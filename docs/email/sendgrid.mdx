@@ -1,15 +1,14 @@
 ---
 title: SendGrid Integration
-subtitle: How to use SendGrid Templates with MagicBell's API
+subtitle: How to use SendGrid with MagicBell's API
 ---
 
-## How to send SendGrid emails from MagicBell's API
+## Sending SendGrid emails from MagicBell's API
 
 ### Initial setup
 
 - Sign up for SendGrid and obtain a SendGrid API key
 - Email your API key to hello@magicbell.com
-- Create a SendGrid template
 
 ### Sending the email
 
@@ -17,7 +16,39 @@ subtitle: How to use SendGrid Templates with MagicBell's API
   Refer to our documentation to see all the overrides options.
 </Note>
 
-4. Now the fun part! Below is an empty snippet of code outlining the minimal pieces required for sending a SendGrid template using MagicBell. 
+Now it's simple! Just include the snippet below in the API:
 
-[ insert snippet of code]
+```shell hideHeader
+"overrides": {
+    "providers": {
+        "sendgrid": {
+                "from": {"email": "enter_email_address"}
+        }
+    }
+}
+```
 
+## Using SendGrid email templates
+
+After creating a template in SendGrid, make sure you have the template ID. Then add the template_id attribute to overrides, and any custom data in your SendGrid template. Below is an example showing how to add a users name to each template.
+
+```shell hideHeader
+"overrides": {
+    "providers": {
+        "sendgrid": {
+            "from": {"email": "dan@magicbell.io"},
+            "personalizations": 
+            [
+                {
+                    "to": [{"email": "dan@magicbell.io"}],
+                    "dynamic_template_data":{
+                        "company": "MB",
+                        "Sender_Name": "Dan"
+                    }
+                }
+            ],
+            "template_id":"d-1a686dcde88644659ba2a90435280a78"
+        }
+    }
+}
+```

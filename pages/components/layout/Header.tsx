@@ -16,7 +16,7 @@ export default function Header({ onToggleMenu }: Props) {
       <div className="flex-1 hidden justify-between py-2 md:pr-8 md:flex max-w-screen-xl mx-auto">
         <div className="flex-1 flex items-center">
           <a href="https://magicbell.com">
-            <img src="/docs/white-logo.png" alt="MagicBell" style={{ height: '40px' }} />
+            <img src="/docs/MBUpdatedLogoWhite.svg" alt="MagicBell" style={{ height: '35px' }} />
           </a>
         </div>
         <div className="ml-4 flex items-center md:ml-6 space-x-5 py-4">

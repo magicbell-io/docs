@@ -41,8 +41,18 @@ Now all users will receive the notification!
 
 ## Programatically
 
+A notification can be sent to all users by including the "matches" attribute with the "email" key, leaving the value an empty string.
 
+```shell hideHeader
+{
+  matches: [
+    {
+      "email": ""
+    }
+  ]
+}
+```
 
 ## How to Manage Users 
 
-Users can 
+You can view, add, and delete users on our Users page. If you send an announcement, it will be delivered to the users listed on this page.

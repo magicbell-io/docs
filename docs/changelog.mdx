@@ -7,6 +7,30 @@ subtitle: The latest releases and improvements to MagicBell
     If you're curious what our team is working on, see our <a href="https://magicbell.com/docs/roadmap">roadmap</a> and follow us on <a href="https://twitter.com/magicbell_io">Twitter</a>! 
 </Note>
 
+## September 6, 2021
+
+### React SDK v2.0.0
+
+The team [introduced a number of enahancements](https://github.com/magicbell-io/react-headless/releases), including eliminating the need to wrap components with the observer function.
+
+### Postmark Integration
+
+You can now send a notification using MagicBell's API through your Postmark account. 
+
+To get started, mail your Postmark API key to hello@magicbell.com. Then include the snippet of code below in your API call. 
+
+```shell hideHeader
+"overrides": {
+	"providers": {
+	    "postmark": { 
+			"from": {"email": "ENTER EMAIL ADDRESS"}
+  		}
+	}
+}
+```
+
+We also include SendGrid and Mailgun.
+
 ## August 23, 2021
 
 ### Enhanced Integration with Delivery Providers
