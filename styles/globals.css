@@ -24,7 +24,7 @@
   }
 
   h2 {
-    @apply text-3xl mt-14 mb-4 font-bold;
+    @apply text-2xl mt-14 mb-4 font-bold;
   }
 
   h3 {
