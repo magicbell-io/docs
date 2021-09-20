@@ -24,7 +24,7 @@
   }
 
   h2 {
-    @apply text-3xl mt-14 mb-4 font-bold;
+    @apply text-2xl mt-14 mb-4 font-bold;
   }
 
   h3 {
@@ -129,4 +129,8 @@ footer a {
 em.highlight {
   @apply bg-blue-100 text-gray-900 px-1 rounded-sm;
   font-style: inherit;
+}
+
+img.full-mobile {
+  margin: 2rem 0;
 }

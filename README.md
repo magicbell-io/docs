@@ -2,27 +2,24 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-1. Make sure XCode, Homebrew, and Git are installed on your machine, and you have a MagicBell Github account.
-2. Navigate to the parent directory (folder) you want to place your code in.
-3. In terminal, run:
+1. Clone the repo
 
-```bash
-git clone https://github.com/magicbell-io/docs.git
-```
+   ```bash
+   git clone git@github.com:magicbell-io/docs.git
+   ```
+2. Install dependencies
 
-4. Then, run:  
+   ```bash
+   yarn install
+   ```
 
-```bash
-yarn install
-```
+3. To spin up your development server, run:
 
-5. You should be all set up now to see MagicBell docs on your local machine. To spin up your development server, run:
+   ```bash
+   yarn dev
+   ```
 
-```bash
-yarn dev
-```
-
-6. Open [http://localhost:3000/docs](http://localhost:3000/docs) with your browser to see the result.
+4. Open [http://localhost:3000/docs](http://localhost:3000/docs) with your browser to see the result.
 
 The `docs` directory contains all entries for the site.
 
