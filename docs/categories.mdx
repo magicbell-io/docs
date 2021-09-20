@@ -2,6 +2,28 @@
 title: Categories
 ---
 
-Categories are a method to group notifications. One use case of grouping notifications is for analytics. 
+When creating a notification, you can send in a `category`. They help with
 
-Our team is developing functionality to customize which channels notifications are delivered to by category. We will release this work soon!
+## Controlling Delivery Channels
+
+By default, notifications are delivered to the channels enabled for the project.
+However, if you'd like notifications of a specific category to be delivered to fewer channels, we can enable that for you. Please write to us.
+
+For example, in a Google docs-like application, you may send the 'page updated' notification only in-app, not via email or mobile push.
+To accomplish this in MagicBell, you can use the category update and write to us to disable email and mobile-push channels for this category.
+
+## End-user notification preference management
+
+Notification preferences for a user are set per category.
+For example, in the screenshot below, the preference labels are derived from two categories - `new_comment`, and `new_message`:
+
+<img className="full-mobile" src="/docs/uploads/categories_preferences.png" />
+
+If you build a custom UI or integrate these preferences into your existing settings screen, you can use the [notification preferences API endpoint](http://localhost:3000/docs/rest-api/reference#put-preferences).
+
+## Coming Soon
+
+Shortly, categories are going to enable you to
+
+- Drill down into analytics
+- Select templates
