@@ -21,3 +21,38 @@ There are three possible reasons:
 ## What do I have to do to enable real-time for my notification inbox?
 
 Nothing at all! Real-time capabilities are enabled by default for everyone, even if you are in the free plan.
+
+## What happens if a user clicks on our notifications? Can I control this behavior?
+
+There are two ways to direct users after clicking a notification:
+
+1. The `action_url` API attribute. It accepts one URL and will direct the user there on click.
+
+
+```shell hideHeader
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }]
+}
+```
+
+
+2. The `onNotificationClick()` method within the frontend notification inbox code. This method provides more flexibility than the 'action_url' attribute.
+
+
+```shell hideHeader
+<script type="text/javascript">
+  var options = {
+    ...
+    onNotificationClick: function(notification) {
+      if (notification.actionUrl) window.open(notification.actionUrl, '_self');
+    },
+    ...
+  };
+</script>
+```
