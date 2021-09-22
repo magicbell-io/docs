@@ -3,8 +3,65 @@ title: Mailgun Integration
 subtitle: How to use Mailgun with MagicBell's API
 ---
 
-<Note>
-Soon MagicBell will integrate with Mailgun temlplates. ✉️ Email hello@magicbell.com if you urgently need this feature!
-</Note>
-
 ## Sending Mailgun emails from MagicBell's API
+
+### Initial setup
+
+- Sign up for Mailgun and obtain an API key
+- Email your **API key** and your **sending domain** to hello@magicbell.com
+
+### Sending emails
+
+**No additional work is needed to send an email through SendGrid**. Your account is set up after emailing our team the necessary information. Now, emails sent through MagicBell's API will use SendGrid. You can verify your team sent an email in SendGrid's application.
+
+### Sending emails with additional or unique content
+
+The `overrides` attribute can send additional and differing content from other channels.
+
+`Overrides` accepts the attributes directly from [Mailgun's documentation](https://documentation.mailgun.com/en/latest/api-sending.html#sending). Below is an example of declaring a unique subject line for emails.
+
+```shell hideHeader
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }],
+    "overrides": {
+        "providers": {
+            "mailgun": {
+                "subject": "New subject header"
+            }
+        }
+    }
+}
+```
+
+## Using Mailgun email templates
+
+After creating a template in Mailgun, copy the template ID. Then add the template attribute to `overrides`. You can also pass custom data for Mailgun templates into the `custom_attributes` attribute. It's possible to override `custom_attributes` by using [h:X-Mailgun-Variables](https://documentation.mailgun.com/en/latest/user_manual.html#templates), but we recommend sticking to `custom_attributes`! Below is an example showing how to add a specific user's name to a SendGrid template with a custom subject line.
+
+```shell hideHeader
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }],
+    "custom_attributes": {
+        "name": "Dan"
+    }
+    "overrides": {
+        "providers": {
+            "mailgun": {
+                "subject": "New subject header",
+                "template_id": "paste template id here"
+            }
+        }
+    }
+}
+```

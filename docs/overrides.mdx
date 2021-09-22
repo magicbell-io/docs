@@ -1,0 +1,74 @@
+---
+title: Overrides API parameter
+subtitle: How to control content across channels and email integrations
+---
+
+## Channel Overrides
+
+You should use the overrides parameter if a specific channel's title, content, or action_url needs to differ from other channels.
+
+Below illustrates how to make the subject of an email different from the title of other notifications.
+
+```shell hideHeader
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }],
+    "overrides": {
+        "channels": {
+            "email": {
+                "title": "New title of email"
+            }
+        }
+    }
+}
+```
+
+The [parameters accepted in overrides.channels](https://magicbell.com/docs/rest-api/reference) are:
+
+```shell hideHeader
+in_app.title
+in_app.content
+in_app.action_url
+email.title
+email.content
+email.action_url
+web_push.title
+web_push.content
+web_push.action_url
+mobile_push.title
+mobile_push.content
+mobile_push.action_url
+```
+
+## Provider Overrides
+
+Overrides can be used for [Postmark](https://magicbell.com/docs/email/postmark), [SendGrid](https://magicbell.com/docs/email/sendgrid), and [Mailgun](https://magicbell.com/docs/email/mailgun) email content.
+
+Each provider has documentation outlining the attributes their APIs accept: [Postmark](https://postmarkapp.com/developer/api/email-api), [SendGrid](https://docs.sendgrid.com/api-reference/mail-send/mail-send), [Mailgun](https://documentation.mailgun.com/en/latest/api-sending.html#sending).
+
+You can use each provider's exact attributes to change or add content. For example, you can add a cc recipient, change the subject header, and more. The code below shows how to add a cc and bcc recipient for Postmark.
+
+```shell hideHeader
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }],
+    "overrides": {
+        "providers": {
+            "postmark": {
+                "Cc": "dan@magicbell.com",
+                "Bcc": "hana@magicbell.com"
+            }
+        }
+    }
+}
+```

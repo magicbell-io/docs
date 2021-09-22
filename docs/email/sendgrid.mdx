@@ -7,22 +7,33 @@ subtitle: How to use SendGrid with MagicBell's API
 
 ### Initial setup
 
-- Sign up for SendGrid and obtain a SendGrid API key
-- Email your API key to hello@magicbell.com
+- Sign up for SendGrid and obtain an API key
+- Email your **API key** (with full access to the Mail Send endpoint) and your **from address from a verified sender identity** to hello@magicbell.com
 
-### Sending the email
+### Sending emails
 
-<Note>
-  Refer to our documentation to view all the parameters for overrides.
-</Note>
+**No additional work is needed to send an email through SendGrid**. Your account is set up after emailing our team the necessary information. Now, emails sent through MagicBell's API will use SendGrid. You can verify your team sent an email in SendGrid's application.
 
-Now it's simple! Just include the snippet below in the API:
+### Sending emails with additional or unique content
+
+The `overrides` attribute can send additional and differing content from other channels.
+
+`Overrides` accepts the attributes directly from [SendGrid's documentation](https://docs.sendgrid.com/api-reference/mail-send/mail-send). Below is an example of declaring a unique subject line for emails.
 
 ```shell hideHeader
-"overrides": {
-    "providers": {
-        "sendgrid": {
-                "from": {"email": "enter_email_address"}
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }],
+    "overrides": {
+        "providers": {
+            "sendgrid": {
+                "subject": "New subject header"
+            }
         }
     }
 }
@@ -30,24 +41,26 @@ Now it's simple! Just include the snippet below in the API:
 
 ## Using SendGrid email templates
 
-After creating a template in SendGrid, make sure you have the template ID. Then add the template_id attribute to overrides, and any custom data in your SendGrid template. Below is an example showing how to add a users name to each template.
+After creating a template in SendGrid, copy the template ID. Then add the template_id attribute to `overrides`. You can also pass custom data for SendGrid templates into the `custom_attributes` attribute. Below is an example showing how to add a specific user's name to a SendGrid template with a custom subject line.
 
 ```shell hideHeader
-"overrides": {
-    "providers": {
-        "sendgrid": {
-            "from": {"email": "dan@magicbell.io"},
-            "personalizations": 
-            [
-                {
-                    "to": [{"email": "dan@magicbell.io"}],
-                    "dynamic_template_data":{
-                        "company": "MB",
-                        "Sender_Name": "Dan"
-                    }
-                }
-            ],
-            "template_id":"d-1a686dcde88644659ba2a90435280a78"
+"notification": {
+    "title": "Welcome to MagicBell",
+    "content": "The notification inbox for your product. Get started in minutes.",
+    "category": "new_message",
+    "action_url": "https://developer.magicbell.com",
+    "recipients": [{
+        "email": "dan@magicbell.com"
+    }],
+    "custom_attributes": {
+        "name": "Dan"
+    }
+    "overrides": {
+        "providers": {
+            "sendgrid": {
+                "subject": "New subject header",
+                "template_id": "paste template id here"
+            }
         }
     }
 }

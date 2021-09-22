@@ -13,7 +13,7 @@ subtitle: The latest releases and improvements to MagicBell
 
 The team [introduced a number of enhancements](https://github.com/magicbell-io/react-headless/releases), including eliminating the need to wrap components with the observer function.
 
-### Postmark Integration
+### Postmark integration
 
 You can now send a notification using MagicBell's API through your Postmark account. 
 
@@ -33,39 +33,15 @@ We also include SendGrid and Mailgun.
 
 ## August 23, 2021
 
-### Enhanced Integration with Delivery Providers
+### Enhanced integration with delivery providers
 
 MagicBell can now relay extra attributes to your providers when calling their API. All you need to do is to send us a provider-specific override when using the create notification API. This is helpful when you want to leverage extra functionality offered by your providers, For example, MagicBell email notifications can leverage SendGrid templates using overrides. See our [demo video for SendGrid](https://www.loom.com/share/c650fa66bd78429d8a90058d704943e0) to learn how.
 
 ## August 16, 2021
 
-### Sidebar Redesign
+### Sidebar redesign
 
-Our team is thrilled to introduce the updated sidebar!
-
-Before
-
-<img
-  className="full-mobile"
-  src="/docs/uploads/sidebar_MB_2.jpg"
-  style={{ width: '15%', height: 'intrinsic' }}
-/>
-
-After, Default view
-
-<img
-  className="full-mobile"
-  src="/docs/uploads/sidebarAfterDefault.png"
-  style={{ width: '4%', height: 'intrinsic' }}
-/>
-
-After, Expanded view
-
-<img
-  className="full-mobile"
-  src="/docs/uploads/sidebarAfterExt.png"
-  style={{ width: '10%', height: 'intrinsic' }}
-/>
+Our team is thrilled to introduce the [updated sidebar](https://app.magicbell.com/projects)!
 
 ### React SDK v8
 
@@ -74,7 +50,7 @@ V8 got rid of MobX, fixed an assortment of bugs, and changed to a proprietary li
 
 ## July 2021
 
-### **Filter Notifications by Category**
+### **Filter notifications by category**
 
 We've added support for filtering notifications by category. You might find it useful to add tabs to your notification inbox. Please check the [fetch notifications API](https://magicbell.com/docs/rest-api/reference#get-notifications) endpoint documentation for details. Support is coming soon for the React SDK.
 
@@ -82,37 +58,37 @@ We've added support for filtering notifications by category. You might find it u
 
 Mila - MagicBell’s designer - wrote a [great blog post](https://magicbell.com/blog/what-painting-taught-me-about-a-career-in-ui-design) on her journey from being an artist to a UI designer. The post skyrocketed all the way to #2 on Hacker News, generating 110+ comments.
 
-### **Edit and Delete Projects**
+### **Edit and delete projects**
 
 After a project is created, it can be edited and / or deleted.
 
-### **Idempotent Requests**
+### **Idempotent requests**
 
 The [API now supports idempotency](https://magicbell.com/docs/idempotent-requests) for safely retrying requests without accidentally performing the same operation twice. This is useful when an API call is disrupted in transit and you do not receive a response.
 
-### **New Slack Community**
+### **New Slack community**
 
 [We created a Slack workspace](https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw) for the MagicBell community. We hope it’s a helpful resource to answer questions, give product updates, and more!
 
 
 ## June 2021
 
-### **Compose Button**
+### **Compose button**
 
 We rolled out a compose button in our dashboard that lets you send notifications to your users. You can add multiple email addresses or external IDs. 
 
-### **Postmark Integration**
+### **Postmark integration**
 
 We've added support for delivering email notifications via Postmark. If you'd like it setup, please contact us. We'll roll out integrations to our dashboard in the coming months, but we are happy to set them up for you in the meantime. . We also support Mailgun and SendGrid.
 
-### **Multiple Mobile-Push Apps per Project**
+### **Multiple mobile-push apps per project**
 
 We've added support for multiple push apps per project. This is useful if you use different app bundles for test/canary/production. Please see the [updated documentation](https://magicbell.com/docs/api-reference#operation/create-push-subscription) or write us if you  have any questions.
 
 
 ## May 2021
 
-### **Improved Developer Documentation Site**
+### **Improved developer documentation site**
 
 Our [new documentation site](https://www.hoss.com/) went live last week. It's more readable, features better navigation, and allows us to add live examples (coming soon!). We'd love to hear your feedback on the structure, and the content.
 
@@ -129,11 +105,11 @@ We have documented the [push subscription API](https://magicbell.com/docs/rest-
 
 ## April 2021
 
-### **User Deletion API**
+### **User deletion API**
 
 We added an [API endpoint](https://developer.magicbell.com/reference#delete_users-user-id) for cases when a user deletes their account and you want to remove them from MagicBell for GDPR compliance.
 
-### **Web Push Notifications for Safari**
+### **Web push notifications for Safari**
 
 We launched web-push last month but it took us a little longer to get to web-push for Safari. Apple has their own (harder) way of doing everything so it took us a while to get this out the door. We'll write up a blog about this soon.
 
@@ -141,14 +117,14 @@ We launched web-push last month but it took us a little longer to get to web-pus
 
 We launched a [better status page](https://status.magicbell.com/) (that lets you subscribe for email updates) as well as a dedicated [Twitter account](https://twitter.com/MagicBellStatus) for status updates. We'd still love for you to follow our regular [Twitter account](https://twitter.com/MagicBell_io) too, of-course! :)
 
-**iOS Push Beta**
+**iOS push beta**
 
 iOS push is now in beta and we'd love for you to try it out. Please reply to this email if you are interested. Android beta coming up next!
 
 
 ## March 2021
 
-### **Notification Preferences Beta**
+### **Notification preferences beta**
 
 The [6.27.0-beta.1 version of the React package](https://www.npmjs.com/package/@magicbell/magicbell-react/v/6.27.0-beta.1) offers a notification preferences UI. We'd love for you to try it and give us some feedback. If you add categories to your [POST /notifications API](https://developer.magicbell.io/reference#notification-send-api) calls, we'll render the preferences matrix for your users - automagically. You can see it in action on our [Chrome extension for Hacker news](https://chrome.google.com/webstore/detail/hacker-news-notifications/bbkfblhdgiddlkfkipjdhhfoephonoba?hl=en&authuser=0) (which is pretty awesome, by the way).
 
@@ -156,6 +132,6 @@ The [6.27.0-beta.1 version of the React package](https://www.npmjs.com/package/
 
 This is how the UI looks when we use categories *direct_comment, reply,* and *new_message,* and enable the web push channel for our project.
 
-### **React Headless**
+### **React headless SDK**
 
 A lot of you asked for better React Native support. We just released a [React headless library](https://www.npmjs.com/package/@magicbell/react-headless) that contains a set of React headless components and hooks to build a notification inbox in React or React Native. Our official React package has more bells and whistles, but this new library is an excellent option for the more adventurous (or creative) ones! Here is an [example in React Native](https://codesandbox.io/s/ancient-frost-roln4). A full blown React Native library will soon follow.

@@ -42,6 +42,10 @@
         "to": "/categories"
       },
       {
+        "name": "Overrides",
+        "to": "/overrides"
+      },
+      {
         "name": "React",
         "children": [
           {
@@ -118,6 +122,18 @@
           {
             "name": "Setting up 3rd party email providers",
             "to": "/email/3rd-party-email-providers"
+          },
+          {
+            "name": "SendGrid",
+            "to": "/email/sendgrid"
+          },
+          {
+            "name": "Postmark",
+            "to": "/email/postmark"
+          },
+          {
+            "name": "Mailgun",
+            "to": "/email/mailgun"
           }
         ]
       },
