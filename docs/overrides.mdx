@@ -1,6 +1,6 @@
 ---
 title: Overrides API parameter
-subtitle: How to control content across channels and email integrations
+subtitle: How to control content across channels and providers
 ---
 
 ## Channel Overrides
@@ -51,7 +51,7 @@ Overrides can be used for [Postmark](https://magicbell.com/docs/email/postmark),
 
 Each provider has documentation outlining the attributes their APIs accept: [Postmark](https://postmarkapp.com/developer/api/email-api), [SendGrid](https://docs.sendgrid.com/api-reference/mail-send/mail-send), [Mailgun](https://documentation.mailgun.com/en/latest/api-sending.html#sending).
 
-You can use each provider's exact attributes to change or add content. For example, you can add a cc recipient, change the subject header, and more. The code below shows how to add a cc and bcc recipient for Postmark.
+You can use each provider's exact attributes to change or add content. For example, you can cc a recipient, change the subject header, and more. The code below shows how to add a cc and bcc recipient for Postmark.
 
 ```shell hideHeader
 "notification": {

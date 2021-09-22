@@ -1,5 +1,5 @@
 ---
-title: Postmark Integration
+title: Postmark integration
 subtitle: How to use Postmark with MagicBell's API
 ---
 
@@ -8,8 +8,8 @@ subtitle: How to use Postmark with MagicBell's API
 ### Initial setup
 
 - Sign up for Postmark and obtain a server API token
-- Verify your sender signature
-- Email your **server ID token** and **verified sender signature rendered on your account (ie full email address)** to hello@magicbell.com
+- Verify your sender signature in Postmark
+- ✉️ Email your **server ID token** and **verified sender signature** (email address) in your account to hello@magicbell.com
 
 ### Sending the email
 
@@ -17,9 +17,9 @@ subtitle: How to use Postmark with MagicBell's API
 
 ### Sending emails with additional or unique content
 
-The `overrides` attribute can send additional and differing content from other channels.
+The `overrides` attribute allows you to send content unique to email, differing from other channels.
 
-`Overrides` accepts the attributes directly from [Postmark's documentation](https://postmarkapp.com/developer/api/email-api). Below is an example of declaring a unique subject line for emails.
+`Overrides` accept the exact attributes directly from [Postmark's documentation](https://postmarkapp.com/developer/api/email-api). Below is an example of a notification with an email subject line different from the title of other channels.
 
 ```shell hideHeader
 "notification": {

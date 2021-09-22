@@ -1,5 +1,5 @@
 ---
-title: Mailgun Integration
+title: Mailgun integration
 subtitle: How to use Mailgun with MagicBell's API
 ---
 
@@ -8,7 +8,7 @@ subtitle: How to use Mailgun with MagicBell's API
 ### Initial setup
 
 - Sign up for Mailgun and obtain an API key
-- Email your **API key** and your **sending domain** to hello@magicbell.com
+- ✉️ Email your **API key**, **sending domain**, and (optionally) what you wish the name and email of the sender to display as to hello@magicbell.com
 
 ### Sending emails
 
@@ -16,9 +16,9 @@ subtitle: How to use Mailgun with MagicBell's API
 
 ### Sending emails with additional or unique content
 
-The `overrides` attribute can send additional and differing content from other channels.
+The `overrides` attribute allows you to send content unique to email, differing from other channels.
 
-`Overrides` accepts the attributes directly from [Mailgun's documentation](https://documentation.mailgun.com/en/latest/api-sending.html#sending). Below is an example of declaring a unique subject line for emails.
+`Overrides` accept the exact attributes directly from [Mailgun's documentation](https://documentation.mailgun.com/en/latest/api-sending.html#sending). Below is an example of a notification with an email subject line different from the title of other channels.
 
 ```shell hideHeader
 "notification": {
@@ -41,7 +41,7 @@ The `overrides` attribute can send additional and differing content from other c
 
 ## Using Mailgun email templates
 
-After creating a template in Mailgun, copy the template ID. Then add the template attribute to `overrides`. You can also pass custom data for Mailgun templates into the `custom_attributes` attribute. It's possible to override `custom_attributes` by using [h:X-Mailgun-Variables](https://documentation.mailgun.com/en/latest/user_manual.html#templates), but we recommend sticking to `custom_attributes`! Below is an example showing how to add a specific user's name to a Mailgun template with a custom subject line.
+After creating a template in Mailgun, copy the template ID. Then add the `template` attribute to `overrides`. You can also pass custom data for Mailgun templates into the `custom_attributes` attribute. It's possible to override `custom_attributes` by using [h:X-Mailgun-Variables](https://documentation.mailgun.com/en/latest/user_manual.html#templates), but we recommend sticking to `custom_attributes`! Below is an example showing how to add a specific user's name to a Mailgun template with a custom subject line.
 
 ```shell hideHeader
 "notification": {
