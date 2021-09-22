@@ -12,7 +12,7 @@ subtitle: How to use Mailgun with MagicBell's API
 
 ### Sending emails
 
-**No additional work is needed to send an email through SendGrid**. Your account is set up after emailing our team the necessary information. Now, emails sent through MagicBell's API will use SendGrid. You can verify your team sent an email in SendGrid's application.
+**No additional work is needed to send an email through Mailgun**. Your account is set up after emailing our team the necessary information. Now, emails sent through MagicBell's API will use Mailgun. You can verify your team sent an email in Mailgun's application.
 
 ### Sending emails with additional or unique content
 
@@ -41,7 +41,7 @@ The `overrides` attribute can send additional and differing content from other c
 
 ## Using Mailgun email templates
 
-After creating a template in Mailgun, copy the template ID. Then add the template attribute to `overrides`. You can also pass custom data for Mailgun templates into the `custom_attributes` attribute. It's possible to override `custom_attributes` by using [h:X-Mailgun-Variables](https://documentation.mailgun.com/en/latest/user_manual.html#templates), but we recommend sticking to `custom_attributes`! Below is an example showing how to add a specific user's name to a SendGrid template with a custom subject line.
+After creating a template in Mailgun, copy the template ID. Then add the template attribute to `overrides`. You can also pass custom data for Mailgun templates into the `custom_attributes` attribute. It's possible to override `custom_attributes` by using [h:X-Mailgun-Variables](https://documentation.mailgun.com/en/latest/user_manual.html#templates), but we recommend sticking to `custom_attributes`! Below is an example showing how to add a specific user's name to a Mailgun template with a custom subject line.
 
 ```shell hideHeader
 "notification": {
