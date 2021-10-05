@@ -4,14 +4,31 @@ subtitle: How to send a notification to all users
 ---
 
 <Note>
-  This feature is currently in development. Email hello@magicbell.com if you want this feature as soon as possible!
+  Announcements can be sent programatically, but the Compose functionality is currently in development. Email hello@magicbell.com if you want this feature as soon as possible!
 </Note>
 
 ## Two options
-- Using the UI
 - Programatically
+- Using the UI
 
-## The UI
+## Programmatically
+
+All users can receive a notification by using [Segmented Send](https://magicbell.com/docs/segmented-send). In `notification.recipients`, include the `matches` attribute with a `*` as the value. 
+
+```shell hideHeader
+{
+  "notification": {
+    "title": "We are processing your order",
+    "recipients": [
+      {
+        "matches": "*"
+      }
+    ]
+  }
+}
+```
+
+## The UI (Coming soon!)
 
 The compose feature can send notifications to individuals, a group of users, or all users. To send a notification to all users:
 
@@ -38,21 +55,3 @@ The compose feature can send notifications to individuals, a group of users, or 
 Now all users will receive the notification! 
 
 <i>After clicking Everyone, you may notice <a href="https://magicbell.com/docs/categories">Category</a> toggles to Announcement. Assigning notifications a Category is a great way to customize your inbox and derive insights from analytics down the road.</i>
-
-## Programmatically
-
-All users can receive a notification by including the "matches" attribute with the "email" key, leaving the value an empty string.
-
-```shell hideHeader
-{
-  matches: [
-    {
-      "email": ""
-    }
-  ]
-}
-```
-
-## How to manage users 
-
-Our team built a page specifically to view, add, and delete users. These are the users who will receive a notification. If a user has not logged onto your site since implementing MagicBell - and they should receive an announcement - you must manually add them.

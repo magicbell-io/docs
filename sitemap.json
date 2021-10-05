@@ -65,6 +65,10 @@
         "to": "/segmented-send"
       },
       {
+        "name": "Announcements",
+        "to": "/announcements"
+      },
+      {
         "name": "Turn on HMAC authentication",
         "to": "/turn-on-hmac-authentication"
       },
