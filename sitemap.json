@@ -140,6 +140,10 @@
           {
             "name": "Mailgun",
             "to": "/email/mailgun"
+          },
+          {
+            "name": "Ping (Webhooks)",
+            "to": "/email/ping"
           }
         ]
       },
