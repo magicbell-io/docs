@@ -184,7 +184,7 @@
     "to": "/libraries-api-wrappers"
   },
   {
-    "name": "What's New",
+    "name": "Changelog",
     "icon": "changelog",
     "to": "/changelog",
     "staticRoute": true
@@ -203,5 +203,9 @@
   {
     "name": "FAQ",
     "to": "/faq"
+  },
+  {
+    "name": "careers",
+    "to": "https://magicbell.com/careers"
   }
 ]
