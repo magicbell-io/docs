@@ -57,6 +57,10 @@
         "to": "/categories"
       },
       {
+        "name": "Topics",
+        "to": "/topics"
+      },
+      {
         "name": "Smart Notifications",
         "to": "/smart-notifications"
       },
