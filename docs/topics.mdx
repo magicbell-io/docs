@@ -1,25 +1,26 @@
 ---
 title: Topics
-subtitle: Groups notifications about one topic
+subtitle: Create and fetch notifications for a topic
 ---
 
-Topics are a way to group together notifications about a specific entity in your system. You can use them for different kinds of orders,
-posts, documents, interests, etc. Let's use GitHub as an example. An example category is `comment`. Users comment on
+Topics are a way to group notifications about a specific entity in your system. You can use them for orders,
+tickets, posts, documents, interests, etc, depending on what you are building. Let's use GitHub as an example. An example category is `comment`. Users comment on
 various kinds of activity - one example being pull requests. The topic in this example is a specific pull-request. Therefore,
-you can create a notification with the topic `pull-request-{{id}}` (`pull-request-123` for the pull request with ID 123).
+you can create (and fetch) notifications with the topic `pull-request-{{id}}`.
 
 ## Creating notifications for a topic
 
 When creating a notification, you can set a topic in the `notification.topic` parameter. A topic must contain
-less than 256 characters and should not contain spaces. An example is below.
+less than 256 characters and should not contain spaces. Continuing our Github example, for the pull-request with ID 123,
+the notifications should use be created with the topic `pull-request-123`
 
 ```json hideHeader
 {
   "notification": {
-    "title": "Your Account Needs Some Attention",
+    "title": "@unamashana please review this PR",
     "recipients": [
       {
-        "email": "josue@magicbell.io",
+        "email": "hana@magicbell.io",
         "external_id": "00001"
       }
     ],
