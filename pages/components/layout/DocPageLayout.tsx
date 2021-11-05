@@ -26,14 +26,14 @@ export default function DocPageLayout({ title = 'Docs', description, children }:
   }, [router.asPath]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <NextSeo
         title={`MagicBell - ${title}`}
         description={description}
         canonical={path.join('https://www.magicbell.com', router.basePath, router.asPath)}
       />
       <Header onToggleMenu={toggleSidebar} />
-      <div className="flex flex-1 w-full max-w-screen-xl mx-auto divide-x divide-gray-200">
+      <div className="max-w-screen-xl mx-auto divide-x divide-gray-200 flex flex-1 w-full">
         <MobileMenu
           navigationItems={sitemap}
           isOpen={sidebarOpen}
