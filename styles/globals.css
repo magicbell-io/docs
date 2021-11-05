@@ -63,7 +63,7 @@
   }
 
   a:hover {
-    @apply text-purple;
+    @apply text-lightPurple;
     text-decoration: none !important;
   }
 

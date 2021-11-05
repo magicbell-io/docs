@@ -7,7 +7,7 @@ interface Props {
 
 export default function Card({ children, title }: Props) {
   return (
-    <div className="break-inside bg-purple text-white rounded-md p-8 mb-4">
+    <div className="break-inside bg-lightPurple text-white rounded-md p-8 mb-4">
       <p className="font-bold text-2xl mb-6">{title}</p>
       {children}
     </div>

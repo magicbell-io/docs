@@ -46,6 +46,20 @@
     ]
   },
   {
+    "name": "GraphQL API",
+    "children": [
+      {
+        "name": "Overview",
+        "to": "/graphql-api/overview"
+      },
+      {
+        "name": "API reference",
+        "to": "/graphql-api/reference",
+        "staticRoute": true
+      }
+    ]
+  },
+  {
     "name": "Guides",
     "children": [
       {

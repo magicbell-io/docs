@@ -26,7 +26,7 @@
                 "notification": {
                   "title": "We're processing your order",
                   "content": "<p>Thank you for your order. We'll notify you when these items are ready.</p>",
-                  "category": "account_created",
+                  "category": "order_created",
                   "topic": "order:33098",
                   "recipients": [
                     { "email": "dan@example.com" },
@@ -63,7 +63,7 @@
                     "title": "We're processing your order",
                     "content": "<p>Thank you for your order. We'll notify you when these items are ready.</p>",
                     "action_url": null,
-                    "category": "account_created",
+                    "category": "order_created",
                     "topic": "order:33098",
                     "custom_attributes": null,
                     "sent_at": 1625853246
@@ -251,6 +251,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           { "$ref": "#/components/parameters/notification_id" }
         ],
@@ -317,6 +320,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           { "$ref": "#/components/parameters/notification_id" }
         ],
@@ -349,6 +355,9 @@
           { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
+          },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
           },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           { "$ref": "#/components/parameters/notification_id" }
@@ -385,6 +394,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           { "$ref": "#/components/parameters/notification_id" }
         ],
@@ -420,6 +432,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           { "$ref": "#/components/parameters/notification_id" }
         ],
@@ -452,6 +467,9 @@
           { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
+          },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
           },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           { "$ref": "#/components/parameters/notification_id" }
@@ -489,8 +507,10 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
-          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
-          { "$ref": "#/components/parameters/notification_id" }
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
+          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
         ],
         "responses": {
           "204": {
@@ -510,8 +530,10 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
-          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
-          { "$ref": "#/components/parameters/notification_id" }
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
+          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
         ],
         "responses": {
           "204": {
@@ -712,6 +734,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
         ],
         "tags": ["User notification preference APIs"],
@@ -754,6 +779,9 @@
           { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
+          },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
           },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
         ],
@@ -835,6 +863,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
         ],
         "requestBody": {
@@ -911,6 +942,9 @@
           {
             "$ref": "#/components/parameters/x_magicbell_user_external_id_header"
           },
+          {
+            "$ref": "#/components/parameters/x_magicbell_user_email_header"
+          },
           { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
           {
             "in": "path",
@@ -960,21 +994,19 @@
         "in": "header",
         "name": "X-MAGICBELL-USER-EMAIL",
         "schema": { "type": "string" },
-        "required": true,
         "description": "Email address of the user. Provide the X-MAGICBELL-USER-EXTERNAL-ID header instead if you identify users by ID."
       },
       "x_magicbell_user_external_id_header": {
         "in": "header",
         "name": "X-MAGICBELL-USER-EXTERNAL-ID",
         "schema": { "type": "string" },
-        "required": true,
         "description": "ID of the user. Provide the X-MAGICBELL-USER-EMAIL header instead if you identify users by email."
       },
       "x_magicbell_user_hmac_header": {
         "in": "header",
         "name": "X-MAGICBELL-USER-HMAC",
         "schema": { "type": "string" },
-        "description": "HMAC calculated with the API secret and ID, or email, of the user."
+        "description": "HMAC calculated with the API secret and ID, or email, of the user. Required if the project has HMAC enabled."
       },
       "notification_id": {
         "in": "path",

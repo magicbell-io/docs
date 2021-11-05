@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         darkGrey: '#9187B2',
         darkPurple: '#230F65',
-        purple: '#5225C1',
+        lightPurple: '#5225C1',
         pink: '#C977FE',
       },
       fontFamily: {

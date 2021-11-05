@@ -18,10 +18,10 @@ const TEMPLATE_CONTEXT = {
   notification_id: '7fb3ce9f-a866-4dff-8ce8-2f64f7c5ed4c',
   user_id: faker.datatype.uuid(),
   device_token: faker.random.alphaNumeric(64),
-  x_magicbell_api_key: 'MAGICBELL_API_KEY',
-  x_magicbell_api_secret: 'MAGICBELL_API_SECRET',
-  x_magicbell_user_external_id: 'USER_ID',
-  x_magicbell_user_email: 'USER_EMAIL',
+  x_magicbell_api_key: '[MAGICBELL_API_KEY]',
+  x_magicbell_api_secret: '[MAGICBELL_API_SECRET]',
+  x_magicbell_user_external_id: '[USER_ID]',
+  x_magicbell_user_email: '[USER_EMAIL]',
 };
 
 export function replaceVariables(codeSnippet: string) {
@@ -35,7 +35,7 @@ export function buildUrl(url: URL) {
 export function buildRequestSnippet(
   location: string,
   method: string,
-  headers: OpenAPIV3.ParameterObject[],
+  headers: OpenAPIV3.ParameterObject[] | Record<string, any>[],
   data: {
     mimeType: string;
     text: string;
@@ -43,7 +43,9 @@ export function buildRequestSnippet(
 ) {
   const headersArray = Object.keys(headers).map((param, index) => ({
     name: headers[index].name,
-    value: replaceVariables(`{${headers[index].name.toLowerCase().replace(/-/g, '_')}}`),
+    value:
+      headers[index].content ||
+      replaceVariables(`{${headers[index].name.toLowerCase().replace(/-/g, '_')}}`),
   }));
 
   return new HTTPSnippet({

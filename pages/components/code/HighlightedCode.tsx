@@ -16,12 +16,14 @@ import xml from 'highlight.js/lib/languages/xml';
 // @ts-ignore
 import curl from 'highlightjs-curl';
 import React from 'react';
+import graphql from '../../../lib/highlight-graphql';
 import HighlightedCodeHeader from './HighlightedCodeHeader';
 
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('clojure', clojure);
 hljs.registerLanguage('curl', curl);
 hljs.registerLanguage('diff-html', diff);
+hljs.registerLanguage('graphql', graphql);
 hljs.registerLanguage('go', go);
 hljs.registerLanguage('java', java);
 hljs.registerLanguage('javascript', javascript);

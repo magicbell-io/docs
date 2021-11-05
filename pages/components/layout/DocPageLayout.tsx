@@ -30,7 +30,11 @@ export default function DocPageLayout({ title = 'Docs', description, children }:
       <NextSeo
         title={`MagicBell - ${title}`}
         description={description}
-        canonical={path.join('https://magicbell.com', router.basePath, router.asPath)}
+        canonical={path.join(
+          process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.magicbell.com',
+          router.basePath,
+          router.asPath,
+        )}
       />
       <Header onToggleMenu={toggleSidebar} />
       <div className="max-w-screen-xl mx-auto divide-x divide-gray-200 flex flex-1 w-full">

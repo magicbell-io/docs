@@ -74,7 +74,7 @@ function getPostsFromSitemap() {
       const post = getPost(entryFilePath, docsDirectory);
       posts.push(post);
     } catch (err) {
-      console.log(err);
+      console.debug(err);
     }
   }
 

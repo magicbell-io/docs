@@ -13,7 +13,7 @@ export default function HeaderParameters({ parameteres = [] }: Props) {
   if (!headerParams.length) return null;
   return (
     <div className="mt-8 mb-12">
-      <p className="uppercase text-sm">Header parameters</p>
+      <p className="uppercase text-sm">HTTP headers</p>
       <ul className="border border-gray-200 rounded divide-y m-0">
         {headerParams.map((param, index) => (
           <Parameter key={index} param={param} />
