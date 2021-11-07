@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "postbuild": "node ./scripts/build-search-index.mjs",
+    "postbuild": "next-sitemap && node ./scripts/build-search-index.mjs",
     "start": "next start",
     "lint": "next lint"
   },
@@ -37,6 +37,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^3.0.6",
     "next-seo": "^4.28.1",
+    "next-sitemap": "^1.6.203",
     "next-svgr": "^0.0.2",
     "openapi-types": "^9.3.0",
     "prettier": "^2.4.1",
