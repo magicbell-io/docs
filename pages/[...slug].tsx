@@ -3,9 +3,7 @@ import * as matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import Error from 'next/error';
 import path from 'path';
-import { flatten, reject } from 'ramda';
 import React from 'react';
 import autolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -13,13 +11,11 @@ import sitemap from '../lib/sitemap';
 import DocPage from '../src/components/DocPage';
 
 interface Props {
-  notFound?: boolean;
   metadata?: { [key: string]: any };
   mdxSource?: MDXRemoteSerializeResult;
 }
 
-export default function DynamicDocument({ mdxSource, metadata, notFound }: Props) {
-  if (notFound) return <Error statusCode={404} />;
+export default function DynamicDocument({ mdxSource, metadata }: Props) {
   if (!metadata) return null;
   return <DocPage mdxSource={mdxSource} {...metadata} />;
 }
