@@ -10,7 +10,7 @@ import React from 'react';
 import autolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import sitemap from '../lib/sitemap';
-import DocPage from './components/DocPage';
+import DocPage from '../src/components/DocPage';
 
 interface Props {
   notFound?: boolean;
@@ -24,25 +24,38 @@ export default function DynamicDocument({ mdxSource, metadata, notFound }: Props
   return <DocPage mdxSource={mdxSource} {...metadata} />;
 }
 
-// @ts-ignore
 export const getStaticPaths: GetStaticPaths = async () => {
   // Load routes from the sitemap
-  const allRoutes = flatten(
-    reject((item) => item.to === undefined || item.staticRoute === true, sitemap),
-  );
+  const allRoutes = sitemap
+    .flatMap((entry) => {
+      if (entry.children) {
+        return entry.children.concat(entry);
+      }
+      return entry;
+    })
+    .filter((item) => item.to !== undefined && !item.staticRoute)
+    .map((item) => item.to) as string[];
 
   return {
-    paths: allRoutes.map((item) => item.to),
+    paths: allRoutes.map((item) => {
+      const path = item.startsWith('/') ? item.substr(1) : item;
+      const slug = path.split('/');
+      return { params: { slug } };
+    }),
     fallback: true,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<{}, { slug: string[] }> = async ({
+  params,
+}) => {
   // Read the file that contains the content for the route
-  const { slug } = params!;
+  if (!params?.slug) {
+    return { notFound: true };
+  }
+  const slug = params.slug.join('/');
 
-  // @ts-ignore
-  const filename = slug?.join('/') + '.mdx';
+  const filename = slug + '.mdx';
   const docsDirectory = path.join(process.cwd(), 'docs');
   const filePath = path.join(docsDirectory, filename);
 
@@ -62,6 +75,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     return { props: { mdxSource, metadata: data } };
   } catch (err) {
-    return { props: { notFound: true } };
+    return { notFound: true };
   }
 };

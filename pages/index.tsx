@@ -5,8 +5,8 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import React from 'react';
-import DocPage from './components/DocPage';
-import HomeChangelog from './components/HomeChangelog';
+import DocPage from '../src/components/DocPage';
+import HomeChangelog from '../src/components/HomeChangelog';
 
 interface Props {
   metadata?: { [key: string]: any };

@@ -6,8 +6,8 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import React from 'react';
-import DocPage from '../components/DocPage';
-import Schema from '../components/graphql/Schema';
+import DocPage from '../../src/components/DocPage';
+import Schema from '../../src/components/graphql/Schema';
 
 interface Props {
   metadata?: { [key: string]: any };

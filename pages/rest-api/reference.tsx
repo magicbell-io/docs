@@ -6,8 +6,8 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import React from 'react';
-import DocPage from '../components/DocPage';
-import Document from '../components/openapi/Document';
+import DocPage from '../../src/components/DocPage';
+import Document from '../../src/components/openapi/Document';
 
 interface Props {
   metadata?: { [key: string]: any };
