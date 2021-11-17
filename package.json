@@ -10,7 +10,8 @@
     "build": "next build",
     "postbuild": "next-sitemap && node ./scripts/build-search-index.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.0.2",
@@ -59,12 +60,15 @@
   "devDependencies": {
     "@types/faker": "^5.5.9",
     "@types/httpsnippet": "^1.23.1",
+    "@types/jest": "^27.0.2",
     "@types/prettier": "^2.4.1",
     "@types/react": "^17.0.33",
     "@types/react-instantsearch-dom": "^6.10.2",
     "autoprefixer": "^10.3.7",
+    "babel-jest": "^27.3.1",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
+    "jest": "^27.3.1",
     "postcss": "^8.3.9",
     "raw-loader": "^4.0.2",
     "tailwindcss": "^2.2.17",

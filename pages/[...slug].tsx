@@ -7,7 +7,7 @@ import path from 'path';
 import React from 'react';
 import autolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import sitemap from '../lib/sitemap';
+import sitemap, { getAllSitemapItems } from '../lib/sitemap';
 import DocPage from '../src/components/DocPage';
 
 interface Props {
@@ -22,13 +22,7 @@ export default function DynamicDocument({ mdxSource, metadata }: Props) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Load routes from the sitemap
-  const allRoutes = sitemap
-    .flatMap((entry) => {
-      if (entry.children) {
-        return entry.children.concat(entry);
-      }
-      return entry;
-    })
+  const allRoutes = getAllSitemapItems(sitemap)
     .filter((item) => item.to !== undefined && !item.staticRoute)
     .map((item) => item.to) as string[];
 

@@ -15,3 +15,20 @@ export function getAllChildrenPaths(element: any): string[] {
   if (element.to) return element.to;
   return reject(isNil, flatten(element.children.map(getAllChildrenPaths)));
 }
+
+/**
+ * Helper function to flatten the sitemap
+ * @param sitemap the sitemap to flatten
+ * @returns an array of elements of the sitemap
+ */
+export function getAllSitemapItems(sitemap: SitemapItem[]): SitemapItem[] {
+  let items:SitemapItem[] = []
+  const traverse = (item: SitemapItem) => {
+    items.push(item)
+    if(item.children){
+      item.children.forEach(traverse)
+    }
+  }
+  sitemap.forEach(traverse)
+  return items;
+}
