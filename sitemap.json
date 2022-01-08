@@ -149,6 +149,15 @@
         ]
       },
       {
+        "name": "Vue",
+        "children": [
+          {
+            "name": "How to use MagicBell with NuxtJS",
+            "to":"/vue/adding-magicbell-to-your-nuxt-application"
+          }
+        ]
+      },
+      {
         "name": "Email",
         "children": [
           {
