@@ -5,21 +5,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Clone the repo
 
    ```bash
-   git clone git@github.com:magicbell-io/docs.git
+   git clone git@github.com:magicbell-io/docs.git magicbell-docs
    ```
-2. Install dependencies
+   
+2. Navigate into the newly created directory
+
+  ```bash
+  cd magicbell-docs
+  ```
+ 
+3. Install the dependencies
 
    ```bash
    yarn install
    ```
 
-3. To spin up your development server, run:
+4. Start your development server:
 
    ```bash
    yarn dev
    ```
 
-4. Open [http://localhost:3000/docs](http://localhost:3000/docs) with your browser to see the result.
+5. Open [http://localhost:3000/docs](http://localhost:3000/docs) with your browser to see the result.
 
 The `docs` directory contains all entries for the site.
 
