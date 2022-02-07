@@ -183,6 +183,15 @@
         ]
       },
       {
+        "name": "Slack",
+        "children": [
+          {
+            "name": "How to use MagicBell with Slack",
+            "to": "/slack"
+          }
+        ]
+      },
+      {
         "name": "Browser",
         "children": [
           {
