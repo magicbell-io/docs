@@ -44,6 +44,8 @@ function extractPath(element) {
 function getPost(context, directory) {
   const fileName = context.to === '/' ? 'index.mdx' : context.to + '.mdx';
   const postPath = path.join(directory, fileName);
+  if (!fs.existsSync(postPath)) return null;
+
   const contents = parseMDXFile(postPath, context);
 
   // {
@@ -75,6 +77,7 @@ function getPostsFromSitemap() {
 
     try {
       const post = getPost(entryFilePath, docsDirectory);
+      if (!post) continue;
       posts.push(post);
     } catch (err) {
       console.debug(err);
