@@ -79,6 +79,18 @@
     @apply inline-block;
   }
 
+  main ol {
+    @apply list-decimal;
+    @apply list-inside;
+    @apply space-y-2;
+    @apply mb-4;
+    @apply ml-4;
+  }
+
+  main ol > li > p:first-child {
+    @apply inline-block;
+  }
+
   pre,
   code {
     font-size: 1rem;
