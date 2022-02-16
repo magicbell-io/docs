@@ -5,15 +5,25 @@ subtitle: How to use slack with MagicBell
 
 ## Deliver notifications to your Slack workspace
 
-To have Slack configured for your MagicBell project, follow these steps:
+We currently have 3 ways of sending MagicBell notifications to slack workspaces. You can choose whichever installation option suits your use case.
 
-- Sign up for Slack workspace.
+1. Install our MagicBell Bot app into your slack workspace(s)
+2. Install our MagicBell Webhook app into your slack workspace(s)
+3. Create and Install your own app into your slack workspace(s)
+
+## Install our MagicBell Bot app into your slack workspace(s).
+This is the simplest way to get MagicBell communication with all your users in multiple workspaces. Click <a href="https://slack.com/oauth/v2/authorize?client_id=904206676034.3112841272850&scope=channels:read,chat:write,chat:write.public,im:write,users:read,users:read.email&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a> to connect your current MagicBell project with your slack workspaces. This will automatically import all your users and channels into MagicBell allowing you the ability to send messages to them in a few minutes.
+
+## Install our MagicBell Webhook Bot app into your slack workspace(s).
+This is the simplest way to get MagicBell communication with a single channel or user. Click
+<a href="https://slack.com/oauth/v2/authorize?client_id=904206676034.3115367504932&scope=incoming-webhook&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+to connect your current MagicBell project with a channel/user in your slack workspaces.
+
+
+## Create and install your own app into your slack workspace
 - Create a Slack application and obtain an oauth key.
 - Send us your oauth key.
 - Verify the slack channel in MagicBell is enabled
-
-## Sign up for a Slack Workspace
-Go to https://slack.com/ and Create a new workspace.
 
 ## Create a slack application and obtain an oath key
 Head over to https://api.slack.com/apps and click on the "Create New App" button
