@@ -190,8 +190,8 @@
             "to": "/slack"
           },
           {
-            "name": "Our testing apps",
-            "to": "/slack/testing-apps"
+            "name": "MagicBell apps (for testing/internal use)",
+            "to": "/slack/magicbell-apps"
           },
           {
             "name": "Create your own app",
