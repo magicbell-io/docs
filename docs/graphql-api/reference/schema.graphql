@@ -198,6 +198,10 @@ type User {
   email: String
   externalId: String
   customAttributes: JSON
+  notifications: NotificationsConnection
+  lastSignInIp: String
+  lastSeenAt: ISO8601DateTime
+  createdAt: ISO8601DateTime!
 }
 
 type UserFilter {
