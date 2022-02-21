@@ -186,8 +186,16 @@
         "name": "Slack",
         "children": [
           {
-            "name": "How to use MagicBell with Slack",
+            "name": "Our slack integration",
             "to": "/slack"
+          },
+          {
+            "name": "Our testing apps",
+            "to": "/slack/testing-apps"
+          },
+          {
+            "name": "Create your own app",
+            "to": "/slack/custom-apps"
           }
         ]
       },

@@ -1,137 +1,29 @@
 ---
 title: Slack
-subtitle: How to use slack with MagicBell
+subtitle: Our slack integration
 ---
 
-## Deliver notifications to your Slack workspace
+MagicBell offers you the ability to send notifications your users via slack.
 
-We currently have 3 ways of sending MagicBell notifications to slack workspaces. You can choose whichever installation option suits your use case.
+To simplify integrating with slack as much as possible we've created 2 slack applications that you can install into your internal slack workspace(s). This will get you up and running in next to no time with little to no setup required on your end.
 
-1. Install our MagicBell Bot app into your slack workspace(s)
-2. Install our MagicBell Webhook app into your slack workspace(s)
-3. Create and Install your own app into your slack workspace(s)
+MagicBell also allows you to create your own branded slack app that can then be set up in your MagicBell project. This will allow you to seemlessly communicate with your customers.
 
-## Install our MagicBell Bot app into your slack workspace(s).
-This is the simplest way to get MagicBell communication with all your users in multiple workspaces. Click <a href="https://slack.com/oauth/v2/authorize?client_id=904206676034.3112841272850&scope=channels:read,chat:write,chat:write.public,im:write,users:read,users:read.email&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a> to connect your current MagicBell project with your slack workspaces. This will automatically import all your users and channels into MagicBell allowing you the ability to send messages to them in a few minutes.
+**MagicBell can even reuse your existing slack apps to deliver your notifications.**
 
-## Install our MagicBell Webhook Bot app into your slack workspace(s).
-This is the simplest way to get MagicBell communication with a single channel or user. Click
-<a href="https://slack.com/oauth/v2/authorize?client_id=904206676034.3115367504932&scope=incoming-webhook&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
-to connect your current MagicBell project with a channel/user in your slack workspaces.
+### There are some pros and cons to each of the different ways MagicBell integrates with slack.
+**MagicBell's slack apps**
 
+Pros:
+- Simple to install, a couple of clicks will integrate MagicBell into your slack workspace.
 
-## Create and install your own app into your slack workspace
-- Create a Slack application and obtain an oauth key.
-- Send us your oauth key.
-- Verify the slack channel in MagicBell is enabled
+Cons:
+- You need to be the MagicBell project owner and have permissions to install apps in the slack workspace.
 
-## Create a slack application and obtain an oath key
-Head over to https://api.slack.com/apps and click on the "Create New App" button
-<img
-  className="full-mobile"
-  src="/docs/uploads/yourApps.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-Name your slack app to something that makes sense to you, eg MagicBell, select the workspace you'd like to install it to and cleck on Create.
-<img
-  className="full-mobile"
-  src="/docs/uploads/renameAppAndSelectWorkspace.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-Under the Basic Information section, click on the "Bots" section. Next we'll assign the required scopes to your bot token to ensure messages reach the correct recipients.
-<img
-  className="full-mobile"
-  src="/docs/uploads/basicInformationSection.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-Click on the "Review Scopes to Add" button.
-<img
-  className="full-mobile"
-  src="/docs/uploads/reviewScopes.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-Under the "Bot Token Scopes" add the following scopes:
-<img
-  className="full-mobile"
-  src="/docs/uploads/botTokenScopes.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-The only thing remaining is to install the app to your workspace:
-<img
-  className="full-mobile"
-  src="/docs/uploads/installToWorkspace.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-Click "Allow"
-<img
-  className="full-mobile"
-  src="/docs/uploads/allowSlackApp.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-This takes you to the OAuth & Permissions page. From here copy the Bot User OAuth Token from the  OAuth Tokens for Your Workspace section and send it over.
-<img
-  className="full-mobile"
-  src="/docs/uploads/botUserOAuthToken.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
+**Creating your own slack app**
 
-## Verify the slack channel in MagicBell is enabled
+Pros:
+- You can customize and style it to your heart's content.
 
-Go to `https://app.magicbell.com/projects/project_id/channels` and ensure that the slack channel is enabled.
-<img
-  className="full-mobile"
-  src="/docs/uploads/slackEnabled.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-
-
-## Send a notification to a slack user/channel
-
-Once your account is set up, MagicBell will automatically deliver slack
-notifications through your Slack app, **no additional work is needed**.
-
-<Tabs>
-
-```json title=PAYLOAD hideHeader noTopBorderRadius
-{
-  "notification": {
-    "title": "Welcome to Example Inc",
-    "recipients": [{
-      "email": "dan@example.com",
-      "externalId": "AB1234BCA",
-      "slackChannelId": "AB1234BCA"
-    }],
-    "custom_attributes": {
-      "name": "Dan",
-      "company": {
-        "name": "Example Inc"
-      }
-    }
-  }
-}
-```
-
-```curl title=cURL hideHeader noTopBorderRadius
-curl https://api.magicbell.com/notifications \
-  --request POST \
-  --header 'X-MAGICBELL-API-KEY: MAGICBELL_API_KEY' \
-  --header 'X-MAGICBELL-API-SECRET: MAGICBELL_API_SECRET' \
-  --data '{
-    "notification": {
-      "title": "Welcome to Example Inc",
-      "recipients": [{
-        "email": "dan@example.com",
-        "externalId": "AB1234BCA",
-        "slackChannelId": "AB1234BCA"
-      }],
-      "custom_attributes": {
-        "name": "Dan",
-        "company": {
-          "name": "Example Inc"
-        }
-      }
-    }
-  }'
-```
-
-</Tabs>
+Cons:
+- There is some manual setup requred to get MagicBell communicating with it
