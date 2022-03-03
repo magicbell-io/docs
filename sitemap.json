@@ -151,10 +151,6 @@
         "to": "/segmented-send"
       },
       {
-        "name": "Announcements",
-        "to": "/announcements"
-      },
-      {
         "name": "Log",
         "to": "/log"
       },
