@@ -38,5 +38,10 @@
     "source": "/customizing-notifications-using-email-headers",
     "destination": "/email/customizing-notifications-using-email-headers",
     "permanent": true
+  },
+  {
+    "source": "/announcements",
+    "destination": "/compose",
+    "permanent": true
   }
 ]
