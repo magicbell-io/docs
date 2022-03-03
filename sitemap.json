@@ -95,6 +95,10 @@
         "to": "/log"
       },
       {
+        "name": "Compose",
+        "to": "/compose"
+      },
+      {
         "name": "Turn on HMAC authentication",
         "to": "/turn-on-hmac-authentication"
       },
@@ -219,10 +223,6 @@
       {
         "name": "Angular",
         "to": "/angular"
-      },
-      {
-        "name": "Compose UI",
-        "to": "/compose"
       }
     ]
   },
@@ -251,13 +251,13 @@
     "to": "/faq"
   },
   {
-    "name": "Contribute to docs",
-    "to": "https://github.com/magicbell-io/docs",
+    "name": "Playground",
+    "to": "https://playground.magicbell.com",
     "staticRoute": true
   },
   {
-    "name": "Playground",
-    "to": "https://playground.magicbell.com",
+    "name": "Contribute to docs",
+    "to": "https://github.com/magicbell-io/docs",
     "staticRoute": true
   }
 ]
