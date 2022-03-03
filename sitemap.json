@@ -254,5 +254,10 @@
     "name": "Contribute to docs",
     "to": "https://github.com/magicbell-io/docs",
     "staticRoute": true
+  },
+  {
+    "name": "Playground",
+    "to": "https://playground.magicbell.com",
+    "staticRoute": true
   }
 ]
