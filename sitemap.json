@@ -63,6 +63,99 @@
     "name": "Guides",
     "children": [
       {
+        "name": "Notification Inbox",
+        "children": [
+          {
+            "name": "Overview",
+            "to": "/notification-inbox"
+          },
+          {
+            "name": "HMAC authentication",
+            "to": "/turn-on-hmac-authentication"
+          },
+          {
+            "name": "React",
+            "children": [
+              {
+                "name": "Identifying users",
+                "to": "/react/identifying-users"
+              },
+              {
+                "name": "Customize the theme",
+                "to": "/react/theme-customization"
+              },
+              {
+                "name": "Localization and internationalization (i18n)",
+                "to": "/react/localization-internationalization"
+              },
+              {
+                "name": "Change the position of the notification inbox",
+                "to": "/react/positioning-floating-notification-inbox"
+              },
+              {
+                "name": "Set a custom click handler",
+                "to": "/react/setting-notification-click-handler"
+              },
+              {
+                "name": "Change the default notification component",
+                "to": "/react/changing-default-notification-component"
+              },
+              {
+                "name": "Play a sound when a notification arrives",
+                "to": "/react/play-sound-new-notification"
+              },
+              {
+                "name": "Render notifications in a sidebar",
+                "to": "/react/render-notifications-sidebar"
+              }
+            ]
+          },
+          {
+            "name": "React Native",
+            "children": [
+              {
+                "name": "Getting started",
+                "to": "/react-native/getting-started"
+              },
+              {
+                "name": "Implement mobile push notifications",
+                "to": "/react-native/implement-mobile-push-notifications"
+              }
+            ]
+          },
+          {
+            "name": "Vue",
+            "children": [
+              {
+                "name": "How to use MagicBell with NuxtJS",
+                "to": "/vue/adding-magicbell-to-your-nuxt-application"
+              }
+            ]
+          },
+          {
+            "name": "Browser",
+            "children": [
+              {
+                "name": "Change the default font",
+                "to": "/browser/changing-default-font"
+              },
+              {
+                "name": "Change the default images",
+                "to": "/browser/changing-default-images"
+              },
+              {
+                "name": "Notify users when a new notification arrives",
+                "to": "/browser/new-notification-hook"
+              }
+            ]
+          },
+          {
+            "name": "Angular",
+            "to": "/angular"
+          }
+        ]
+      },
+      {
         "name": "Channels",
         "children": [
           {
@@ -157,90 +250,6 @@
       {
         "name": "Compose",
         "to": "/compose"
-      },
-      {
-        "name": "Turn on HMAC authentication",
-        "to": "/turn-on-hmac-authentication"
-      },
-      {
-        "name": "React",
-        "children": [
-          {
-            "name": "Identifying users",
-            "to": "/react/identifying-users"
-          },
-          {
-            "name": "Customize the theme",
-            "to": "/react/theme-customization"
-          },
-          {
-            "name": "Localization and internationalization (i18n)",
-            "to": "/react/localization-internationalization"
-          },
-          {
-            "name": "Change the position of the notification inbox",
-            "to": "/react/positioning-floating-notification-inbox"
-          },
-          {
-            "name": "Set a custom click handler",
-            "to": "/react/setting-notification-click-handler"
-          },
-          {
-            "name": "Change the default notification component",
-            "to": "/react/changing-default-notification-component"
-          },
-          {
-            "name": "Play a sound when a notification arrives",
-            "to": "/react/play-sound-new-notification"
-          },
-          {
-            "name": "Render notifications in a sidebar",
-            "to": "/react/render-notifications-sidebar"
-          }
-        ]
-      },
-      {
-        "name": "React Native",
-        "children": [
-          {
-            "name": "Getting started",
-            "to": "/react-native/getting-started"
-          },
-          {
-            "name": "Implement mobile push notifications",
-            "to": "/react-native/implement-mobile-push-notifications"
-          }
-        ]
-      },
-      {
-        "name": "Vue",
-        "children": [
-          {
-            "name": "How to use MagicBell with NuxtJS",
-            "to": "/vue/adding-magicbell-to-your-nuxt-application"
-          }
-        ]
-      },
-      {
-        "name": "Browser",
-        "children": [
-          {
-            "name": "Change the default font",
-            "to": "/browser/changing-default-font"
-          },
-          {
-            "name": "Change the default images",
-            "to": "/browser/changing-default-images"
-          },
-          {
-            "name": "Notify users when a new notification arrives",
-            "to": "/browser/new-notification-hook"
-          }
-        ]
-      },
-      {
-        "name": "Angular",
-        "to": "/angular"
       }
     ]
   },

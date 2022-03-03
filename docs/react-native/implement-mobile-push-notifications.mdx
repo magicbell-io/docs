@@ -1,42 +1,7 @@
 ---
-title: Implement Mobile Push Notifications
-subtitle: Learn how to send mobile push notifications from your mobile app
+title: Implement Mobile Push Notifications in React Native
+subtitle: Learn how to send mobile push notifications from your React Native mobile app
 ---
-
-MagicBell can help you implement mobile push notifications in four steps.
-
-## Setup iOS push notifications
-
-To deliver push notifications from your iOS app you need to register a new auth key
-for the Apple Push Notification service (APNs) and send it to us. MagicBell will use p8
-tokens to authenticate requests made to the APNs.
-
-Follow these steps to register a new key:
-
-- Login to [your Apple developer account](https://developer.apple.com/account) and open the keys page (you have to enroll in Apple's Developer Program, before).
-- Register a new key, make sure you enable "Apple Push Notifications service (APNs)"
-- Apple will generate a 10-digit ID and an authentication token signing key. Store it safely.
-
-<img
-  src="/docs/uploads/22c450362258-registering-apple-key.png"
-  style={{ width: '80%', height: 'intrinsic' }}
-/>
-
-<br />
-
-MagicBell needs the p8 key, ID, team ID for your Apple account, and iOS app's bundle ID. Please
-[get in touch with us](mailto:hello@magicbell.io) so we can help you set them up for your account.
-
-## Setup Android push notifications
-
-To deliver push notifications from your Android app you need to create a Firebase
-project and set your [Firebase credentials](https://firebase.google.com/docs/cloud-messaging/auth-server) for MagicBell.
-Follow these steps to do it:
-
-- Login to your [Firebase account](https://console.firebase.google.com), pick your project and open the settings page of that project. If you don't have a project yet, create one.
-- Open the Cloud Messaging settings tab, copy the server key and sender ID.
-
-MagicBell needs the project's server key, sender ID, and the bundle ID of your Android app. Please [get in touch with us](mailto:hello@magicbell.io) so we can help you set them up for your account.
 
 ## Configure your mobile app
 
