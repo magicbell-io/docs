@@ -72,6 +72,8 @@ Go to `https://app.magicbell.com/projects/project_id/channels` and ensure that t
 
 Once your account is set up, MagicBell will automatically deliver slack
 notifications through your Slack app, **no additional work is needed**.
+To send a message to a Slack Channel use the Channel's ID as the externalId.
+To send a DM in Slack you can use the user's email address.
 
 <Tabs>
 
@@ -81,8 +83,7 @@ notifications through your Slack app, **no additional work is needed**.
     "title": "Welcome to Example Inc",
     "recipients": [{
       "email": "dan@example.com",
-      "externalId": "AB1234BCA",
-      "slackChannelId": "AB1234BCA"
+      "externalId": "AB1234BCA"
     }],
     "custom_attributes": {
       "name": "Dan",
@@ -104,8 +105,7 @@ curl https://api.magicbell.com/notifications \
       "title": "Welcome to Example Inc",
       "recipients": [{
         "email": "dan@example.com",
-        "externalId": "AB1234BCA",
-        "slackChannelId": "AB1234BCA"
+        "externalId": "AB1234BCA"
       }],
       "custom_attributes": {
         "name": "Dan",
