@@ -71,6 +71,7 @@
     @apply list-disc;
     @apply list-inside;
     @apply space-y-2;
+    @apply mt-6;
     @apply mb-4;
     @apply ml-4;
   }
