@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import SearchBar from './SearchBar';
 
 interface Props {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode
 }
 
 export default function Content({ children }: Props) {

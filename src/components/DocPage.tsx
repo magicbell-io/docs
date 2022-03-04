@@ -7,9 +7,11 @@ interface Props {
   subtitle?: string;
   mdxSource?: MDXRemoteSerializeResult;
   children?: JSX.Element | JSX.Element[];
+  editUrl?: string;
+
 }
 
-export default function DocPage({ title, subtitle, mdxSource, children }: Props) {
+export default function DocPage({ title, subtitle, mdxSource, editUrl, children }: Props) {
   const pageTitle = title || 'Docs';
 
   return (
@@ -24,6 +26,10 @@ export default function DocPage({ title, subtitle, mdxSource, children }: Props)
         <p>Loading...</p>
       )}
       <section>{children}</section>
+
+      {editUrl ? <div className="mt-16">
+        <a href={editUrl}>Edit this page</a>
+      </div> : null}
     </DocPageLayout>
   );
 }

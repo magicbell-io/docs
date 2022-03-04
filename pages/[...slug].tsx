@@ -13,11 +13,12 @@ import DocPage from '../src/components/DocPage';
 interface Props {
   metadata?: { [key: string]: any };
   mdxSource?: MDXRemoteSerializeResult;
+  editUrl?: string;
 }
 
-export default function DynamicDocument({ mdxSource, metadata }: Props) {
+export default function DynamicDocument({ mdxSource, metadata, editUrl }: Props) {
   if (!metadata) return null;
-  return <DocPage mdxSource={mdxSource} {...metadata} />;
+  return <DocPage mdxSource={mdxSource} editUrl={editUrl} {...metadata} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -48,6 +49,7 @@ export const getStaticProps: GetStaticProps<{}, { slug: string[] }> = async ({
   const filename = slug + '.mdx';
   const docsDirectory = path.join(process.cwd(), 'docs');
   const filePath = path.join(docsDirectory, filename);
+  const editUrl = `https://github.com/magicbell-io/docs/edit/main/docs/${filename}`;
 
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -63,7 +65,7 @@ export const getStaticProps: GetStaticProps<{}, { slug: string[] }> = async ({
       },
     });
 
-    return { props: { mdxSource, metadata: data } };
+    return { props: { mdxSource, metadata: data, editUrl } };
   } catch (err) {
     return { notFound: true };
   }
