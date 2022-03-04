@@ -3,12 +3,14 @@ import React, { useEffect } from 'react';
 
 export default function SearchBoxShortcut() {
   useEffect(() => {
-    hotkeys('command+K', function (event, handler) {
+    hotkeys('ctrl+k, command+K', function (event, handler) {
       event.preventDefault();
       document.getElementById('search-field')?.focus();
+      return false;
     });
+
     return () => {
-      hotkeys.unbind('command+K');
+      hotkeys.unbind('ctrl+k, command+K');
     };
   }, []);
 
