@@ -9,20 +9,12 @@
     "name": "Getting started",
     "children": [
       {
-        "name": "1. Welcome to MagicBell",
-        "to": "/getting-started-with-magicbell"
-      },
-      {
-        "name": "2. Sending notifications",
-        "to": "/sending-notifications"
-      },
-      {
-        "name": "3. Adding MagicBell to your product",
+        "name": "Adding MagicBell to your product",
         "to": "/adding-magicbell-to-your-product"
       },
       {
-        "name": "4. What's next?",
-        "to": "/whats-next"
+        "name": "Sending notifications",
+        "to": "/sending-notifications"
       }
     ]
   },
@@ -283,8 +275,8 @@
     "staticRoute": true
   },
   {
-    "name": "Contribute to docs",
-    "to": "https://github.com/magicbell-io/docs",
+    "name": "Slack Community",
+    "to": "https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw",
     "staticRoute": true
   }
 ]
