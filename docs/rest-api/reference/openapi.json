@@ -566,7 +566,8 @@
                     "plan": "enterprise",
                     "pricing_version": "v10",
                     "preferred_pronoun": "She"
-                  }
+                  },
+                  "phone_numbers": ["+15005550001"]
                 }
               }
             }
@@ -656,7 +657,8 @@
                       "plan": "enterprise",
                       "pricing_version": "v10",
                       "preferred_pronoun": "She"
-                    }
+                    },
+                    "phone_numbers": ["+15005550001"]
                   }
                 }
               }
@@ -1212,6 +1214,10 @@
           "custom_attributes": {
             "type": "object",
             "description": "Any customer attributes that you'd like to associate with the user. You may want to use these attributes later when writing email templates, for example."
+          },
+          "phone_numbers": {
+            "type": "array",
+            "description": "An array of phone numbers to use for sending SMS notifications."
           }
         }
       },
