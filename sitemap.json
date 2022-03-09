@@ -197,6 +197,15 @@
             ]
           },
           {
+            "name": "SMS",
+            "children": [
+              {
+                "name": "Twilio",
+                "to": "/sms/twilio"
+              }
+            ]
+          },
+          {
             "name": "Mobile-Push",
             "children": [
               {
