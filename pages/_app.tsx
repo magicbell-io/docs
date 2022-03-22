@@ -1,6 +1,7 @@
 // @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import type { AppProps } from 'next/app';
+import { Intercom, LiveChatLoaderProvider } from 'react-live-chat-loader';
 import Callout from '../src/components/Callout';
 import Card from '../src/components/Card';
 import HighlightedCode from '../src/components/code/HighlightedCode';
@@ -26,9 +27,14 @@ const components = {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MDXProvider components={components}>
-      <Component {...pageProps} />
-    </MDXProvider>
+    <>
+      <MDXProvider components={components}>
+        <Component {...pageProps} />
+      </MDXProvider>
+      <LiveChatLoaderProvider provider="intercom" providerKey="d0f6dew9">
+        <Intercom color="rgb(82, 37, 193)" />
+      </LiveChatLoaderProvider>
+    </>
   );
 }
 
