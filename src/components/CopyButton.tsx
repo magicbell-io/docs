@@ -1,4 +1,5 @@
-import { CheckIcon, ClipboardIcon } from '@heroicons/react/outline';
+import CheckIcon from '@heroicons/react/outline/CheckIcon';
+import ClipboardIcon from '@heroicons/react/outline/ClipboardIcon';
 import React from 'react';
 import { useCopyToClipboard, useToggle } from 'react-use';
 

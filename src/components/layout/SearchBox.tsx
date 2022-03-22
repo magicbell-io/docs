@@ -1,4 +1,4 @@
-import { SearchIcon } from '@heroicons/react/outline';
+import SearchIcon from '@heroicons/react/outline/SearchIcon';
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
 import FormSubmitter from '../FormSubmitter';
