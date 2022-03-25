@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="flex justify-between max-w-screen-xl mx-auto md:px-8 px-4 md:py-24 py-12 w-full md:flex-row flex-col-reverse text-darkPurple">
       <div className="flex flex-1 flex-col gap-4">
-        <a href="https://magicbell.com/" aria-label="Go to homepage">
+        <a href="https://www.magicbell.com/" aria-label="Go to homepage">
           <MagicBellLogo
             className="md:h-7 h-6 fill-current text-darkPurple"
             role="img"
