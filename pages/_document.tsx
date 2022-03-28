@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-import IntercomScripts from '../src/components/scripts/IntercomScripts';
 import SegmentScripts from '../src/components/scripts/SegmentScripts';
 
 export default class MyDocument extends Document {
@@ -37,7 +36,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           <SegmentScripts />
-          <IntercomScripts />
         </body>
       </Html>
     );

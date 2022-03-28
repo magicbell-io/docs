@@ -198,6 +198,7 @@ type User {
   email: String
   externalId: String
   customAttributes: JSON
+  phoneNumbers: JSON
   notifications: NotificationsConnection
   lastSignInIp: String
   lastSeenAt: ISO8601DateTime

@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/outline';
+import ChevronRightIcon from '@heroicons/react/outline/ChevronRightIcon';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 import { includes } from 'ramda';

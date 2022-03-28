@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { MenuIcon } from '@heroicons/react/outline';
+import MenuIcon from '@heroicons/react/outline/MenuIcon';
 import React from 'react';
 import MagicBellLogo from '../../../public/magicbell.svg';
 import Arrow from '../Arrow';

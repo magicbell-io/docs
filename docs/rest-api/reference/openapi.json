@@ -566,7 +566,8 @@
                     "plan": "enterprise",
                     "pricing_version": "v10",
                     "preferred_pronoun": "She"
-                  }
+                  },
+                  "phone_numbers": ["+15005550001"]
                 }
               }
             }
@@ -656,7 +657,8 @@
                       "plan": "enterprise",
                       "pricing_version": "v10",
                       "preferred_pronoun": "She"
-                    }
+                    },
+                    "phone_numbers": ["+15005550001"]
                   }
                 }
               }
@@ -823,20 +825,50 @@
                 },
                 "example": {
                   "notification_preferences": {
-                    "categories": {
-                      "billing": {
-                        "email": true,
-                        "in_app": true,
-                        "mobile_push": false,
-                        "web_push": true
+                    "categories": [
+                      {
+                        "slug": "billing",
+                        "label": "Billing",
+                        "channels": [
+                          {
+                            "slug": "email",
+                            "label": "Email",
+                            "enabled": true
+                          },
+                          {
+                            "slug": "web_push",
+                            "label": "Web Push",
+                            "enabled": false
+                          },
+                          {
+                            "slug": "mobile_push",
+                            "label": "Mobile Push",
+                            "enabled": false
+                          }
+                        ]
                       },
-                      "new_comment": {
-                        "email": true,
-                        "in_app": true,
-                        "mobile_push": true,
-                        "web_push": false
+                      {
+                        "slug": "new_reply",
+                        "label": "New reply",
+                        "channels": [
+                          {
+                            "slug": "email",
+                            "label": "Email",
+                            "enabled": true
+                          },
+                          {
+                            "slug": "web_push",
+                            "label": "Web Push",
+                            "enabled": true
+                          },
+                          {
+                            "slug": "mobile_push",
+                            "label": "Mobile Push",
+                            "enabled": true
+                          }
+                        ]
                       }
-                    }
+                    ]
                   }
                 }
               }
@@ -867,9 +899,15 @@
               },
               "example": {
                 "notification_preferences": {
-                  "categories": {
-                    "billing": { "email": true, "web_push": false }
-                  }
+                  "categories": [
+                    {
+                      "slug": "billing",
+                      "channels": [
+                        { "slug": "email", "enabled": false },
+                        { "slug": "web_push", "enabled": false }
+                      ]
+                    }
+                  ]
                 }
               }
             }
@@ -885,20 +923,29 @@
                 },
                 "example": {
                   "notification_preferences": {
-                    "categories": {
-                      "billing": {
-                        "email": true,
-                        "in_app": false,
-                        "mobile_push": false,
-                        "web_push": false
-                      },
-                      "new_comment": {
-                        "email": true,
-                        "in_app": true,
-                        "mobile_push": false,
-                        "web_push": false
+                    "categories": [
+                      {
+                        "slug": "billing",
+                        "label": "Billing",
+                        "channels": [
+                          {
+                            "slug": "email",
+                            "label": "Email",
+                            "enabled": false
+                          },
+                          {
+                            "slug": "web_push",
+                            "label": "Web Push",
+                            "enabled": false
+                          },
+                          {
+                            "slug": "mobile_push",
+                            "label": "Mobile Push",
+                            "enabled": false
+                          }
+                        ]
                       }
-                    }
+                    ]
                   }
                 }
               }
@@ -1087,42 +1134,53 @@
       }
     },
     "schemas": {
-      "UserPreferencesCategory": {
+      "CategoryChannels": {
         "type": "object",
         "properties": {
-          "email": {
-            "type": "boolean",
-            "description": "A flag to enable or disable email messages for this category when a new notification is created."
+          "label": {
+            "type": "string",
+            "description": "The label of the channel"
           },
-          "in_app": {
-            "type": "boolean",
-            "description": "Whether to send new notifications to the notification inbox or not."
+          "slug": {
+            "type": "string",
+            "description": "The slug of the channel."
           },
-          "mobile_push": {
-            "type": "boolean",
-            "description": "A flag to enable or disable mobile push notifications for this category when a new notification is created."
-          },
-          "web_push": {
-            "type": "boolean",
-            "description": "A flag to enable or disable browser push notifications for this category when a new notification is created."
+          "enabled": {
+            "type": "string",
+            "description": "The slug of the channel."
           }
         }
       },
-      "NotificationPreferences": {
+      "NotificationPreferencesChannels": {
+        "type": "array",
+        "items": { "$ref": "#/components/schemas/CategoryChannels" }
+      },
+      "NotificationPreferencesCategory": {
         "type": "object",
         "properties": {
-          "new_message": {
-            "$ref": "#/components/schemas/UserPreferencesCategory",
-            "description": "Preferences for notifications of the \"new_message\" category."
+          "label": {
+            "type": "string",
+            "description": "The label of the category"
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of the category."
+          },
+          "channels": {
+            "$ref": "#/components/schemas/NotificationPreferencesChannels",
+            "description": "Preferences for each channel for this category."
           }
         }
       },
       "NotificationPreferencesCategories": {
+        "type": "array",
+        "items": { "$ref": "#/components/schemas/NotificationPreferencesCategory" }
+      },
+      "NotificationPreferences": {
         "type": "object",
         "properties": {
           "categories": {
-            "$ref": "#/components/schemas/NotificationPreferences",
-            "description": "Preferences for notifications based on categories."
+            "$ref": "#/components/schemas/NotificationPreferencesCategories"
           }
         }
       },
@@ -1130,7 +1188,7 @@
         "type": "object",
         "properties": {
           "notification_preferences": {
-            "$ref": "#/components/schemas/NotificationPreferencesCategories"
+            "$ref": "#/components/schemas/NotificationPreferences"
           }
         }
       },
@@ -1156,6 +1214,10 @@
           "custom_attributes": {
             "type": "object",
             "description": "Any customer attributes that you'd like to associate with the user. You may want to use these attributes later when writing email templates, for example."
+          },
+          "phone_numbers": {
+            "type": "array",
+            "description": "An array of phone numbers to use for sending SMS notifications."
           }
         }
       },

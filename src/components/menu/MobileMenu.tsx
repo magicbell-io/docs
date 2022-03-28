@@ -1,4 +1,4 @@
-import { XIcon } from '@heroicons/react/outline';
+import XIcon from '@heroicons/react/outline/XIcon';
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import { SitemapItem } from '../../../lib/sitemap';

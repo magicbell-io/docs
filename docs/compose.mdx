@@ -18,15 +18,8 @@ interface instead of the API.
 
 ## Recipients
 
-Enter the email addresses or external IDs of the desired recipients.
-
-Soon our team will release Announcements. You will be able to select All Users
-to send a notification to all users easily.
-
-<Note>
-  If the Announcements feature would be valuable for you - and you want to send
-  notifications to all users as soon as possible - email hello@magicbell.com!
-</Note>
+Enter the email addresses or external IDs of the desired recipients, or pick `everyone` to notify your entire userbase.
+Make sure your users are synced with MagicBell by using our [create users API](https://magicbell.com/docs/rest-api/reference#create-user) to add a user each time one is added to your system.
 
 ## Notification title
 
@@ -38,6 +31,13 @@ notifications.
 Content is the body of your notification - the message you want to pass onto
 users. Content will be the body of an email and below the notification title for
 in-app notifications.
+
+The content input supports HTML. You can insert header, image, and other HTML
+tags. You can generate HTML for rich notifications [on this page](https://html-online.com/editor/).
+
+## Category
+
+Optionally, pick a category for this notification. [Categories](/docs/categories) control the delivery channels that the notification will be delivered on.
 
 The content input supports HTML. You can insert header, image, and other HTML
 tags.

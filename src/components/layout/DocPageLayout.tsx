@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import path from 'path';
-import React, { useEffect } from 'react';
+import React, {ReactNode, useEffect} from 'react';
 import { useToggle } from 'react-use';
 import sitemap from '../../../lib/sitemap';
 import DesktopMenu from '../menu/DesktopMenu';
@@ -13,7 +13,7 @@ import Header from './Header';
 interface Props {
   title?: string;
   description?: string;
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
 }
 
 export default function DocPageLayout({ title = 'Docs', description, children }: Props) {

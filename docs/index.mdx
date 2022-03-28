@@ -7,128 +7,51 @@ subtitle: Explore our guides and examples to integrate MagicBell.
   Get a complete, multichannel notification system in under an hour!
 </Note>
 
-## Building blocks of MagicBell
+## First steps
 
-<Grid>
-  <Card title="Notification inbox">
-    Add the notification inbox to your app in under <b>~30 minutes</b>.
-  </Card>
-  <Card title="Rich text">
-    Notification content supports HTML - make your notifications as pretty and robust as
-    you want using inline CSS, images, inputs, etc.
-  </Card>
-  <Card title="Customization">
-    <b>Fully customize</b> your inbox using our UI or with one of our React packages.
-  </Card>
-  <Card title="Categories">
-    Assign a category to each notification to enable users to manage their notification
-    preferences. Categories also allow you to customize the delivery channels for a
-    notification.
-  </Card>
-  <Card title="API">
-    <p>
-      Use our Rest API to send notifications. You can send notifications to your users
-      using an email address or an id.
-    </p>
-    <p>We offer API wrappers for convenience.</p>
-  </Card>
-  <Card title="Channels">
-    Select the <b>channels</b> you want to deliver notifications to: <b>In-app</b>,{' '}
-    <b>email</b>, <b>web push</b> and <b>mobile push</b>.
-  </Card>
-  <Card title="Announcements">
-    Easily send notifications to <i>all</i> users or a segment of them.
-  </Card>
-</Grid>
+We have designed MagicBell so you can get started without having to learn much about our product.
 
-Whether you are using MagicBell's inbox or building your UI, our SDKs take care of real-time updates and asynchronous state management for you.
+### Sending Notifications
 
-<strong>
-<a href="https://www.youtube.com/watch?v=oLkWQfVYjgw&t=1s">Watch a quick demo</a> and refer to <a href="https://magicbell.com/docs/channels">our guides</a> to learn more!
-</strong>
+Try sending a test notification via code, or no-code
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oLkWQfVYjgw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+- [Send a notification using Compose (no-code)](/docs/compose)
+- [Send a notification using the API with curl](/docs/sending-notifications)
 
-## Try MagicBell
+### The Inbox
 
-<i>5 minutes to complete</i>
+Play around with the Inbox in our playground, or add it to your web/mobile app!
 
-Sign up for free! Then visit [our dashboard](https://app.magicbell.com) to send a notification and instantly see it in your inbox on the right. It takes one click to see how MagicBell works!
+- [Browse our playground to find inspiration and examples](https://playground.magicbell.com)
+- [Adding MagicBell to your product](/docs/adding-magicbell-to-your-product)
 
-<img
-  className="full-mobile"
-  src="/docs/uploads/ComposeButton.png"
-  style={{ width: '80%', height: 'intrinsic' }}
-/>
+### Foundational concepts
 
-## Implement MagicBell
+Let's learn about some important MagicBell concepts now
 
-<i>30 minutes to complete</i>
+- [Channels](/docs/channels)
+- [Categories](/docs/categories)
+- [Topics](/docs/topics)
 
-Simply paste our snippet of code in your application and follow [the Getting Started walkthrough](https://magicbell.com/docs/getting-started-with-magicbell) to get MagicBell up and running! Below is the <a href="https://chrome.google.com/webstore/detail/hacker-news-notifications/bbkfblhdgiddlkfkipjdhhfoephonoba?hl=en">MagicBell extension for Hacker News</a>.
+### Useful features
 
-<img
-  className="full-mobile"
-  src="/docs/uploads/Hacker_News.jpg"
-  style={{ width: '80%', height: 'intrinsic' }}
-/>
+It's time to learn about some helpful features
 
-## Customize MagicBell
+- [Log](/docs/log)
+- [Segmented Send](/docs/segmented-send)
 
-<i>5 minutes - 1 hour to complete</i>
+### The APIs
 
-The theme of your inbox can easily be changed using our application or directly in JavaScript. The React SDK allows full customization. The inbox below was built by <a href="https://pitch.com/">Pitch</a> - a series B startup.
+Time to explore the API
 
-<img
-  className="full-mobile"
-  src="/docs/uploads/Pitch.png"
-  style={{ width: '80%', height: 'intrinsic' }}
-/>
+- [REST API](/docs/rest-api/overview)
+- [GraphQL API (more admin functions than the REST API)](/docs/graphql-api/overview)
 
-### MagicBell dashboard
+### Get Help
 
-At [app.magicbell.com/projects](https://app.magicbell.com/projects) you can
-change colors, typography, and additional styling. Then copy the code generated
-from 'Notification Inbox Code' and paste the updated code into your application.
+- [Slack Community](https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw)
 
-<img
-  className="full-mobile"
-  src="/docs/uploads/Customization.png"
-  style={{ width: '80%', height: 'intrinsic' }}
-/>
-
-### JavaScript
-
-Developers can change the styling directly in code as well.
-
-```html title=ESM
-<script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
-
-  let theme = {
-    icon: { borderColor: 'white', width: '20px' },
-    header: { backgroundColor: '#7fccc4', textColor: '#f2faf9' },
-    footer: { backgroundColor: '#7fccc4', textColor: '#f2faf9' },
-  };
-
-  magicbell('render', target, {
-    apiKey: 'MAGICBELL_API_KEY',
-    userEmail: 'mary@example.com',
-    height: 500,
-    theme,
-  });
-</script>
-```
-
-### React
-
-Our team built two React libraries to give you more power! An example is the
-ability to completely customize the in-app notification inbox to match the
-design of your product. See our [theming guide](https://magicbell.com/docs/react/theme-customization) and the
-[package documentation](https://www.npmjs.com/package/@magicbell/magicbell-react) to
-learn more.
-
-## Our Vision with MagicBell
+## The MagicBell Way
 
 Our goal is for customers to have a notification system as fast as possible - in
 under 30 mins - and continue to wow day after day. We vow to continue to make
