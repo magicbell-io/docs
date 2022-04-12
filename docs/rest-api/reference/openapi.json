@@ -1251,8 +1251,9 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "Title of the notification.",
-            "nullable": false
+            "description": "Title of the notification. It has a maximum length of 255 characters.",
+            "nullable": false,
+            "maxLength": 255
           },
           "category": {
             "type": "string",
