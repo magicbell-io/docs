@@ -99,6 +99,10 @@
               {
                 "name": "Render notifications in a sidebar",
                 "to": "/react/render-notifications-sidebar"
+              },
+              {
+                "name": "Known Issues",
+                "to": "/react/known-issues"
               }
             ]
           },
