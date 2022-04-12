@@ -1251,24 +1251,24 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "Title of the notification. It has a maximum length of 255 characters.",
+            "description": "Title of the notification.\nMaximum length: 255.",
             "nullable": false,
             "maxLength": 255
           },
           "category": {
             "type": "string",
-            "description": "Category the notification belongs to. This is useful to allow users to set their preferences.",
+            "description": "Category the notification belongs to. This is useful to allow users to set their preferences.\nMaximum length: 100.",
             "nullable": true
           },
           "content": {
             "type": "string",
-            "description": "Content of the notification. If you provide HTML content, the notification inbox will render it correctly.",
+            "description": "Content of the notification. If you provide HTML content, the notification inbox will render it correctly.\nMaximum length: 1MB.",
             "nullable": true
           },
           "action_url": {
             "type": "string",
             "format": "url",
-            "description": "A URL to redirect the user to when they click the notification in their notification inbox.",
+            "description": "A URL to redirect the user to when they click the notification in their notification inbox.\nMaximum length: 2048.",
             "nullable": true
           },
           "recipients": {
