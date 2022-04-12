@@ -1280,18 +1280,18 @@
           },
           "custom_attributes": {
             "type": "object",
-            "description": "Set of key-value pairs that you can attach to a notification. It accepts objects for the value of a key.\n\nYou can use it to share data between channels or to render a custom UI.",
+            "description": "Set of key-value pairs that you can attach to a notification. It accepts objects for the value of a key.\n\nYou can use it to share data between channels or to render a custom UI.\nMaximum length: 7KB.",
             "nullable": true,
             "additionalProperties": true
           },
           "topic": {
             "type": "string",
-            "description": "Topic the notification belongs to. This is useful to create threads.",
+            "description": "Topic the notification belongs to. This is useful to create threads.\nMaximum length: 100.",
             "nullable": true
           },
           "overrides": {
             "type": "object",
-            "description": "Optional overrides to configure notifications per target destination",
+            "description": "Optional overrides to configure notifications per target destination.",
             "nullable": true,
             "properties": {
               "channels": {
