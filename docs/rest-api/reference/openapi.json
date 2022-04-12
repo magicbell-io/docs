@@ -197,7 +197,6 @@
                         "id": "dd1502be-1d07-4906-8217-38dbe4c6ea6b",
                         "email": "dan@example.com",
                         "external_id": null,
-                        "first_name": null,
                         "last_name": null,
                         "custom_attributes": {}
                       },
@@ -1197,19 +1196,19 @@
         "properties": {
           "external_id": {
             "type": "string",
-            "description": "A unique string that MagicBell can utilize to identify the user uniquely. We recommend setting this attribute to the ID of the user in your database. Provide the external id if the user's email is unavailable."
+            "description": "A unique string that MagicBell can utilize to identify the user uniquely. We recommend setting this attribute to the ID of the user in your database. Provide the external id if the user's email is unavailable.\nMaximum lenght: 255."
           },
           "email": {
             "type": "string",
-            "description": "The user's email"
+            "description": "The user's email.\nMaximum lenght: 255."
           },
           "first_name": {
             "type": "string",
-            "description": "The user's first name"
+            "description": "The user's first name.\nMaximum lenght: 50."
           },
           "last_name": {
             "type": "string",
-            "description": "The user's last name"
+            "description": "The user's last name.\nMaximum lenght: 50."
           },
           "custom_attributes": {
             "type": "object",
@@ -1217,7 +1216,7 @@
           },
           "phone_numbers": {
             "type": "array",
-            "description": "An array of phone numbers to use for sending SMS notifications."
+            "description": "An array of phone numbers to use for sending SMS notifications.\nMaximum lenght: 50 items."
           }
         }
       },
