@@ -43,5 +43,10 @@
     "source": "/announcements",
     "destination": "/compose",
     "permanent": true
+  },
+  {
+    "source": "/getting-started-with-magicbell",
+    "destination": "/adding-magicbell-to-your-product",
+    "permanent": true
   }
 ]
