@@ -102,7 +102,7 @@ type Query {
     "Returns the elements that come before the specified cursor"
     before: String
 
-    "Returns the first n elements."
+    "Returns the first n elements. Defaults to 50. The maximum accepted value is 50."
     first: Int
 
     "Returns the last n elements."
