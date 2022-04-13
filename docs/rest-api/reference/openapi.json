@@ -1261,7 +1261,7 @@
           },
           "content": {
             "type": "string",
-            "description": "Content of the notification. If you provide HTML content, the notification inbox will render it correctly.\nMaximum length: 1MB.",
+            "description": "Content of the notification. If you provide HTML content, the notification inbox will render it correctly.\nMaximum length: 4MB.",
             "nullable": true
           },
           "action_url": {
@@ -1279,7 +1279,7 @@
           },
           "custom_attributes": {
             "type": "object",
-            "description": "Set of key-value pairs that you can attach to a notification. It accepts objects for the value of a key.\n\nYou can use it to share data between channels or to render a custom UI.\nMaximum length: 7KB.",
+            "description": "Set of key-value pairs that you can attach to a notification. It accepts objects for the value of a key.\n\nYou can use it to share data between channels or to render a custom UI.\nMaximum length: 6KB.",
             "nullable": true,
             "additionalProperties": true
           },
