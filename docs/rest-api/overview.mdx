@@ -78,4 +78,4 @@ All timestamps returned by the REST API are in seconds since the Unix epoch.
 
 ## Rate limiting
 
-The REST API imposes a limit of 200 requests per second by project for writing operations (`POST`, `PUT` and `DELETE`). Reading operations have a limit of 400 requests per second. It responds with the 429 HTTP status if the limit is exceeded.
+The REST API imposes a limit of 400 requests per second by project. If the limit is exceeded, you will get an HTTP 429 Too Many Requests response.
