@@ -75,3 +75,7 @@ axios.post('https://api.magicbell.com/notifications', data, headers).catch((erro
 ## Timestamps
 
 All timestamps returned by the REST API are in seconds since the Unix epoch.
+
+## Rate limiting
+
+The MagicBell REST API imposes a limit of 200 requests per second by project for writing operations (`POST`, `PUT` and `DELETE`). Reading operations have a limit of 400 requests per second.
