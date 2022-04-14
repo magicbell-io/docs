@@ -41,7 +41,19 @@ export default function SchemaObject({
         {required && <span className="text-red-500 mx-4 text-xs">required</span>}
       </p>
       <p className="m-0 opacity-80">{object.description}</p>
-      <p className="mb-0 opacity-80 capitalize">{object.type}</p>
+      <p className="mb-0 opacity-80 capitalize mt-2">{object.type}</p>
+      {object.maxLength ? (
+        <p className="mb-0 opacity-80">Max length: {object.maxLength}</p>
+      ) : null}
+      {object.minLength ? (
+        <p className="mb-0 opacity-80">Min length: {object.minLength}</p>
+      ) : null}
+      {object.maxItems ? (
+        <p className="mb-0 opacity-80">Max items: {object.maxItems}</p>
+      ) : null}
+      {object.minItems ? (
+        <p className="mb-0 opacity-80">Min items: {object.minItems}</p>
+      ) : null}
     </div>
   );
 }

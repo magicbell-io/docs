@@ -1196,27 +1196,33 @@
         "properties": {
           "external_id": {
             "type": "string",
-            "description": "A unique string that MagicBell can utilize to identify the user uniquely. We recommend setting this attribute to the ID of the user in your database. Provide the external id if the user's email is unavailable.\nMaximum lenght: 255."
+            "description": "A unique string that MagicBell can utilize to identify the user uniquely. We recommend setting this attribute to the ID of the user in your database. Provide the external id if the user's email is unavailable.",
+            "maxLength": 255
           },
           "email": {
             "type": "string",
-            "description": "The user's email.\nMaximum lenght: 255."
+            "description": "The user's email.",
+            "maxLength": 255
           },
           "first_name": {
             "type": "string",
-            "description": "The user's first name.\nMaximum lenght: 50."
+            "description": "The user's first name.",
+            "maxLength": 50
           },
           "last_name": {
             "type": "string",
-            "description": "The user's last name.\nMaximum lenght: 50."
+            "description": "The user's last name.",
+            "maxLength": 50
           },
           "custom_attributes": {
             "type": "object",
-            "description": "Any customer attributes that you'd like to associate with the user. You may want to use these attributes later when writing email templates, for example."
+            "description": "Any customer attributes that you'd like to associate with the user. You may want to use these attributes later when writing email templates, for example.",
+            "maxLength": 6000
           },
           "phone_numbers": {
             "type": "array",
-            "description": "An array of phone numbers to use for sending SMS notifications.\nMaximum lenght: 50 items."
+            "description": "An array of phone numbers to use for sending SMS notifications.",
+            "maxItems": 50
           }
         }
       },
@@ -1250,25 +1256,21 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "Title of the notification.\nMaximum length: 255.",
+            "description": "Title of the notification.",
             "nullable": false,
             "maxLength": 255
           },
-          "category": {
-            "type": "string",
-            "description": "Category the notification belongs to. This is useful to allow users to set their preferences.\nMaximum length: 100.",
-            "nullable": true
-          },
           "content": {
             "type": "string",
-            "description": "Content of the notification. If you provide HTML content, the notification inbox will render it correctly.\nMaximum length: 4MB.",
+            "description": "Content of the notification. If you provide HTML content, the notification inbox will render it correctly. It should not exceed 4MB.",
             "nullable": true
           },
           "action_url": {
             "type": "string",
             "format": "url",
-            "description": "A URL to redirect the user to when they click the notification in their notification inbox.\nMaximum length: 2048.",
-            "nullable": true
+            "description": "A URL to redirect the user to when they click the notification in their notification inbox.",
+            "nullable": true,
+            "maxLength": 2048
           },
           "recipients": {
             "$ref": "#/components/schemas/Recipients",
@@ -1279,14 +1281,22 @@
           },
           "custom_attributes": {
             "type": "object",
-            "description": "Set of key-value pairs that you can attach to a notification. It accepts objects for the value of a key.\n\nYou can use it to share data between channels or to render a custom UI.\nMaximum length: 6KB.",
+            "description": "Set of key-value pairs that you can attach to a notification, 6KB at maximum. It accepts objects for the value of a key.\n\nYou can use it to share data between channels or to render a custom UI.",
             "nullable": true,
-            "additionalProperties": true
+            "additionalProperties": true,
+            "maxLength": 6000
+          },
+          "category": {
+            "type": "string",
+            "description": "Category the notification belongs to. This is useful to allow users to set their preferences.",
+            "nullable": true,
+            "maxLength": 100
           },
           "topic": {
             "type": "string",
-            "description": "Topic the notification belongs to. This is useful to create threads.\nMaximum length: 100.",
-            "nullable": true
+            "description": "Topic the notification belongs to. This is useful to create threads.",
+            "nullable": true,
+            "maxLength": 100
           },
           "overrides": {
             "type": "object",
@@ -1470,15 +1480,18 @@
         "properties": {
           "device_token": {
             "type": "string",
-            "description": "Token that identifies the device. This is usually generated automatically by your app once installed."
+            "description": "Token that identifies the device. This is usually generated automatically by your app once installed.",
+            "maxLength": 255
           },
           "platform": {
             "type": "string",
-            "description": "The platform where the device token was generated from. This value is used to determine the delivery mechanism for mobile push notifications. Either 'ios', 'android' or 'safari'."
+            "description": "The platform where the device token was generated from. This value is used to determine the delivery mechanism for mobile push notifications. Either 'ios', 'android' or 'safari'.",
+            "minLength": 3
           },
           "app_bundle_id": {
             "type": "string",
-            "description": "The bundle ID of your app. This value is used to determine the delivery mechanism for mobile push notifications based on your workflow so that you can link several mobile applications to one project."
+            "description": "The bundle ID of your app. This value is used to determine the delivery mechanism for mobile push notifications based on your workflow so that you can link several mobile applications to one project.",
+            "maxLength": 155
           }
         },
         "required": ["device_token", "platform"]
