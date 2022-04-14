@@ -72,3 +72,7 @@ produces
   }
 }
 ```
+
+## Rate limiting
+
+The GraphQL API imposes a limit of 200 requests per second. It responds with the 429 HTTP status if the limit is exceeded.
