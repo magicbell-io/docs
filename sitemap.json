@@ -14,7 +14,13 @@
       },
       {
         "name": "Sending notifications",
-        "to": "/sending-notifications"
+        "to": "/sending-notifications",
+        "children": [
+          {
+            "name": "Choosing a Unique Identifier".
+            "to": "/choosing-an-identifier"
+          }
+        ]
       }
     ]
   },
