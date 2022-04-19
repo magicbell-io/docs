@@ -17,7 +17,7 @@
         "to": "/sending-notifications",
         "children": [
           {
-            "name": "Choosing a Unique Identifier".
+            "name": "Choosing a Unique Identifier",
             "to": "/choosing-an-identifier"
           }
         ]
