@@ -11,22 +11,21 @@ subtitle: The latest releases and improvements to MagicBell
   and follow us on <a href="https://twitter.com/magicbell_io">Twitter</a>!
 </Note>
 
-## April 1, 2022
+## April 22, 2022
 
-Here is the changelog for April 1. It's a WIP.
+### Projects and Workspaces
 
-### Big Change 1
-
-If there is a big change, please write it here
-
-- Workspaces! It's now possible to switch between projects and workspaces through the refined project menu in the sidebar. Clicking "create project", creates a project in the currently active workspace.
+- Workspaces! It's now possible to switch between projects and workspaces through the refined project menu in the sidebar. Clicking "create project" creates a project in the currently active workspace.
 
 ### Other Updates
 
 - Add support for `mutable-content`, `interruption-level`, `relevance-score` &
 `target-content-id` to the available iOS notification overrides.
-- Change 4
-- Change 2
+- Fix edge case where enabling push notifications did not work when a project had `HMAC authentication` enabled.
+- Fix an issue where enabling web push notifications would respond with `Forbidden`.
+- The SendGrid Webhook is now deprecated.
+- Fix an issue where the Category page wouldn't display an error with duplicate slugs.
+- Notification content is now limited to 4MB in size.
 
 ## Mar 14, 2022
 
