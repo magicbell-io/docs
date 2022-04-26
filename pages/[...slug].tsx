@@ -67,6 +67,7 @@ export const getStaticProps: GetStaticProps<{}, { slug: string[] }> = async ({
 
     return { props: { mdxSource, metadata: data, editUrl } };
   } catch (err) {
+    console.error(`Failed to serve docs page ${filePath}`, err);
     return { notFound: true };
   }
 };
