@@ -233,6 +233,10 @@
         "to": "/categories"
       },
       {
+        "name": "Templates",
+        "to": "/templates"
+      },
+      {
         "name": "Topics",
         "to": "/topics"
       },
