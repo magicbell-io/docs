@@ -1,0 +1,44 @@
+---
+title: Templates
+---
+
+Templates are a great way to decouple the rendering of a notification from the data that powers it. Templates are composed on a per category, per channel basis.
+
+## How to compose templates
+
+Please visit the Categories tab in the dashboard. Select your desired category (or create a new one), then switch to the Templates tab. Here, you can create or edit templates for each channel by selecting from the dropdown.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/templates.png"
+  style={{ width: '80%', height: 'intrinsic' }}
+/>
+
+Merge tags such as `{{ notification.content }}` are supported — a complete list will appear when you press `{`, after which you can continue typing or select one from the list. More advanced functionality such as [control flow](https://shopify.github.io/liquid/tags/control-flow/) and [default values](https://shopify.github.io/liquid/filters/default/) are also supported — consult the [Liquid reference](https://shopify.github.io/liquid/basics/introduction/) more information.
+
+### Notification title
+
+The title will be the subject of emails, and the first bolded line for in-app
+notifications.
+
+### Content
+
+Content is the body of your notification - the message you want to pass on to users. Content will be the body of an email and below the notification title for in-app notifications.
+
+The content input supports [HTML](https://html-online.com/editor/) and [Markdown](https://www.markdownguide.org/basic-syntax/).
+
+### Email Layout
+
+Please visit the Categories tab in the dashboard, then select Email Layout. Here, copy/paste the HTML of your current email template. Use the merge tag `{{ template.content }}` as a placeholder for the content. The content will default to `{{ notification.content }}` for uncategorized notifications and categories without configured templates.
+
+All notifications that are sent to the email channel will be wrapped in this layout.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/email-layout.png"
+  style={{ width: '80%', height: 'intrinsic' }}
+/>
+
+## Limitations
+
+- Templates work across channels subject to limitations for that channel. For instance, Slack does not support titles.
