@@ -32,18 +32,6 @@ Content is the body of your notification - the message you want to pass on to us
 
 The content input supports HTML and [Markdown](https://www.markdownguide.org/basic-syntax/).
 
-### Email Layout
-
-Please visit the Channels tab in the dashboard, then select Email Layout. Here, copy/paste the HTML of your current email template. Use the merge tag `{{ template.content }}` as a placeholder for the content. The content will default to `{{ notification.content }}` for uncategorized notifications and categories without configured templates.
-
-This layout will wrap around all notifications sent to the email channel.
-
-<img
-  className="full-mobile"
-  src="/docs/uploads/email-layout.png"
-  style={{ width: '75%', height: 'intrinsic' }}
-/>
-
 ## Limitations
 
 - Templates work across channels subject to limitations for that channel. For instance, Slack does not support headings.

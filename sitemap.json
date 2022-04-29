@@ -234,7 +234,16 @@
       },
       {
         "name": "Templates",
-        "to": "/templates"
+        "children": [
+          {
+            "name": "Getting started with Templates",
+            "to": "/templates"
+          },
+          {
+            "name": "Email layouts",
+            "to": "/email-layouts"
+          }
+        ]
       },
       {
         "name": "Topics",
