@@ -233,6 +233,19 @@
         "to": "/categories"
       },
       {
+        "name": "Templates",
+        "children": [
+          {
+            "name": "Getting started with Templates",
+            "to": "/templates"
+          },
+          {
+            "name": "Email layouts",
+            "to": "/email-layouts"
+          }
+        ]
+      },
+      {
         "name": "Topics",
         "to": "/topics"
       },
