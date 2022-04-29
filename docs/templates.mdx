@@ -24,7 +24,7 @@ More advanced functionality such as [control flow](https://shopify.github.io/liq
 
 ### Notification title
 
-The title will be the subject of email and push notifications, and the first bolded line for in-app and Slack notifications.
+The title will be the subject of email and push notifications and the first bolded line for in-app and Slack notifications.
 
 ### Content
 
@@ -36,7 +36,7 @@ The content input supports HTML and [Markdown](https://www.markdownguide.org/bas
 
 Please visit the Channels tab in the dashboard, then select Email Layout. Here, copy/paste the HTML of your current email template. Use the merge tag `{{ template.content }}` as a placeholder for the content. The content will default to `{{ notification.content }}` for uncategorized notifications and categories without configured templates.
 
-All notifications that are sent to the email channel will be wrapped in this layout.
+This layout will wrap around all notifications sent to the email channel.
 
 <img
   className="full-mobile"
@@ -48,6 +48,6 @@ All notifications that are sent to the email channel will be wrapped in this lay
 
 - Templates work across channels subject to limitations for that channel. For instance, Slack does not support headings.
 - Channel-specific styling notes:
-  - **In-app and email**: Markdown is converted to HTML, which is then sent to the user.
+  - **In-app and email**: Markdown converts to HTML, which is then sent to the user.
   - **Slack**: HTML is sent as raw text. Markdown is not parsed prior to sending the notification — rather, any Markdown will be parsed by Slack.
   - **Push and SMS**: Markdown is removed. As with Slack, HTML is sent as raw text.
