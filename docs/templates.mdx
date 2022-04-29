@@ -11,21 +11,26 @@ Please visit the Categories tab in the dashboard. Select your desired category (
 <img
   className="full-mobile"
   src="/docs/uploads/templates.png"
-  style={{ width: '80%', height: 'intrinsic' }}
+  style={{ width: '75%', height: 'intrinsic' }}
 />
 
-Merge tags such as `{{ notification.content }}` are supported — a complete list will appear when you press `{`, after which you can continue typing or select one from the list. More advanced functionality such as [control flow](https://shopify.github.io/liquid/tags/control-flow/) and [default values](https://shopify.github.io/liquid/filters/default/) are also supported — consult the [Liquid reference](https://shopify.github.io/liquid/basics/introduction/) more information.
+Templates override the title and content of notifications.
+
+Merge tags such as `{{ notification.content }}` are supported — a complete list will appear when you press `{`, after which you can continue typing or select one from the list.
+
+More advanced functionality such as [control flow](https://shopify.github.io/liquid/tags/control-flow/) and [default values](https://shopify.github.io/liquid/filters/default/) are also supported — consult the [Liquid reference](https://shopify.github.io/liquid/basics/introduction/) more information.
+
+[Notification Overrides](/docs/overrides) further override the title and content of templates.
 
 ### Notification title
 
-The title will be the subject of emails, and the first bolded line for in-app
-notifications.
+The title will be the subject of email and push notifications, and the first bolded line for in-app and Slack notifications.
 
 ### Content
 
 Content is the body of your notification - the message you want to pass on to users. Content will be the body of an email and below the notification title for in-app notifications.
 
-The content input supports [HTML](https://html-online.com/editor/) and [Markdown](https://www.markdownguide.org/basic-syntax/).
+The content input supports HTML and [Markdown](https://www.markdownguide.org/basic-syntax/).
 
 ### Email Layout
 
@@ -36,9 +41,13 @@ All notifications that are sent to the email channel will be wrapped in this lay
 <img
   className="full-mobile"
   src="/docs/uploads/email-layout.png"
-  style={{ width: '80%', height: 'intrinsic' }}
+  style={{ width: '75%', height: 'intrinsic' }}
 />
 
 ## Limitations
 
 - Templates work across channels subject to limitations for that channel. For instance, Slack does not support headings.
+- Channel-specific styling notes:
+  - **In-app and email**: Markdown is converted to HTML, which is then sent to the user.
+  - **Slack**: HTML is sent as raw text. Markdown is not parsed prior to sending the notification — rather, any Markdown will be parsed by Slack.
+  - **Push and SMS**: Markdown is removed. As with Slack, HTML is sent as raw text.
