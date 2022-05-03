@@ -18,7 +18,7 @@ export default function Header({ onToggleMenu }: Props) {
       <div className="flex-1 hidden justify-between md:flex max-w-screen-xl mx-auto md:px-8 p-4">
         <div className="flex-1 flex items-center space-x-10 py-4">
           <div className="flex-1 flex space-x-24">
-            <a href="https://magicbell.com" aria-label="Go to homepage">
+            <a href="https://www.magicbell.com" aria-label="Go to homepage">
               <MagicBellLogo
                 className="md:h-7 h-6 fill-current text-darkPurple"
                 role="img"
@@ -28,22 +28,22 @@ export default function Header({ onToggleMenu }: Props) {
             </a>
             <div className="flex-1 space-x-6">
               <a
-                href="https://magicbell.com/spec"
+                href="https://www.magicbell.com/spec"
                 className="text-darkPurple hover:text-pink"
               >
                 Notification Spec
               </a>
-              <a href="https://magicbell.com/docs" className="text-pink hover:text-pink">
+              <a href="https://www.magicbell.com/docs" className="text-pink hover:text-pink">
                 Docs
               </a>
               <a
-                href="https://magicbell.com/pricing"
+                href="https://www.magicbell.com/pricing"
                 className="text-darkPurple hover:text-pink"
               >
                 Pricing
               </a>
               <a
-                href="https://magicbell.com/careers"
+                href="https://www.magicbell.com/careers"
                 className="text-darkPurple hover:text-pink"
               >
                 Careers
@@ -53,6 +53,7 @@ export default function Header({ onToggleMenu }: Props) {
           <a
             className="font-bold text-2xl hover:text-darkPurple text-darkPurple"
             href="https://app.magicbell.com"
+            rel="nofollow"
           >
             <div className="flex items-center space-x-4">
               <span>Sign up</span>
@@ -62,7 +63,7 @@ export default function Header({ onToggleMenu }: Props) {
         </div>
       </div>
       <div className="flex-1 flex items-center md:hidden px-4 py-6">
-        <a href="https://magicbell.com">
+        <a href="https://www.magicbell.com">
           <MagicBellLogo
             className="h-7 fill-current text-darkPurple"
             role="img"
