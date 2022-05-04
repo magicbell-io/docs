@@ -13,6 +13,10 @@
         "to": "/adding-magicbell-to-your-product"
       },
       {
+        "name": "Choosing a Unique Identifier",
+        "to": "/choosing-an-identifier"
+      },
+      {
         "name": "Sending notifications",
         "to": "/sending-notifications"
       }
