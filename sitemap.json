@@ -19,6 +19,10 @@
       {
         "name": "Sending notifications",
         "to": "/sending-notifications"
+      },
+      {
+        "name": "What's Next",
+        "to": "/whats-next"
       }
     ]
   },
