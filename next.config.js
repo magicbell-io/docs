@@ -22,6 +22,10 @@ module.exports = withPlugins([[withBundleAnalyzer], withSvgr], {
 
     return config;
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
   async redirects() {
     return redirects;
   },
