@@ -6,6 +6,7 @@
   ],
   "companyLinks": [
     { "displayText": "About", "url": "https://magicbell.com/about" },
+    { "displayText": "Philosphy", "url": "https://www.magicbell.com/philosophy" },
     { "displayText": "Careers", "url": "https://magicbell.com/careers" },
     { "displayText": "Blog", "url": "https://magicbell.com/blog" },
     { "displayText": "Case Studies", "url": "https://magicbell.com/customers" },
@@ -24,7 +25,7 @@
     { "displayText": "Changelog", "url": "/changelog" },
     {
       "displayText": "Roadmap",
-      "url": "https://magicbell.notion.site/Roadmap-7d6834b32dd247d8b1b5c6ca813a34d3"
+      "url": "https://roadmap.magicbell.community/"
     },
     {
       "displayText": "Service Status",
@@ -32,16 +33,11 @@
     }
   ],
   "resourcesLinks": [
+    { "displayText": "Why MagicBell?", "url": "https://www.magicbell.com/blog/building-a-user-notification-system" },
     { "displayText": "Notification Spec", "url": "https://magicbell.com/spec" },
     { "displayText": "Pricing", "url": "https://magicbell.com/pricing" },
-    {
-      "displayText": "Why MagicBell?",
-      "url": "https://magicbell.com/blog/building-a-user-notification-system"
-    },
-    {
-      "displayText": "Request a Demo",
-      "url": "https://magicbell.typeform.com/to/AgrVeIk5"
-    }
+    { "displayText": "Integrations", "url": "https://www.magicbell.com/integrations" },
+    { "displayText": "Vulnerability Disclosure Program", "url": "https://www.federacy.com/magicbell?tab=Intro" }
   ],
   "learnLinks": [
     { "displayText": "API Reference", "url": "/rest-api/reference" },
