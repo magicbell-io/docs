@@ -25,16 +25,16 @@ export default function DocPageLayout({ title = 'Docs', description, children }:
     setSidebarOpen(false);
   }, [router.asPath]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const path = [router.basePath, router.asPath].filter(Boolean).join('');
+  const baseURL = process.env.NEXT_STATIC_BASE_URL || 'https://www.magicbell.com';
+  const canonical = new URL(path, baseURL).toString();
+
   return (
     <div className="min-h-screen flex flex-col">
       <NextSeo
         title={`MagicBell - ${title}`}
         description={description}
-        canonical={path.join(
-          process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.magicbell.com',
-          router.basePath,
-          router.asPath,
-        )}
+        canonical={canonical}
       />
       <Header onToggleMenu={toggleSidebar} />
       <div className="max-w-screen-xl mx-auto divide-x divide-gray-200 flex flex-1 w-full">
