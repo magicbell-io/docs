@@ -1,0 +1,61 @@
+---
+title: Segments
+subtitle: Learn how to group your users into segments
+---
+
+Often notifications need to be sent to a specified group of users. Groups can be static, but more commonly, they are dynamic (e.g., when a user switches payment tiers).
+
+## How to create segments
+
+Click the **Users** icon from the left navigation sidebar and select **Create Segment**. Use the query builder to compose a new segment. Segments consist of a **Field**, a **Condition**, and **Criteria**.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/create-segment.gif"
+  style={{ width: '75%', height: 'intrinsic' }}
+/>
+
+Compose complex segments by creating additional filters — click **Add** and choose the `And` or `Or` operator.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/create-complex-segment.gif"
+  style={{ width: '75%', height: 'intrinsic' }}
+/>
+
+Remember to label and save your segment!
+
+<Note>
+Segment labels do not have to be unique.
+</Note>
+
+### Fields
+
+The following fields are supported:
+
+- `email`
+- `first_name`
+- `last_name`
+- `external_id`
+- `custom_attributes`
+
+Custom Attributes can also consist of nested properties (`nested.property`), deeply nested properties (`deeply.nested.property`), and arrays (`["dog", "cat", "rabbit"]`).
+
+### Conditions
+
+The following conditions are supported:
+
+- `contains`
+- `equals`
+- `starts with`
+- `ends with`
+
+### Criteria
+
+- Criteria accepts strings, integers, and boolean values under 200 characters.
+- `*` is a wild card. It represents any character. For example, `s*nk` matches "sink", "sank", and "sunk".
+
+## Setting custom attributes
+
+We encourage you to set custom
+attributes on your MagicBell users to take full advantage of this feature. You can do it using our [users API endpoints](https://www.magicbell.com/docs/rest-api/reference#create-user).
