@@ -270,6 +270,10 @@
         "to": "/segmented-send"
       },
       {
+        "name": "Segments",
+        "to": "/segments"
+      },
+      {
         "name": "Log",
         "to": "/log"
       },
