@@ -70,6 +70,83 @@
     ]
   },
   {
+    "name": "Channels",
+    "children": [
+      {
+        "name": "All Channels",
+        "to": "/channels"
+      },
+      {
+        "name": "Email",
+        "children": [
+          {
+            "name": "Setting up 3rd party email providers",
+            "to": "/email/3rd-party-email-providers"
+          },
+          {
+            "name": "SendGrid",
+            "to": "/email/sendgrid"
+          },
+          {
+            "name": "Postmark",
+            "to": "/email/postmark"
+          },
+          {
+            "name": "Mailgun",
+            "to": "/email/mailgun"
+          },
+          {
+            "name": "Ping (Webhook)",
+            "to": "/email/ping"
+          }
+        ]
+      },
+      {
+        "name": "Slack",
+        "children": [
+          {
+            "name": "Our slack integration",
+            "to": "/slack"
+          },
+          {
+            "name": "MagicBell apps (for testing/internal use)",
+            "to": "/slack/magicbell-apps"
+          },
+          {
+            "name": "Create your own app",
+            "to": "/slack/custom-apps"
+          }
+        ]
+      },
+      {
+        "name": "SMS",
+        "children": [
+          {
+            "name": "Twilio",
+            "to": "/sms/twilio"
+          }
+        ]
+      },
+      {
+        "name": "Mobile-Push",
+        "children": [
+          {
+            "name": "Getting started",
+            "to": "/mobile-push"
+          },
+          {
+            "name": "iOS (APNS)",
+            "to": "/mobile-push/ios"
+          },
+          {
+            "name": "Android (Firebase)",
+            "to": "/mobile-push/android"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Guides",
     "children": [
       {
@@ -166,83 +243,6 @@
           {
             "name": "Angular",
             "to": "/angular"
-          }
-        ]
-      },
-      {
-        "name": "Channels",
-        "children": [
-          {
-            "name": "All Channels",
-            "to": "/channels"
-          },
-          {
-            "name": "Email",
-            "children": [
-              {
-                "name": "Setting up 3rd party email providers",
-                "to": "/email/3rd-party-email-providers"
-              },
-              {
-                "name": "SendGrid",
-                "to": "/email/sendgrid"
-              },
-              {
-                "name": "Postmark",
-                "to": "/email/postmark"
-              },
-              {
-                "name": "Mailgun",
-                "to": "/email/mailgun"
-              },
-              {
-                "name": "Ping (Webhook)",
-                "to": "/email/ping"
-              }
-            ]
-          },
-          {
-            "name": "Slack",
-            "children": [
-              {
-                "name": "Our slack integration",
-                "to": "/slack"
-              },
-              {
-                "name": "MagicBell apps (for testing/internal use)",
-                "to": "/slack/magicbell-apps"
-              },
-              {
-                "name": "Create your own app",
-                "to": "/slack/custom-apps"
-              }
-            ]
-          },
-          {
-            "name": "SMS",
-            "children": [
-              {
-                "name": "Twilio",
-                "to": "/sms/twilio"
-              }
-            ]
-          },
-          {
-            "name": "Mobile-Push",
-            "children": [
-              {
-                "name": "Getting started",
-                "to": "/mobile-push"
-              },
-              {
-                "name": "iOS (APNS)",
-                "to": "/mobile-push/ios"
-              },
-              {
-                "name": "Android (Firebase)",
-                "to": "/mobile-push/android"
-              }
-            ]
           }
         ]
       },
