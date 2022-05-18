@@ -266,12 +266,17 @@
         "to": "/overrides"
       },
       {
-        "name": "Segmented send",
-        "to": "/segmented-send"
-      },
-      {
-        "name": "Segments",
-        "to": "/segments"
+        "name": "Segmentation",
+        "children": [
+          {
+            "name": "Segments (UI)",
+            "to": "/segments"
+          },
+          {
+            "name": "Segmented send",
+            "to": "/segmented-send"
+          }
+        ]
       },
       {
         "name": "Log",
