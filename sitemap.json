@@ -27,35 +27,45 @@
     ]
   },
   {
-    "name": "Rest API",
-    "icon": "terminal",
+    "name": "API",
     "children": [
       {
-        "name": "Overview",
-        "to": "/rest-api/overview"
+        "name": "Rest API",
+        "icon": "terminal",
+        "children": [
+          {
+            "name": "Overview",
+            "to": "/rest-api/overview"
+          },
+          {
+            "name": "Idempotent Requests",
+            "to": "/rest-api/idempotent-requests"
+          },
+          {
+            "name": "API reference",
+            "to": "/rest-api/reference",
+            "staticRoute": true
+          }
+        ]
       },
       {
-        "name": "Idempotent Requests",
-        "to": "/rest-api/idempotent-requests"
+        "name": "GraphQL API",
+        "children": [
+          {
+            "name": "Overview",
+            "to": "/graphql-api/overview"
+          },
+          {
+            "name": "API reference",
+            "to": "/graphql-api/reference",
+            "staticRoute": true
+          }
+        ]
       },
       {
-        "name": "API reference",
-        "to": "/rest-api/reference",
-        "staticRoute": true
-      }
-    ]
-  },
-  {
-    "name": "GraphQL API",
-    "children": [
-      {
-        "name": "Overview",
-        "to": "/graphql-api/overview"
-      },
-      {
-        "name": "API reference",
-        "to": "/graphql-api/reference",
-        "staticRoute": true
+        "name": "API wrappers and libraries",
+        "icon": "library",
+        "to": "/libraries-api-wrappers"
       }
     ]
   },
@@ -288,11 +298,7 @@
       }
     ]
   },
-  {
-    "name": "API wrappers and libraries",
-    "icon": "library",
-    "to": "/libraries-api-wrappers"
-  },
+
   {
     "name": "Changelog",
     "icon": "changelog",
