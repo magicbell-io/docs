@@ -39,7 +39,11 @@ The following fields are supported:
 - `external_id`
 - `custom_attributes`
 
-Custom Attributes can also consist of nested properties (`nested.property`), deeply nested properties (`deeply.nested.property`), and arrays (`["dog", "cat", "rabbit"]`).
+Custom Attributes can also consist of:
+
+- nested properties (`nested.property`)
+- deeply nested properties (`deeply.nested.property`)
+- arrays (`["dog", "cat", "rabbit"]`)
 
 ### Conditions
 
@@ -52,7 +56,7 @@ The following conditions are supported:
 
 ### Criteria
 
-- Criteria accepts strings, integers, and boolean values under 200 characters.
+- Criteria accepts strings and integers under 200 characters, and boolean values.
 - `*` is a wild card. It represents any character. For example, `s*nk` matches "sink", "sank", and "sunk".
 
 ## Setting custom attributes
