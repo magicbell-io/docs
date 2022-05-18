@@ -143,10 +143,8 @@
             "to": "/mobile-push/android"
           }
         ]
-      }
-    ]
-  },
-  {
+      },
+      {
     "name": "Guides",
     "children": [
       {
