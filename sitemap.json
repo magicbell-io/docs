@@ -1,329 +1,312 @@
 [
   {
-    "name": "Hello. We're MagicBell!",
-    "icon": "home",
-    "to": "/",
-    "staticRoute": true
-  },
-  {
-    "name": "Getting started",
-    "children": [
-      {
-        "name": "Adding MagicBell to your product",
-        "to": "/adding-magicbell-to-your-product"
-      },
-      {
-        "name": "Choosing a Unique Identifier",
-        "to": "/choosing-an-identifier"
-      },
-      {
-        "name": "Sending notifications",
-        "to": "/sending-notifications"
-      },
-      {
-        "name": "What's Next",
-        "to": "/whats-next"
-      }
-    ]
-  },
-  {
-    "name": "API",
-    "children": [
-      {
-        "name": "Rest API",
-        "icon": "terminal",
-        "children": [
-          {
-            "name": "Overview",
-            "to": "/rest-api/overview"
-          },
-          {
-            "name": "Idempotent Requests",
-            "to": "/rest-api/idempotent-requests"
-          },
-          {
-            "name": "API reference",
-            "to": "/rest-api/reference",
-            "staticRoute": true
-          }
-        ]
-      },
-      {
-        "name": "GraphQL API",
-        "children": [
-          {
-            "name": "Overview",
-            "to": "/graphql-api/overview"
-          },
-          {
-            "name": "API reference",
-            "to": "/graphql-api/reference",
-            "staticRoute": true
-          }
-        ]
-      },
-      {
-        "name": "API wrappers and libraries",
-        "icon": "library",
-        "to": "/libraries-api-wrappers"
-      }
-    ]
-  },
-  {
-    "name": "Channels",
-    "children": [
-      {
-        "name": "All Channels",
-        "to": "/channels"
-      },
-      {
-        "name": "Email",
-        "children": [
-          {
-            "name": "Setting up 3rd party email providers",
-            "to": "/email/3rd-party-email-providers"
-          },
-          {
-            "name": "SendGrid",
-            "to": "/email/sendgrid"
-          },
-          {
-            "name": "Postmark",
-            "to": "/email/postmark"
-          },
-          {
-            "name": "Mailgun",
-            "to": "/email/mailgun"
-          },
-          {
-            "name": "Ping (Webhook)",
-            "to": "/email/ping"
-          }
-        ]
-      },
-      {
-        "name": "Slack",
-        "children": [
-          {
-            "name": "Our slack integration",
-            "to": "/slack"
-          },
-          {
-            "name": "MagicBell apps (for testing/internal use)",
-            "to": "/slack/magicbell-apps"
-          },
-          {
-            "name": "Create your own app",
-            "to": "/slack/custom-apps"
-          }
-        ]
-      },
-      {
-        "name": "SMS",
-        "children": [
-          {
-            "name": "Twilio",
-            "to": "/sms/twilio"
-          }
-        ]
-      },
-      {
-        "name": "Mobile-Push",
-        "children": [
-          {
-            "name": "Getting started",
-            "to": "/mobile-push"
-          },
-          {
-            "name": "iOS (APNS)",
-            "to": "/mobile-push/ios"
-          },
-          {
-            "name": "Android (Firebase)",
-            "to": "/mobile-push/android"
-          }
-        ]
-      },
-      {
-    "name": "Guides",
-    "children": [
-      {
-        "name": "Notification Inbox",
-        "children": [
-          {
-            "name": "Overview",
-            "to": "/notification-inbox"
-          },
-          {
-            "name": "HMAC authentication",
-            "to": "/turn-on-hmac-authentication"
-          },
-          {
-            "name": "React",
-            "children": [
-              {
-                "name": "Identifying users",
-                "to": "/react/identifying-users"
-              },
-              {
-                "name": "Customize the theme",
-                "to": "/react/theme-customization"
-              },
-              {
-                "name": "Localization and internationalization (i18n)",
-                "to": "/react/localization-internationalization"
-              },
-              {
-                "name": "Change the position of the notification inbox",
-                "to": "/react/positioning-floating-notification-inbox"
-              },
-              {
-                "name": "Set a custom click handler",
-                "to": "/react/setting-notification-click-handler"
-              },
-              {
-                "name": "Change the default notification component",
-                "to": "/react/changing-default-notification-component"
-              },
-              {
-                "name": "Play a sound when a notification arrives",
-                "to": "/react/play-sound-new-notification"
-              },
-              {
-                "name": "Render notifications in a sidebar",
-                "to": "/react/render-notifications-sidebar"
-              },
-              {
-                "name": "Known Issues",
-                "to": "/react/known-issues"
-              }
-            ]
-          },
-          {
-            "name": "React Native",
-            "children": [
-              {
-                "name": "Getting started",
-                "to": "/react-native/getting-started"
-              },
-              {
-                "name": "Implement mobile push notifications",
-                "to": "/react-native/implement-mobile-push-notifications"
-              }
-            ]
-          },
-          {
-            "name": "Vue",
-            "children": [
-              {
-                "name": "How to use MagicBell with NuxtJS",
-                "to": "/vue/adding-magicbell-to-your-nuxt-application"
-              }
-            ]
-          },
-          {
-            "name": "Browser",
-            "children": [
-              {
-                "name": "Change the default font",
-                "to": "/browser/changing-default-font"
-              },
-              {
-                "name": "Change the default images",
-                "to": "/browser/changing-default-images"
-              },
-              {
-                "name": "Notify users when a new notification arrives",
-                "to": "/browser/new-notification-hook"
-              }
-            ]
-          },
-          {
-            "name": "Angular",
-            "to": "/angular"
-          }
-        ]
-      },
-      {
-        "name": "Categories",
-        "to": "/categories"
-      },
-      {
-        "name": "Templates",
-        "children": [
-          {
-            "name": "Getting started with Templates",
-            "to": "/templates"
-          },
-          {
-            "name": "Email layouts",
-            "to": "/email-layouts"
-          }
-        ]
-      },
-      {
-        "name": "Topics",
-        "to": "/topics"
-      },
-      {
-        "name": "Smart Notifications",
-        "to": "/smart-notifications"
-      },
-      {
-        "name": "Override content accross channels",
-        "to": "/overrides"
-      },
-      {
-        "name": "Segmentation",
-        "children": [
-          {
-            "name": "Segments (UI)",
-            "to": "/segments"
-          },
-          {
-            "name": "Segmented send",
-            "to": "/segmented-send"
-          }
-        ]
-      },
-      {
-        "name": "Log",
-        "to": "/log"
-      },
-      {
-        "name": "Compose",
-        "to": "/compose"
-      }
-    ]
-  },
+		"name": "Hello. We're MagicBell!",
+		"icon": "home",
+		"to": "/",
+		"staticRoute": true
+	},
+	{
+		"name": "Getting started",
+		"children": [{
+				"name": "Adding MagicBell to your product",
+				"to": "/adding-magicbell-to-your-product"
+			},
+			{
+				"name": "Choosing a Unique Identifier",
+				"to": "/choosing-an-identifier"
+			},
+			{
+				"name": "Sending notifications",
+				"to": "/sending-notifications"
+			},
+			{
+				"name": "What's Next",
+				"to": "/whats-next"
+			}
+		]
+	},
+	{
+		"name": "API",
+		"children": [{
+				"name": "Rest API",
+				"icon": "terminal",
+				"children": [{
+						"name": "Overview",
+						"to": "/rest-api/overview"
+					},
+					{
+						"name": "Idempotent Requests",
+						"to": "/rest-api/idempotent-requests"
+					},
+					{
+						"name": "API reference",
+						"to": "/rest-api/reference",
+						"staticRoute": true
+					}
+				]
+			},
+			{
+				"name": "GraphQL API",
+				"children": [{
+						"name": "Overview",
+						"to": "/graphql-api/overview"
+					},
+					{
+						"name": "API reference",
+						"to": "/graphql-api/reference",
+						"staticRoute": true
+					}
+				]
+			},
+			{
+				"name": "API wrappers and libraries",
+				"icon": "library",
+				"to": "/libraries-api-wrappers"
+			}
+		]
+	},
+	{
+		"name": "Channels",
+		"children": [{
+				"name": "All Channels",
+				"to": "/channels"
+			},
+			{
+				"name": "Email",
+				"children": [{
+						"name": "Setting up 3rd party email providers",
+						"to": "/email/3rd-party-email-providers"
+					},
+					{
+						"name": "SendGrid",
+						"to": "/email/sendgrid"
+					},
+					{
+						"name": "Postmark",
+						"to": "/email/postmark"
+					},
+					{
+						"name": "Mailgun",
+						"to": "/email/mailgun"
+					},
+					{
+						"name": "Ping (Webhook)",
+						"to": "/email/ping"
+					}
+				]
+			},
+			{
+				"name": "Slack",
+				"children": [{
+						"name": "Our slack integration",
+						"to": "/slack"
+					},
+					{
+						"name": "MagicBell apps (for testing/internal use)",
+						"to": "/slack/magicbell-apps"
+					},
+					{
+						"name": "Create your own app",
+						"to": "/slack/custom-apps"
+					}
+				]
+			},
+			{
+				"name": "SMS",
+				"children": [{
+					"name": "Twilio",
+					"to": "/sms/twilio"
+				}]
+			},
+			{
+				"name": "Mobile-Push",
+				"children": [{
+						"name": "Getting started",
+						"to": "/mobile-push"
+					},
+					{
+						"name": "iOS (APNS)",
+						"to": "/mobile-push/ios"
+					},
+					{
+						"name": "Android (Firebase)",
+						"to": "/mobile-push/android"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Guides",
+		"children": [{
+				"name": "Notification Inbox",
+				"children": [{
+						"name": "Overview",
+						"to": "/notification-inbox"
+					},
+					{
+						"name": "HMAC authentication",
+						"to": "/turn-on-hmac-authentication"
+					},
+					{
+						"name": "React",
+						"children": [{
+								"name": "Identifying users",
+								"to": "/react/identifying-users"
+							},
+							{
+								"name": "Customize the theme",
+								"to": "/react/theme-customization"
+							},
+							{
+								"name": "Localization and internationalization (i18n)",
+								"to": "/react/localization-internationalization"
+							},
+							{
+								"name": "Change the position of the notification inbox",
+								"to": "/react/positioning-floating-notification-inbox"
+							},
+							{
+								"name": "Set a custom click handler",
+								"to": "/react/setting-notification-click-handler"
+							},
+							{
+								"name": "Change the default notification component",
+								"to": "/react/changing-default-notification-component"
+							},
+							{
+								"name": "Play a sound when a notification arrives",
+								"to": "/react/play-sound-new-notification"
+							},
+							{
+								"name": "Render notifications in a sidebar",
+								"to": "/react/render-notifications-sidebar"
+							},
+							{
+								"name": "Known Issues",
+								"to": "/react/known-issues"
+							}
+						]
+					},
+					{
+						"name": "React Native",
+						"children": [{
+								"name": "Getting started",
+								"to": "/react-native/getting-started"
+							},
+							{
+								"name": "Implement mobile push notifications",
+								"to": "/react-native/implement-mobile-push-notifications"
+							}
+						]
+					},
+					{
+						"name": "Vue",
+						"children": [{
+							"name": "How to use MagicBell with NuxtJS",
+							"to": "/vue/adding-magicbell-to-your-nuxt-application"
+						}]
+					},
+					{
+						"name": "Browser",
+						"children": [{
+								"name": "Change the default font",
+								"to": "/browser/changing-default-font"
+							},
+							{
+								"name": "Change the default images",
+								"to": "/browser/changing-default-images"
+							},
+							{
+								"name": "Notify users when a new notification arrives",
+								"to": "/browser/new-notification-hook"
+							}
+						]
+					},
+					{
+						"name": "Angular",
+						"to": "/angular"
+					}
+				]
+			},
+			{
+				"name": "Categories",
+				"to": "/categories"
+			},
+			{
+				"name": "Templates",
+				"children": [{
+						"name": "Getting started with Templates",
+						"to": "/templates"
+					},
+					{
+						"name": "Email layouts",
+						"to": "/email-layouts"
+					}
+				]
+			},
+			{
+				"name": "Topics",
+				"to": "/topics"
+			},
+			{
+				"name": "Smart Notifications",
+				"to": "/smart-notifications"
+			},
+			{
+				"name": "Override content accross channels",
+				"to": "/overrides"
+			},
+			{
+				"name": "Segmentation",
+				"children": [{
+						"name": "Segments (UI)",
+						"to": "/segments"
+					},
+					{
+						"name": "Segmented send",
+						"to": "/segmented-send"
+					}
+				]
+			},
+			{
+				"name": "Log",
+				"to": "/log"
+			},
+			{
+				"name": "Compose",
+				"to": "/compose"
+			}
+		]
+	},
 
-  {
-    "name": "Changelog",
-    "icon": "changelog",
-    "to": "/changelog"
-  },
-  {
-    "name": "Roadmap",
-    "icon": "roadmap",
-    "to": "https://roadmap.magicbell.community/",
-    "staticRoute": true
-  },
-  {
-    "name": "Glossary",
-    "to": "/glossary"
-  },
-  {
-    "name": "FAQ",
-    "to": "/faq"
-  },
-  {
-    "name": "Playground",
-    "to": "https://playground.magicbell.com",
-    "staticRoute": true
-  },
-  {
-    "name": "Slack Community",
-    "to": "https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw",
-    "staticRoute": true
-  }
+	{
+		"name": "Changelog",
+		"icon": "changelog",
+		"to": "/changelog"
+	},
+	{
+		"name": "Roadmap",
+		"icon": "roadmap",
+		"to": "https://roadmap.magicbell.community/",
+		"staticRoute": true
+	},
+	{
+		"name": "Glossary",
+		"to": "/glossary"
+	},
+	{
+		"name": "FAQ",
+		"to": "/faq"
+	},
+	{
+		"name": "Playground",
+		"to": "https://playground.magicbell.com",
+		"staticRoute": true
+	},
+	{
+		"name": "Slack Community",
+		"to": "https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw",
+		"staticRoute": true
+	}
 ]
