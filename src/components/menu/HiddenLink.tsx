@@ -10,9 +10,9 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-export default function PageLink({ name, hide, style }: Props) {
+export default function HiddenLink({ name, hide, style }: Props) {
   const router = useRouter();
-  const isActive = router.asPath === to;
+  const isActive = router.asPath === hide;
 
   return (
     <Link href={hide || ''}>
