@@ -1,5 +1,5 @@
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import DocPageLayout from './layout/DocPageLayout';
 
 interface Props {
@@ -8,8 +8,17 @@ interface Props {
   mdxSource?: MDXRemoteSerializeResult;
   children?: JSX.Element | JSX.Element[];
   editUrl?: string;
-
 }
+
+const components: Record<string, ReactNode> = {
+    a: ({children, href}: { children: ReactNode, href: string }) => {
+        const isMagicBell = /magicbell.com/i.test(href);
+        const isProduct = (/(app|api).magicbell.com/i.test(href));
+
+        const rel = isProduct ? 'nofollow' : isMagicBell ? '' : 'noopener';
+        return <a href={href} rel={rel}>{children}</a>
+    }
+};
 
 export default function DocPage({ title, subtitle, mdxSource, editUrl, children }: Props) {
   const pageTitle = title || 'Docs';
@@ -20,7 +29,7 @@ export default function DocPage({ title, subtitle, mdxSource, editUrl, children 
       <p className="mb-16 font-normal text-gray-500 text-center text-xl">{subtitle}</p>
       {mdxSource ? (
         <article className="mdx-content">
-          <MDXRemote {...mdxSource} />
+          <MDXRemote components={components} {...mdxSource} />
         </article>
       ) : (
         <p>Loading...</p>
