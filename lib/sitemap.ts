@@ -13,6 +13,7 @@ export default sitemap as SitemapItem[];
 
 export function getAllChildrenPaths(element: any): string[] {
   if (element.to) return element.to;
+  if (element.hide) return element.hide;
   return reject(isNil, flatten(element.children.map(getAllChildrenPaths)));
 }
 

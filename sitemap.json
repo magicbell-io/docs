@@ -2,7 +2,7 @@
   {
 		"name": "Hello. We're MagicBell!",
 		"icon": "home",
-		"to": "/",
+		"hide": "/",
 		"staticRoute": true
 	},
 	{
@@ -21,7 +21,7 @@
 			},
 			{
 				"name": "What's Next",
-				"to": "/whats-next"
+				"hide": "/whats-next"
 			}
 		]
 	},
