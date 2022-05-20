@@ -29,11 +29,7 @@ Compose complex segments by creating additional filters — click **Add** and ch
   style={{ width: '75%', height: 'intrinsic' }}
 />
 
-Remember to label and save your segment!
-
-<Note>
-Segment labels do not have to be unique.
-</Note>
+Remember to label and save your segment! Segment labels do not have to be unique.
 
 ### Fields
 
@@ -45,11 +41,11 @@ The following fields are supported:
 - `external_id`
 - `custom_attributes`
 
-Custom Attributes can also consist of:
+The following are examples of valid custom attributes:
 
-- nested properties (`nested.property`)
-- deeply nested properties (`deeply.nested.property`)
-- arrays (`["dog", "cat", "rabbit"]`)
+- `company`
+- `company.department` (nested properties)
+- `company.department.role` (deeply nested properties)
 
 ### Conditions
 
