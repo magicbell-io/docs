@@ -12,15 +12,13 @@ interface Props {
 
 export default function HiddenLink({ name, hide, style }: Props) {
   const router = useRouter();
-  const isActive = router.asPath === hide;
 
   return (
     <Link href={hide || ''}>
       <a
         className={classNames(
-          isActive
+          hidden
         )}
-        style={display: none}
       >
         {name}
       </a>
