@@ -139,12 +139,6 @@
   }
 }
 
-/* Navigation */
-
-a.hidden {
-  display: none;
-}
-
 /* Header */
 header {
   font-size: 20px;

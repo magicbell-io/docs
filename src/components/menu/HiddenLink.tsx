@@ -17,7 +17,7 @@ export default function HiddenLink({ name, hide, style }: Props) {
     <Link href={hide || ''}>
       <a
         className={classNames(
-          hidden
+          hide
         )}
       >
         {name}
