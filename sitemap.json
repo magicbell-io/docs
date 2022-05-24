@@ -260,7 +260,7 @@
 			{
 				"name": "Segmentation",
 				"children": [{
-						"name": "Segments (UI)",
+						"name": "Segments",
 						"to": "/segments"
 					},
 					{
