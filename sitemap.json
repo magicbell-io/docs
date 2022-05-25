@@ -7,8 +7,7 @@
 	},
 	{
 		"name": "Getting started",
-		"children": [
-      {
+		"children": [{
 				"name": "Adding MagicBell to your product",
 				"to": "/adding-magicbell-to-your-product"
 			},
@@ -28,12 +27,10 @@
 	},
 	{
 		"name": "API",
-		"children": [
-      {
+		"children": [{
 				"name": "Rest API",
 				"icon": "terminal",
-				"children": [
-          {
+				"children": [{
 						"name": "Overview",
 						"to": "/rest-api/overview"
 					},
@@ -50,8 +47,7 @@
 			},
 			{
 				"name": "GraphQL API",
-				"children": [
-          {
+				"children": [{
 						"name": "Overview",
 						"to": "/graphql-api/overview"
 					},
@@ -71,15 +67,13 @@
 	},
 	{
 		"name": "Channels",
-		"children": [
-      {
+		"children": [{
 				"name": "All Channels",
 				"to": "/channels"
 			},
 			{
 				"name": "Email",
-				"children": [
-          {
+				"children": [{
 						"name": "Setting up 3rd party email providers",
 						"to": "/email/3rd-party-email-providers"
 					},
@@ -103,8 +97,7 @@
 			},
 			{
 				"name": "Slack",
-				"children": [
-          {
+				"children": [{
 						"name": "Our slack integration",
 						"to": "/slack"
 					},
@@ -120,16 +113,14 @@
 			},
 			{
 				"name": "SMS",
-				"children": [
-          {
+				"children": [{
 					"name": "Twilio",
 					"to": "/sms/twilio"
 				}]
 			},
 			{
 				"name": "Mobile-Push",
-				"children": [
-          {
+				"children": [{
 						"name": "Getting started",
 						"to": "/mobile-push"
 					},
@@ -147,11 +138,9 @@
 	},
 	{
 		"name": "Guides",
-		"children": [
-      {
+		"children": [{
 				"name": "Notification Inbox",
-				"children": [
-          {
+				"children": [{
 						"name": "Overview",
 						"to": "/notification-inbox"
 					},
@@ -161,8 +150,7 @@
 					},
 					{
 						"name": "React",
-						"children": [
-              {
+						"children": [{
 								"name": "Identifying users",
 								"to": "/react/identifying-users"
 							},
@@ -202,8 +190,7 @@
 					},
 					{
 						"name": "React Native",
-						"children": [
-              {
+						"children": [{
 								"name": "Getting started",
 								"to": "/react-native/getting-started"
 							},
@@ -215,16 +202,14 @@
 					},
 					{
 						"name": "Vue",
-						"children": [
-              {
+						"children": [{
 							"name": "How to use MagicBell with NuxtJS",
 							"to": "/vue/adding-magicbell-to-your-nuxt-application"
 						}]
 					},
 					{
 						"name": "Browser",
-						"children": [
-              {
+						"children": [{
 								"name": "Change the default font",
 								"to": "/browser/changing-default-font"
 							},
@@ -250,8 +235,7 @@
 			},
 			{
 				"name": "Templates",
-				"children": [
-          {
+				"children": [{
 						"name": "Getting started with Templates",
 						"to": "/templates"
 					},
@@ -275,8 +259,7 @@
 			},
 			{
 				"name": "Segmentation",
-				"children": [
-          {
+				"children": [{
 						"name": "Segments",
 						"to": "/segments"
 					},
