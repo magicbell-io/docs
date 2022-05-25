@@ -1,8 +1,9 @@
 [
   {
 		"name": "Hello. We're MagicBell!",
+		"icon": "home",
 		"to": "/",
-		"hiddenRoute": true
+		"staticRoute": true
 	},
 	{
 		"name": "Getting started",
