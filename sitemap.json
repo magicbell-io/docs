@@ -254,12 +254,12 @@
 			{
 				"name": "Segmentation",
 				"children": [{
-						"name": "Segments",
+						"name": "Segments (Dashboard)",
 						"to": "/segments"
 					},
 					{
-						"name": "Segmented send",
-						"to": "/segmented-send"
+						"name": "Segments (API)",
+						"to": "/segments-api"
 					}
 				]
 			},
