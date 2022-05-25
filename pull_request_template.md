@@ -3,12 +3,13 @@
 > Description here
 
 ## Type of change
+
 - [ ] Bug fix (fixes an issue)
 - [ ] New feature (adds functionality)
 
 ## Related issues
 
-> Fix [#1]() 
+> Fix [#1]()
 
 ## Checklists
 
@@ -23,7 +24,7 @@
 - [ ] Security impact of change has been considered
 - [ ] Code follows company security practices and guidelines
 
-### Code review 
+### Code review
 
 - [ ] Pull request has a descriptive title and context useful to a reviewer. Screenshots or screencasts are attached as necessary
 - [ ] "Ready for review" label attached and reviewers assigned

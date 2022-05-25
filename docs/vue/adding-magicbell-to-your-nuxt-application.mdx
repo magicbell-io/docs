@@ -22,8 +22,8 @@ After successfully installing the package, you will need to create a plugin file
 import { renderWidget } from '@magicbell/embeddable/dist/magicbell.esm.js';
 
 const MagicBellPlugin = ({ _app }, inject) => {
-    inject("magicbell", renderWidget);
-}
+  inject('magicbell', renderWidget);
+};
 
 export default MagicBellPlugin;
 ```
@@ -41,12 +41,10 @@ plugins: ['~/plugins/magicbell.client.js'],
 transpile: ['@magicbell/embeddable/dist/magicbell.esm.js']
 ```
 
-
-If you now want to use the Widget in your code, create a `<div />` in the template and give it a `ref` so it can be referenced via the code. 
-After that, you will need to use the referenced `<div />` to mount the MagicBell widget. You can do that by accessing the plugin using `this.$magicbell`. 
+If you now want to use the Widget in your code, create a `<div />` in the template and give it a `ref` so it can be referenced via the code.
+After that, you will need to use the referenced `<div />` to mount the MagicBell widget. You can do that by accessing the plugin using `this.$magicbell`.
 
 The finished code should look like that
-
 
 ```javascript title=Vue
 // MagicBell.vue
@@ -59,7 +57,7 @@ export default {
         const magicbellOptions = {
             apiKey: this.$config.MAGICBELL_API_KEY,
             userExternalId: 'some-id',
-            // other customization options: 
+            // other customization options:
             // http://magicbell.com/docs/browser/changing-default-font
         }
         this.$magicbell(this.$refs.notifications, magicbellOptions)

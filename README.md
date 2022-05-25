@@ -7,13 +7,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
    ```bash
    git clone git@github.com:magicbell-io/docs.git magicbell-docs
    ```
-   
+
 2. Navigate into the newly created directory
 
-  ```bash
-  cd magicbell-docs
-  ```
- 
+```bash
+cd magicbell-docs
+```
+
 3. Install the dependencies
 
    ```bash

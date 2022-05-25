@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import path from 'path';
-import React, {ReactNode, useEffect} from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { useToggle } from 'react-use';
 import sitemap from '../../../lib/sitemap';
 import DesktopMenu from '../menu/DesktopMenu';

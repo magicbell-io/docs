@@ -7,27 +7,33 @@ subtitle: Create your own app
 This feature is in beta. We'd love your feedback — please <a href="mailto:hello@magicbell.com">get in touch</a> and let us know how it can be improved.
 
 If you're curious what our team is working on, see our <a href="https://roadmap.magicbell.community/">roadmap</a> and follow us on <a href="https://twitter.com/magicbell_io">Twitter</a>!
+
 </Note>
 
 ## Create and install your own app into your slack workspace
+
 - Create a Slack application and obtain an oauth key.
 - Send us your oauth key.
 - Verify the slack channel in MagicBell is enabled
 
 ## Create a slack application and obtain an oath key
+
 Head over to https://api.slack.com/apps and click on the "Create New App" button
+
 <img
   className="full-mobile"
   src="/docs/uploads/yourApps.png"
   style={{ width: '75%', height: 'intrinsic' }}
 />
-Name your slack app to something that makes sense to you, eg MagicBell, select the workspace you'd like to install it to and cleck on Create.
+Name your slack app to something that makes sense to you, eg MagicBell, select the workspace
+you'd like to install it to and cleck on Create.
 <img
   className="full-mobile"
   src="/docs/uploads/renameAppAndSelectWorkspace.png"
   style={{ width: '75%', height: 'intrinsic' }}
 />
-Under the Basic Information section, click on the "Bots" section. Next we'll assign the required scopes to your bot token to ensure messages reach the correct recipients.
+Under the Basic Information section, click on the "Bots" section. Next we'll assign the required
+scopes to your bot token to ensure messages reach the correct recipients.
 <img
   className="full-mobile"
   src="/docs/uploads/basicInformationSection.png"
@@ -57,7 +63,8 @@ Click "Allow"
   src="/docs/uploads/allowSlackApp.png"
   style={{ width: '75%', height: 'intrinsic' }}
 />
-This takes you to the OAuth & Permissions page. From here copy the Bot User OAuth Token from the  OAuth Tokens for Your Workspace section and send it over.
+This takes you to the OAuth & Permissions page. From here copy the Bot User OAuth Token from
+the OAuth Tokens for Your Workspace section and send it over.
 <img
   className="full-mobile"
   src="/docs/uploads/botUserOAuthToken.png"
@@ -67,12 +74,12 @@ This takes you to the OAuth & Permissions page. From here copy the Bot User OAut
 ## Verify the slack channel in MagicBell is enabled
 
 Go to `https://app.magicbell.com/projects/project_id/channels` and ensure that the slack channel is enabled.
+
 <img
   className="full-mobile"
   src="/docs/uploads/slackEnabled.png"
   style={{ width: '75%', height: 'intrinsic' }}
 />
-
 
 ## Send a notification to a slack user/channel
 
@@ -87,10 +94,12 @@ To send a DM in Slack you can use the user's email address.
 {
   "notification": {
     "title": "Welcome to Example Inc",
-    "recipients": [{
-      "email": "dan@example.com",
-      "externalId": "AB1234BCA"
-    }],
+    "recipients": [
+      {
+        "email": "dan@example.com",
+        "externalId": "AB1234BCA"
+      }
+    ],
     "custom_attributes": {
       "name": "Dan",
       "company": {

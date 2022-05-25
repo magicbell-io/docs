@@ -31,13 +31,13 @@ export function getAllChildrenPaths(element: any): string[] {
  * @returns an array of elements of the sitemap
  */
 export function getAllSitemapItems(sitemap: SitemapItem[]): SitemapItem[] {
-  let items:SitemapItem[] = []
+  let items: SitemapItem[] = [];
   const traverse = (item: SitemapItem) => {
-    items.push(item)
-    if(item.children){
-      item.children.forEach(traverse)
+    items.push(item);
+    if (item.children) {
+      item.children.forEach(traverse);
     }
-  }
-  sitemap.forEach(traverse)
+  };
+  sitemap.forEach(traverse);
   return items;
 }

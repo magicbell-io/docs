@@ -33,11 +33,17 @@
     }
   ],
   "resourcesLinks": [
-    { "displayText": "Why MagicBell?", "url": "https://www.magicbell.com/blog/building-a-user-notification-system" },
+    {
+      "displayText": "Why MagicBell?",
+      "url": "https://www.magicbell.com/blog/building-a-user-notification-system"
+    },
     { "displayText": "Notification Spec", "url": "https://magicbell.com/spec" },
     { "displayText": "Pricing", "url": "https://magicbell.com/pricing" },
     { "displayText": "Integrations", "url": "https://www.magicbell.com/integrations" },
-    { "displayText": "Vulnerability Disclosure Program", "url": "https://www.federacy.com/magicbell?tab=Intro" }
+    {
+      "displayText": "Vulnerability Disclosure Program",
+      "url": "https://www.federacy.com/magicbell?tab=Intro"
+    }
   ],
   "learnLinks": [
     { "displayText": "API Reference", "url": "/rest-api/reference" },

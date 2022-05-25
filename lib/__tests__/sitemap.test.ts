@@ -13,5 +13,5 @@ test('getAllItems', () => {
   expect(items).toHaveLength(3);
   expect(items[0].name).toBe('test');
   expect(items[0].to).toBe('test');
-  expect(items[1].name).toBe("test2")
+  expect(items[1].name).toBe('test2');
 });

@@ -11,16 +11,26 @@ interface Props {
 }
 
 const components: Record<string, ReactNode> = {
-    a: ({children, href}: { children: ReactNode, href: string }) => {
-        const isMagicBell = /magicbell.com/i.test(href);
-        const isProduct = (/(app|api).magicbell.com/i.test(href));
+  a: ({ children, href }: { children: ReactNode; href: string }) => {
+    const isMagicBell = /magicbell.com/i.test(href);
+    const isProduct = /(app|api).magicbell.com/i.test(href);
 
-        const rel = isProduct ? 'nofollow' : isMagicBell ? '' : 'noopener';
-        return <a href={href} rel={rel}>{children}</a>
-    }
+    const rel = isProduct ? 'nofollow' : isMagicBell ? '' : 'noopener';
+    return (
+      <a href={href} rel={rel}>
+        {children}
+      </a>
+    );
+  },
 };
 
-export default function DocPage({ title, subtitle, mdxSource, editUrl, children }: Props) {
+export default function DocPage({
+  title,
+  subtitle,
+  mdxSource,
+  editUrl,
+  children,
+}: Props) {
   const pageTitle = title || 'Docs';
 
   return (
@@ -36,9 +46,11 @@ export default function DocPage({ title, subtitle, mdxSource, editUrl, children 
       )}
       <section>{children}</section>
 
-      {editUrl ? <div className="mt-16">
-        <a href={editUrl}>Edit this page</a>
-      </div> : null}
+      {editUrl ? (
+        <div className="mt-16">
+          <a href={editUrl}>Edit this page</a>
+        </div>
+      ) : null}
     </DocPageLayout>
   );
 }

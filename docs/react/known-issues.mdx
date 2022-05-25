@@ -10,16 +10,18 @@ React SDK does not offer support for server-side rendering at this moment. The w
 the server, and only render MagicBell on the client.
 
 ```jsx
-import MagicBell, { FloatingNotificationInbox}  from  "@magicbell/magicbell-react";
+import MagicBell, { FloatingNotificationInbox } from '@magicbell/magicbell-react';
 
 export default function Index() {
   return (
     <nav>
-      {typeof window !== 'undefined' ? <MagicBell apiKey="..." userEmail="...">
-        {(props) => <FloatingNotificationInbox {...props} />}
-      </MagicBell> : null}
+      {typeof window !== 'undefined' ? (
+        <MagicBell apiKey="..." userEmail="...">
+          {(props) => <FloatingNotificationInbox {...props} />}
+        </MagicBell>
+      ) : null}
     </nav>
-  )
+  );
 }
 ```
 

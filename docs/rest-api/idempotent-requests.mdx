@@ -10,10 +10,8 @@ To perform an idempotent request, you need to add an `Idempotency-Key: <key>` he
 An idempotency key is a unique value generated on your side, which the server uses to recognize subsequent retries of the same request.
 We suggest using V4 UUID to avoid collisions.
 
-
 The resulting status code and body of the first request will be cached. Subsequent requests with the same
 idempotency key will return the same result. The cached results will expire after 24 hours.
-
 
 <Tabs>
 

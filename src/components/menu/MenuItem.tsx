@@ -1,6 +1,6 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import React from 'react';
-import {SitemapItem} from '../../../lib/sitemap';
+import { SitemapItem } from '../../../lib/sitemap';
 import GraphqlAPILinks from './GraphqlAPILinks';
 import OpenAPILinks from './OpenAPILinks';
 import PageLink from './PageLink';
@@ -17,7 +17,7 @@ export default function MenuItem(props: SitemapItem) {
     return (
       <>
         <PageLink {...props} />
-        <OpenAPILinks/>
+        <OpenAPILinks />
       </>
     );
   }
@@ -26,7 +26,7 @@ export default function MenuItem(props: SitemapItem) {
     return (
       <>
         <PageLink {...props} />
-        <GraphqlAPILinks/>
+        <GraphqlAPILinks />
       </>
     );
   }

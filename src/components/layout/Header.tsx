@@ -33,7 +33,10 @@ export default function Header({ onToggleMenu }: Props) {
               >
                 Notification Spec
               </a>
-              <a href="https://www.magicbell.com/docs" className="text-pink hover:text-pink">
+              <a
+                href="https://www.magicbell.com/docs"
+                className="text-pink hover:text-pink"
+              >
                 Docs
               </a>
               <a

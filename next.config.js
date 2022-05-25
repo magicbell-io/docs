@@ -3,7 +3,7 @@ const redirects = require('./redirects.json');
 const withSvgr = require('next-svgr');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 
 module.exports = withPlugins([[withBundleAnalyzer], withSvgr], {
   reactStrictMode: true,
@@ -23,10 +23,10 @@ module.exports = withPlugins([[withBundleAnalyzer], withSvgr], {
     return config;
   },
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ['en'],
+    defaultLocale: 'en',
   },
   async redirects() {
     return redirects;
-  }
+  },
 });
