@@ -7,12 +7,16 @@
         "to": "/adding-magicbell-to-your-product"
       },
       {
-        "name": "Choosing a Unique Identifier",
+        "name": "Choosing a unique identifier",
         "to": "/choosing-an-identifier"
       },
       {
         "name": "Sending notifications",
         "to": "/sending-notifications"
+      },
+      {
+        "name": "What's next",
+        "to": "/whats-next"
       }
     ]
   },
@@ -324,10 +328,6 @@
       {
         "name": "Hello. We're MagicBell!",
         "to": "/"
-      },
-      {
-        "name": "What's Next",
-        "to": "/whats-next"
       }
     ]
   }
