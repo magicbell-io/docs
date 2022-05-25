@@ -28,5 +28,5 @@ module.exports = withPlugins([[withBundleAnalyzer], withSvgr], {
   },
   async redirects() {
     return redirects;
-  },
+  }
 });
