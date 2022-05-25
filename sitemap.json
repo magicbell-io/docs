@@ -1,11 +1,4 @@
 [
-  {
-		"name": "Hello. We're MagicBell!",
-		"icon": "home",
-		"to": "/",
-		"staticRoute": true,
-		"hiddenRoute": true
-	},
 	{
 		"name": "Getting started",
 		"children": [{
@@ -309,5 +302,17 @@
 		"name": "Slack Community",
 		"to": "https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw",
 		"staticRoute": true
-	}
+	},
+  {
+    "name": "Hidden Routes",
+    "hiddenRoute": true,
+    "children": [
+      {
+    		"name": "Hello. We're MagicBell!",
+    		"icon": "home",
+    		"to": "/",
+    		"staticRoute": true
+    	}
+    ]
+  }
 ]
