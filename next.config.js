@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withPlugins = require('next-compose-plugins');
 const redirects = require('./redirects.json');
 const withSvgr = require('next-svgr');

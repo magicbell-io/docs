@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const openapiFilePath = path.join(docsDirectory, 'rest-api/reference/openapi.json');
   const openapiFileContents = fs.readFileSync(openapiFilePath, 'utf8');
-  let openapi = await SwaggerParser.validate(JSON.parse(openapiFileContents));
+  const openapi = await SwaggerParser.validate(JSON.parse(openapiFileContents));
 
   // @ts-ignore
   const { content, data } = matter(fileContents);

@@ -20,7 +20,7 @@ export default function Field({ field, operation, schema }: Props) {
   const [title, description] = descriptionNode
     ? descriptionNode.replace(/\n+/, ':::').split(':::')
     : ['', ''];
-  const titleSlug = slugify(title, { lower: true, remove: /\"\|\?/ });
+  const titleSlug = slugify(title, { lower: true, remove: /"\|\?/ });
 
   return (
     <article id={href} className="py-36 border-t">

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import faker from 'faker';
 import { OpenAPIV3 } from 'openapi-types';
 import pupa from 'pupa';
@@ -9,7 +10,9 @@ const requests = require('./httpsnippet-python-requests');
 try {
   HTTPSnippet.addTargetClient('ruby', httparty);
   HTTPSnippet.addTargetClient('python', requests);
-} catch (err) {}
+} catch (err) {
+  /* intentionally left blank */
+}
 
 const BASE_URL = 'https://api.magicbell.com'; // @todo Take it from the OpenAPI file
 

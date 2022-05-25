@@ -37,9 +37,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<{}, { slug: string[] }> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<
+  Record<string, unknown>,
+  { slug: string[] }
+> = async ({ params }) => {
   // Read the file that contains the content for the route
   if (!params?.slug) {
     return { notFound: true };

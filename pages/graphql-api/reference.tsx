@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const schemaFilePath = path.join(docsDirectory, 'graphql-api/reference/schema.graphql');
   const schemaFileContents = fs.readFileSync(schemaFilePath, 'utf8');
-  let serializedSchema = schemaFileContents;
+  const serializedSchema = schemaFileContents;
 
   // @ts-ignore
   const { content, data } = matter(fileContents);

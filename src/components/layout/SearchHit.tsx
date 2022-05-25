@@ -11,7 +11,7 @@ interface Props {
       title: { value: string };
       content: { value: string };
     };
-    _snippetResult?: {} | undefined;
+    _snippetResult?: Record<string, unknown> | undefined;
     _distinctSeqID?: number | undefined;
   };
 }

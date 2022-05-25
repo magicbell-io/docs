@@ -8,14 +8,6 @@ interface Props {
   field: GraphQLField<any, any, any>;
 }
 
-const apiKeyHeader = {
-  name: 'X-MAGICBELL-API-KEY',
-  required: true,
-  in: '',
-  description: 'API key of your MagicBell project.',
-  schema: { type: 'String' },
-};
-
 export default function Headers({ field }: Props) {
   if (!field) return null;
 

@@ -18,7 +18,7 @@ export default function Operation({ pathKey, operation, method }: Props) {
   if (!operation) return null;
 
   const realTimeEnabled = includes('real-time', operation.tags || []);
-  const titleSlug = slugify(operation.summary || '', { lower: true, remove: /\"\|\?/ });
+  const titleSlug = slugify(operation.summary || '', { lower: true, remove: /"\|\?/ });
 
   return (
     <article id={operation.operationId} className="py-36 border-t">
