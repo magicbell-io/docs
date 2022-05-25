@@ -48,5 +48,10 @@
     "source": "/getting-started-with-magicbell",
     "destination": "/adding-magicbell-to-your-product",
     "permanent": true
+  },
+  {
+    "source": "/segmented-send",
+    "destination": "/segments-api",
+    "permanent": true
   }
 ]
