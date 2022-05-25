@@ -12,22 +12,28 @@ export default function MenuItem(props: SitemapItem) {
   if (props.hiddenRoute) return null;
 
   if (props.children) return <ParentMenuItem {...props} />;
+
+  if (props.to === '/rest-api/reference' && router.asPath.startsWith('/rest-api')) {
+    return (
+      <>
+        <PageLink {...props} />
+        <OpenAPILinks/>
+      </>
+    );
+  }
+
+  if (props.to === '/graphql-api/reference' && router.asPath.startsWith('/graphql-api')) {
+    return (
+      <>
+        <PageLink {...props} />
+        <GraphqlAPILinks/>
+      </>
+    );
+  }
+
   if (props.to) {
-    if (props.to === '/rest-api/reference' && router.asPath.startsWith('/rest-api'))
-      return (
-        <>
-          <PageLink {...props} />
-          <OpenAPILinks />
-        </>
-      );
-    if (props.to === '/graphql-api/reference' && router.asPath.startsWith('/graphql-api'))
-      return (
-        <>
-          <PageLink {...props} />
-          <GraphqlAPILinks />
-        </>
-      );
     return <PageLink {...props} />;
   }
+
   return null;
 }
