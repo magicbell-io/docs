@@ -6,14 +6,22 @@ export type SitemapItem = {
   to?: string;
   icon?: string;
   children?: SitemapItem[];
+  /**
+   * Static Routes are routes that have a dedicated page file, or point to an external url.
+   * These routes are not "dynamic" next pages, like [...slug].tsx
+   */
   staticRoute?: boolean;
+
+  /**
+   * Hidden routes are urls that need to get indexed, but won't be added to the nav/sidebar
+   */
+  hiddenRoute?: boolean;
 };
 
 export default sitemap as SitemapItem[];
 
 export function getAllChildrenPaths(element: any): string[] {
   if (element.to) return element.to;
-  if (element.hide) return element.hide;
   return reject(isNil, flatten(element.children.map(getAllChildrenPaths)));
 }
 
