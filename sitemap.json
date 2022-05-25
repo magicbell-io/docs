@@ -3,7 +3,7 @@
 		"name": "Hello. We're MagicBell!",
 		"icon": "home",
 		"to": "/",
-		"staticRoute": true
+		"hiddenRoute": true
 	},
 	{
 		"name": "Getting started",
