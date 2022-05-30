@@ -51,7 +51,7 @@
   },
   {
     "source": "/segmented-send",
-    "destination": "/segments-api",
+    "destination": "/segments",
     "permanent": true
   }
 ]
