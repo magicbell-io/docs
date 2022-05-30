@@ -270,17 +270,8 @@
         "to": "/overrides"
       },
       {
-        "name": "Segmentation",
-        "children": [
-          {
-            "name": "Segments (Dashboard)",
-            "to": "/segments"
-          },
-          {
-            "name": "Segments (API)",
-            "to": "/segments-api"
-          }
-        ]
+        "name": "Segments",
+        "to": "/segments"
       },
       {
         "name": "Log",
@@ -292,7 +283,6 @@
       }
     ]
   },
-
   {
     "name": "Changelog",
     "icon": "changelog",
