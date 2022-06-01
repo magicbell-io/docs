@@ -53,5 +53,10 @@
     "source": "/segmented-send",
     "destination": "/segments",
     "permanent": true
+  },
+  {
+    "source": "/smart-notifications",
+    "destination": "/smart-delivery",
+    "permanent": true
   }
 ]
