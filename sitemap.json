@@ -262,8 +262,8 @@
         "to": "/topics"
       },
       {
-        "name": "Smart Notifications",
-        "to": "/smart-notifications"
+        "name": "Smart Delivery",
+        "to": "/smart-delivery"
       },
       {
         "name": "Override content accross channels",
