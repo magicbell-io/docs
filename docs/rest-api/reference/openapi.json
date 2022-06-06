@@ -729,6 +729,96 @@
       }
     },
     "/users/email:{user_email}": {
+      "put": {
+        "operationId": "update-user-by-email",
+        "tags": ["Users APIs"],
+        "summary": "Update a user by email",
+        "description": "Update a user's data. If you identify users by their email addresses, you need to update the MagicBell data, so this user can still access their notifications.",
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_api_secret_header" },
+          {
+            "in": "path",
+            "name": "user_email",
+            "required": true,
+            "schema": { "type": "string", "minimum": 1 }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/WrappedUser" },
+              "example": {
+                "user": {
+                  "external_id": "56780",
+                  "email": "hana@supportbee.com",
+                  "first_name": "Hana",
+                  "last_name": "Mohan",
+                  "custom_attributes": {
+                    "plan": "enterprise",
+                    "pricing_version": "v10",
+                    "preferred_pronoun": "She"
+                  },
+                  "phone_numbers": ["+15005550001"]
+                }
+              }
+            }
+          }
+        },
+          "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WrappedUser" },
+                "example": {
+                  "user": {
+                    "id": "7fb3ce9f-a866-4dff-8ce8-2f64f7c5ed4c",
+                    "external_id": "56780",
+                    "email": "hana@magicbell.io",
+                    "first_name": "Hana",
+                    "last_name": "Mohan",
+                    "custom_attributes": {
+                      "plan": "enterprise",
+                      "pricing_version": "v10",
+                      "preferred_pronoun": "She"
+                    },
+                    "phone_numbers": ["+15005550001"]
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "Param 'notification_preferences.categories' is missing"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "A user with the the given id doesn't exist"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "operationId": "delete-user-by-email",
         "tags": ["Users APIs"],
@@ -764,6 +854,96 @@
       }
     },
     "/users/external_id:{external_id}": {
+      "put": {
+        "operationId": "update-user-by-external-id",
+        "tags": ["Users APIs"],
+        "summary": "Update a user by external ID",
+        "description": "Update a user's data. If you identify users by their email addresses, you need to update the MagicBell data, so this user can still access their notifications.",
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_api_secret_header" },
+          {
+            "in": "path",
+            "name": "external_id",
+            "required": true,
+            "schema": { "type": "string", "minimum": 1 }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/WrappedUser" },
+              "example": {
+                "user": {
+                  "external_id": "56780",
+                  "email": "hana@supportbee.com",
+                  "first_name": "Hana",
+                  "last_name": "Mohan",
+                  "custom_attributes": {
+                    "plan": "enterprise",
+                    "pricing_version": "v10",
+                    "preferred_pronoun": "She"
+                  },
+                  "phone_numbers": ["+15005550001"]
+                }
+              }
+            }
+          }
+        },
+          "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WrappedUser" },
+                "example": {
+                  "user": {
+                    "id": "7fb3ce9f-a866-4dff-8ce8-2f64f7c5ed4c",
+                    "external_id": "56780",
+                    "email": "hana@magicbell.io",
+                    "first_name": "Hana",
+                    "last_name": "Mohan",
+                    "custom_attributes": {
+                      "plan": "enterprise",
+                      "pricing_version": "v10",
+                      "preferred_pronoun": "She"
+                    },
+                    "phone_numbers": ["+15005550001"]
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "Param 'notification_preferences.categories' is missing"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "A user with the the given id doesn't exist"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "operationId": "delete-user-by-external-id",
         "tags": ["Users APIs"],
