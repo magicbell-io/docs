@@ -16,7 +16,7 @@ to download the schema.
 ## Pagination
 
 Our GraphQL API implements [Relay pagination](https://relay.dev/graphql/connections.htm),
-a a cursor based pagination model based on the connection pattern.
+a cursor-based pagination model based on the connection pattern.
 
 - Pagination is done with the `after` argument
 - Slicing is done with the `first` argument
@@ -25,7 +25,7 @@ a a cursor based pagination model based on the connection pattern.
 - Each edge contains a field called `node`
 - A connection also contains a field called `pageInfo`, which contains the pagination data
 
-For example, this query
+For example, this query:
 
 ```graphql
 query {
@@ -75,4 +75,4 @@ produces
 
 ## Rate limiting
 
-The GraphQL API imposes a limit of 200 requests per second by project. If the limit is exceeded, you will get an HTTP 429 Too Many Requests response.
+The GraphQL API imposes a limit of 200 requests per second per project. Requests exceeding this limit will return an HTTP 429 Too Many Requests response.
