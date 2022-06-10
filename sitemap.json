@@ -82,7 +82,7 @@
             "to": "/email/mailgun"
           },
           {
-            "name": "Ping (Webhook)",
+            "name": "Ping",
             "to": "/email/ping"
           },
           {
