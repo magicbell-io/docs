@@ -494,7 +494,6 @@
         }
       }
     },
-
     "/notifications/read": {
       "post": {
         "operationId": "mark-a-users-notification-as-read",
@@ -1088,6 +1087,251 @@
           }
         }
       }
+    },
+    "/workspaces/{workspace_id}/projects": {
+      "post": {
+        "tags": ["Projects management"],
+        "summary": "Create a project in a workspace",
+        "description": "Creates a project in a workspace",
+        "operationId": "create-projects",
+        "parameters": [
+          { "$ref": "#/components/parameters/authorization_header" },
+          { "$ref": "#/components/parameters/workspace_id" }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ProjectBody" },
+              "example": {
+                "project": {
+                  "name": "Project name",
+                  "hmac_enabled": false
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Created project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrappedProject"
+                },
+                "example": {
+                  "project": {
+                    "id": 13,
+                    "name": "Project name",
+                    "hmac_enabled": false,
+                    "api_key": "[API_KEY]",
+                    "api_secret": "[API_SECRET]",
+                    "workspace": {
+                      "id": 8,
+                      "title": "Magicbell's Workspace"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The token is not valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [{ "code": "forbidden" }]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Projects management"],
+        "summary": "List all projects in a workspace",
+        "operationId": "index-projects",
+        "parameters": [
+          { "$ref": "#/components/parameters/authorization_header" },
+          { "$ref": "#/components/parameters/workspace_id" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Projects listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Projects"
+                },
+                "example": {
+                  "projects": [
+                    {
+                      "id": 13,
+                      "name": "Project name",
+                      "hmac_enabled": false,
+                      "api_key": "[API_KEY]",
+                      "api_secret": "[API_SECRET]",
+                      "workspace": {
+                        "id": 8,
+                        "title": "Magicbell's Workspace"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The token is not valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [{ "code": "forbidden" }]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{workspace_id}/projects/{project_id}": {
+      "get": {
+        "tags": ["Projects management"],
+        "summary": "Fetch a project in a workspace",
+        "operationId": "show-projects",
+        "parameters": [
+          { "$ref": "#/components/parameters/authorization_header" },
+          { "$ref": "#/components/parameters/workspace_id" },
+          { "$ref": "#/components/parameters/project_id" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrappedProject"
+                },
+                "example": {
+                  "project": {
+                    "id": 13,
+                    "name": "Project name",
+                    "hmac_enabled": false,
+                    "api_key": "[API_KEY]",
+                    "api_secret": "[API_SECRET]",
+                    "workspace": {
+                      "id": 8,
+                      "title": "Magicbell's Workspace"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The token is not valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [{ "code": "forbidden" }]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Projects management"],
+        "summary": "Update a project in a workspace",
+        "description": "Updates a project in a workspace",
+        "operationId": "update-projects",
+        "parameters": [
+          { "$ref": "#/components/parameters/authorization_header" },
+          { "$ref": "#/components/parameters/workspace_id" },
+          { "$ref": "#/components/parameters/project_id" }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ProjectBody" },
+              "example": {
+                "project": {
+                  "name": "Project name",
+                  "hmac_enabled": false
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WrappedProject"
+                },
+                "example": {
+                  "project": {
+                    "id": 13,
+                    "name": "Project name",
+                    "hmac_enabled": false,
+                    "api_key": "[API_KEY]",
+                    "api_secret": "[API_SECRET]",
+                    "workspace": {
+                      "id": 8,
+                      "title": "Magicbell's Workspace"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The token is not valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [{ "code": "forbidden" }]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Projects management"],
+        "summary": "Delete a project in a workspace",
+        "description": "Deletes a project in a workspace",
+        "operationId": "delete-projects",
+        "parameters": [
+          { "$ref": "#/components/parameters/authorization_header" },
+          { "$ref": "#/components/parameters/workspace_id" },
+          { "$ref": "#/components/parameters/project_id" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted project",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Successfully deleted project 'Project name'"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The token is not valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [{ "code": "forbidden" }]
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1124,12 +1368,33 @@
         "schema": { "type": "string" },
         "description": "HMAC calculated with the API secret and ID, or email, of the user. Required if the project has HMAC enabled."
       },
+      "authorization_header": {
+        "in": "header",
+        "name": "Authorization",
+        "schema": { "type": "string" },
+        "required": true,
+        "description": "The Bearer JWT token of your MagicBell user."
+      },
       "notification_id": {
         "in": "path",
         "name": "notification_id",
         "schema": { "type": "string" },
         "required": true,
         "description": "ID of the user notification.\nThe ID of a user notification can be obtained from the \"Fetch user notifications\" API endpoint or from push events sent to the MagicBell React library.\n"
+      },
+      "workspace_id": {
+        "in": "path",
+        "name": "workspace_id",
+        "description": "ID of the workspace",
+        "required": true,
+        "schema": { "type": "string" }
+      },
+      "project_id": {
+        "in": "path",
+        "name": "project_id",
+        "description": "ID of the project",
+        "required": true,
+        "schema": { "type": "string" }
       }
     },
     "schemas": {
@@ -1373,6 +1638,78 @@
         "type": "object",
         "properties": {
           "notification": { "$ref": "#/components/schemas/Notification" }
+        }
+      },
+      "ProjectBody": {
+        "type": "object",
+        "properties": {
+          "project": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Project Name",
+                "nullable": true,
+                "maxLength": 255
+              },
+              "hmac_enabled": {
+                "type": "boolean",
+                "description": "True when hmac is enabled for a project"
+              }
+            }
+          }
+        }
+      },
+      "Project": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string",
+            "description": "Project Name",
+            "nullable": true,
+            "maxLength": 255
+          },
+          "hmac_enabled": {
+            "type": "boolean",
+            "description": "True when hmac is enabled for a project"
+          },
+          "api_key": {
+            "type": "string",
+            "description": "Project's api_key"
+          },
+          "api_secret": {
+            "type": "string",
+            "description": "Project's api_secret"
+          },
+          "workspace": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "title": {
+                "type": "string",
+                "description": "Workspace's title"
+              }
+            }
+          }
+        }
+      },
+      "Projects": {
+        "type": "object",
+        "properties": {
+          "projects": {
+            "type": "array",
+            "description": "List of all projects in a workspace",
+            "items": { "$ref": "#/components/schemas/Project" }
+          }
+        }
+      },
+      "WrappedProject": {
+        "type": "object",
+        "properties": {
+          "project": { "$ref": "#/components/schemas/Project" }
         }
       },
       "NotificationBroadcast": {

@@ -28,6 +28,9 @@ const TEMPLATE_CONTEXT = {
   x_magicbell_api_secret: '[MAGICBELL_API_SECRET]',
   x_magicbell_user_external_id: '[USER_ID]',
   x_magicbell_user_email: '[USER_EMAIL]',
+  authorization: 'Bearer [TOKEN]',
+  workspace_id: 134,
+  project_id: 419,
 };
 
 export function replaceVariables(codeSnippet: string) {
