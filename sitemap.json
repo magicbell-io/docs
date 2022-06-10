@@ -67,7 +67,7 @@
     "name": "Channels",
     "children": [
       {
-        "name": "All Channels",
+        "name": "Overview",
         "to": "/channels"
       },
       {
@@ -78,20 +78,20 @@
             "to": "/email/overview"
           },
           {
-            "name": "SendGrid",
-            "to": "/email/sendgrid"
-          },
-          {
-            "name": "Postmark",
-            "to": "/email/postmark"
-          },
-          {
             "name": "Mailgun",
             "to": "/email/mailgun"
           },
           {
             "name": "Ping (Webhook)",
             "to": "/email/ping"
+          },
+          {
+            "name": "Postmark",
+            "to": "/email/postmark"
+          },
+          {
+            "name": "SendGrid",
+            "to": "/email/sendgrid"
           }
         ]
       },
