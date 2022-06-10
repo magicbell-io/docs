@@ -74,8 +74,8 @@
         "name": "Email",
         "children": [
           {
-            "name": "Setting up 3rd party email providers",
-            "to": "/email/3rd-party-email-providers"
+            "name": "Overview",
+            "to": "/email/overview"
           },
           {
             "name": "SendGrid",
