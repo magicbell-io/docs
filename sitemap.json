@@ -75,7 +75,7 @@
         "children": [
           {
             "name": "Overview",
-            "to": "/email/overview"
+            "to": "/email"
           },
           {
             "name": "Mailgun",

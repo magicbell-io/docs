@@ -26,12 +26,7 @@
   },
   {
     "source": "/enabling-email-delivery",
-    "destination": "/email/overview",
-    "permanent": true
-  },
-  {
-    "source": "/customizing-notifications-using-email-headers",
-    "destination": "/email/customizing-notifications-using-email-headers",
+    "destination": "/email",
     "permanent": true
   },
   {
@@ -56,7 +51,7 @@
   },
   {
     "source": "/email/3rd-party-email-providers",
-    "destination": "/email/overview",
+    "destination": "/email",
     "permanent": true
   }
 ]
