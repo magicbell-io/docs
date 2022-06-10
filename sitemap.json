@@ -67,31 +67,53 @@
     "name": "Channels",
     "children": [
       {
-        "name": "All Channels",
+        "name": "Overview",
         "to": "/channels"
       },
       {
         "name": "Email",
         "children": [
           {
-            "name": "Setting up 3rd party email providers",
-            "to": "/email/3rd-party-email-providers"
-          },
-          {
-            "name": "SendGrid",
-            "to": "/email/sendgrid"
-          },
-          {
-            "name": "Postmark",
-            "to": "/email/postmark"
+            "name": "Overview",
+            "to": "/email"
           },
           {
             "name": "Mailgun",
             "to": "/email/mailgun"
           },
           {
-            "name": "Ping (Webhook)",
+            "name": "Ping",
             "to": "/email/ping"
+          },
+          {
+            "name": "Postmark",
+            "to": "/email/postmark"
+          },
+          {
+            "name": "SendGrid",
+            "to": "/email/sendgrid"
+          }
+        ]
+      },
+      {
+        "name": "Push",
+        "children": [
+          {
+            "name": "Mobile Push",
+            "children": [
+              {
+                "name": "Overview",
+                "to": "/mobile-push"
+              },
+              {
+                "name": "iOS (APNs)",
+                "to": "/mobile-push/ios"
+              },
+              {
+                "name": "Android (Firebase)",
+                "to": "/mobile-push/android"
+              }
+            ]
           }
         ]
       },
@@ -118,23 +140,6 @@
           {
             "name": "Twilio",
             "to": "/sms/twilio"
-          }
-        ]
-      },
-      {
-        "name": "Mobile-Push",
-        "children": [
-          {
-            "name": "Getting started",
-            "to": "/mobile-push"
-          },
-          {
-            "name": "iOS (APNS)",
-            "to": "/mobile-push/ios"
-          },
-          {
-            "name": "Android (Firebase)",
-            "to": "/mobile-push/android"
           }
         ]
       }
