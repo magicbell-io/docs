@@ -5,11 +5,21 @@ subtitle: How to use SendGrid with MagicBell
 
 ## Deliver email notifications with your SendGrid account
 
-To have SendGrid configured for your MagicBell project, follow these steps:
+To configure SendGrid for your MagicBell project, follow these steps:
 
-- Sign up for SendGrid and obtain an API key. It must have full access to the Mail Send endpoint.
-- Send us your API key and your verified sender identity (email address) (encrypt it with our [public PGP key](/docs/uploads/magicbell-support.key)).
-- Verify the email channel in MagicBell is enabled
+1. Sign up for [SendGrid](https://signup.sendgrid.com/) and [obtain an API key](https://docs.sendgrid.com/ui/account-and-settings/api-keys). It must have full access to the [`Mail Send` endpoint](https://docs.sendgrid.com/api-reference/mail-send/mail-send).
+1. From the **Channels** page in your Dashboard, click the ⚙ icon next to **Email** to access Email Channel Settings.
+1. Under **SendGrid**, enable the provider and enter the API key from step 1 then click **Save**.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/email_sendgrid.gif"
+  style={{ width: '100%', height: 'intrinsic' }}
+/>
+
+<Note>
+You can optionally configure a custom from/reply to email address (verified sender identity) and name.
+</Note>
 
 Once your account is set up, MagicBell will automatically deliver email
 notifications through your SendGrid account, **no additional work is needed**. You will
@@ -18,9 +28,9 @@ to view your activity.
 
 ## Sending emails with additional or unique content
 
-Our [create notifications endpoint](https://magicbell.com/docs/rest-api/reference#create-notification)
+Our [create notifications endpoint](/docs/rest-api/reference#create-notification)
 allows you to customize the content sent to SendGrid by setting
-[`notification.overrides`](https://magicbell.com/docs/overrides).
+[`notification.overrides`](/docs/overrides).
 
 The `notification.overrides` parameter accepts all of the [SendGrid's Web API](https://docs.sendgrid.com/api-reference/mail-send/mail-send)
 body parameters.
