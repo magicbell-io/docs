@@ -96,6 +96,28 @@
         ]
       },
       {
+        "name": "Push",
+        "children": [
+          {
+            "name": "Mobile Push",
+            "children": [
+              {
+                "name": "Overview",
+                "to": "/mobile-push"
+              },
+              {
+                "name": "iOS (APNs)",
+                "to": "/mobile-push/ios"
+              },
+              {
+                "name": "Android (Firebase)",
+                "to": "/mobile-push/android"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "Slack",
         "children": [
           {
@@ -118,23 +140,6 @@
           {
             "name": "Twilio",
             "to": "/sms/twilio"
-          }
-        ]
-      },
-      {
-        "name": "Mobile-Push",
-        "children": [
-          {
-            "name": "Getting started",
-            "to": "/mobile-push"
-          },
-          {
-            "name": "iOS (APNS)",
-            "to": "/mobile-push/ios"
-          },
-          {
-            "name": "Android (Firebase)",
-            "to": "/mobile-push/android"
           }
         ]
       }
