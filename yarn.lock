@@ -1886,6 +1886,14 @@
     tinycolor2 "^1.4.2"
     tslib "^2.1.0"
 
+"@magicbell/support-widget@git+https://github.com/magicbell-io/support-widget":
+  version "0.1.0"
+  resolved "git+https://github.com/magicbell-io/support-widget#afabb42bb8d3a24cac74067aaa50154d14765616"
+  dependencies:
+    botz "^1.1.0"
+    tiny-invariant "^1.2.0"
+    tiny-warning "^1.0.3"
+
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.22.tgz#8a723157bf90e78f17dc0f27995398e6c731f1ba"
@@ -3142,6 +3150,11 @@ bops@^1.0.1:
   dependencies:
     base64-js "1.0.2"
     to-utf8 "0.0.1"
+
+botz@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/botz/-/botz-1.1.0.tgz#68bf8fc9f134388db022acb0ac08370ac42f25c6"
+  integrity sha512-myVez5rQV6U201zi8u42W68TzC7vQZQ30XMP5WPvdiskCOYbZdDrpDbNbEf9LfEFYA6NsC/7jjreaedr6NiyRQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -8786,11 +8799,6 @@ react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-live-chat-loader@^2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/react-live-chat-loader/-/react-live-chat-loader-2.7.3.tgz#a66a7d64eacdf0a680570b4e9a99639a88bffaae"
-  integrity sha512-VviVqnF3PYDBJ77JiPZv4cpulx806L22WfsIQxvlxlEWmzKNp/0lEs57uP6EJcE+d1jQwGcR9DIsj5qouE6OkA==
-
 react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
@@ -10082,7 +10090,12 @@ timers-browserify@2.0.12, timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tiny-warning@^1.0.2:
+tiny-invariant@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.2.0.tgz#a1141f86b672a9148c72e978a19a73b9b94a15a9"
+  integrity sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==
+
+tiny-warning@^1.0.2, tiny-warning@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==

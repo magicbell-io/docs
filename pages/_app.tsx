@@ -1,7 +1,6 @@
 // @ts-ignore
 import { MDXProvider } from '@mdx-js/react';
 import type { AppProps } from 'next/app';
-import { Intercom, LiveChatLoaderProvider } from 'react-live-chat-loader';
 import Callout from '../src/components/Callout';
 import Card from '../src/components/Card';
 import HighlightedCode from '../src/components/code/HighlightedCode';
@@ -11,6 +10,8 @@ import Table from '../src/components/Table';
 import Tabs from '../src/components/tabs/Tabs';
 import '../styles/globals.css';
 import '../styles/material.css';
+import 'botz/styles.css';
+import { SupportWidget } from '@magicbell/support-widget';
 
 const NotificationInboxPreview = dynamic(
   import('../src/components/magicbell/NotificationInboxPreview'),
@@ -33,9 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <MDXProvider components={components}>
         <Component {...pageProps} />
       </MDXProvider>
-      <LiveChatLoaderProvider provider="intercom" providerKey="d0f6dew9">
-        <Intercom color="rgb(82, 37, 193)" />
-      </LiveChatLoaderProvider>
+      <SupportWidget />
     </>
   );
 }
