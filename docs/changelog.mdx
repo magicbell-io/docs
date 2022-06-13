@@ -9,6 +9,32 @@ subtitle: The latest releases and improvements to MagicBell
   <a href="https://twitter.com/magicbell_io">Twitter</a>!
 </Note>
 
+## June 13, 2022
+
+### Configure Channel Integrations in the Dashboard
+
+MagicBell supports powerful integrations with third-party providers to deliver notifications to your users through the platforms of your choice. You can now enable and configure providers for Email, Web and Mobile Push, and SMS channels directly from your Dashboard without reaching out to our support team. Check out our configuration guides for step-by-step instructions:
+
+- [Mailgun](/docs/email/mailgun)
+- [Ping Email Provider](/docs/email/ping)
+- [Postmark](/docs/email/postmark)
+- [SendGrid](/docs/email/sendgrid)
+- [iOS Mobile Push](/docs/mobile-push/ios)
+- [Twilio](/docs/sms/twilio)
+
+### Projects API
+
+Our new [Projects API](/docs/rest-api/reference#create-projects) enables you to manage your MagicBell projects programmatically. The API consumes your MagicBell user's JWT token for authentication and your workspace ID. Both of these will be exposed in the Dashboard soon — for now, get in touch with us, and we'll provide them for you.
+
+### Other Updates
+
+- The number of monthly active users (MAU) for the last 30 days is now shown on the workspace billing page, allowing you to keep track of your usage.
+- Version  `9.1.1` of our React package fixes an issue with infinite scroll in the Notification Inbox.
+- Fixed various issues in our React packages related to synchronization issues when using multiple stores.
+- Our React packages now provide better events about the state change of the real-time connection.
+- Matches in the [create notifications API](/docs/rest-api/reference#create-notification) now support spaces and case-insensitive search.
+
+
 ## May 23, 2022
 
 ### Segments
