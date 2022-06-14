@@ -8,8 +8,8 @@ interface Props {
     content: string;
     slug: string;
     _highlightResult?: {
-      title: { value: string };
-      content: { value: string };
+      title?: { value?: string };
+      content?: { value?: string };
     };
     _snippetResult?: Record<string, unknown> | undefined;
     _distinctSeqID?: number | undefined;
