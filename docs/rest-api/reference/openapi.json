@@ -1272,7 +1272,7 @@
       "post": {
         "tags": ["Projects management"],
         "summary": "Create a project in a workspace",
-        "description": "Creates a project in a workspace",
+        "description": "Creates a project in a workspace.\n\nThis feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
         "operationId": "create-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
@@ -1378,6 +1378,7 @@
       "get": {
         "tags": ["Projects management"],
         "summary": "Fetch a project in a workspace",
+        "description": "This feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
         "operationId": "get-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
@@ -1423,7 +1424,7 @@
       "put": {
         "tags": ["Projects management"],
         "summary": "Update a project in a workspace",
-        "description": "Updates a project in a workspace",
+        "description": "Updates a project in a workspace.\n\nThis feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
         "operationId": "update-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
@@ -1482,7 +1483,7 @@
       "delete": {
         "tags": ["Projects management"],
         "summary": "Delete a project in a workspace",
-        "description": "Deletes a project in a workspace",
+        "description": "Deletes a project in a workspace.\n\nThis feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
         "operationId": "delete-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
