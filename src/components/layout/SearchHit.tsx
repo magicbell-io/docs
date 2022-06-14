@@ -26,11 +26,11 @@ export default function SearchHit({ hit }: Props) {
       <article className="px-8 py-4 text-white hover:bg-gray-700 cursor-pointer">
         <p
           className="m-0"
-          dangerouslySetInnerHTML={{ __html: _highlightResult?.title.value || '' }}
+          dangerouslySetInnerHTML={{ __html: _highlightResult?.title?.value || '' }}
         />
         <div
           className="m-0 text-gray-400 truncate text-sm"
-          dangerouslySetInnerHTML={{ __html: _highlightResult?.content.value || '' }}
+          dangerouslySetInnerHTML={{ __html: _highlightResult?.content?.value || '' }}
         />
       </article>
     </Link>
