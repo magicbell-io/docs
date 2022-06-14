@@ -2,33 +2,56 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-1. Clone the repo
+1. Install Node.js v14.17.4
+
+2. Clone the repo
 
    ```bash
    git clone git@github.com:magicbell-io/docs.git magicbell-docs
    ```
 
-2. Navigate into the newly created directory
+3. Navigate into the newly created directory
 
 ```bash
 cd magicbell-docs
 ```
 
-3. Install the dependencies
+4. Install the dependencies
 
    ```bash
    yarn install
    ```
 
-4. Start your development server:
+5. Start your development server:
 
    ```bash
    yarn dev
    ```
 
-5. Open [http://localhost:3000/docs](http://localhost:3000/docs) with your browser to see the result.
+6. Open [http://localhost:3000/docs](http://localhost:3000/docs) with your browser to see the result.
 
 The `docs` directory contains all entries for the site.
+
+### Adding docs
+
+Pages in the `docs` directory must be added to `sitemap.json` to be indexed for search and rendered. Doing so, by default, also adds items to the left sidebar navigation tree. This isn't always desirable, so you can hide items with `"hiddenRoute": true`:
+
+```json
+{
+  "name": "indirect links not shown in the sidebar",
+  "hiddenRoute": true,
+  "children": [
+    {
+      "name": "some page",
+      "to": "/page-1"
+    },
+    {
+      "name": "another page",
+      "to": "/page-2"
+    }
+  ]
+}
+```
 
 ## Learn More
 
@@ -41,7 +64,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Heroku
 
-Configure your heroku CLI and run:
+Configure your Heroku CLI and run:
 
 ```
 heroku git:remote -a magicbell-docs
