@@ -764,7 +764,7 @@
             }
           }
         },
-          "responses": {
+        "responses": {
           "200": {
             "description": "OK",
             "content": {
@@ -889,7 +889,7 @@
             }
           }
         },
-          "responses": {
+        "responses": {
           "200": {
             "description": "OK",
             "content": {
@@ -1272,8 +1272,8 @@
       "post": {
         "tags": ["Projects management"],
         "summary": "Create a project in a workspace",
-        "description": "Creates a project in a workspace",
-        "operationId": "create-projects",
+        "description": "Creates a project in a workspace.\n\nThis feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
+        "operationId": "create-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
           { "$ref": "#/components/parameters/workspace_id" }
@@ -1329,8 +1329,8 @@
       },
       "get": {
         "tags": ["Projects management"],
-        "summary": "List all projects in a workspace",
-        "operationId": "index-projects",
+        "summary": "Fetch all projects in a workspace",
+        "operationId": "get-projects",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
           { "$ref": "#/components/parameters/workspace_id" }
@@ -1378,7 +1378,8 @@
       "get": {
         "tags": ["Projects management"],
         "summary": "Fetch a project in a workspace",
-        "operationId": "show-projects",
+        "description": "This feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
+        "operationId": "get-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
           { "$ref": "#/components/parameters/workspace_id" },
@@ -1423,8 +1424,8 @@
       "put": {
         "tags": ["Projects management"],
         "summary": "Update a project in a workspace",
-        "description": "Updates a project in a workspace",
-        "operationId": "update-projects",
+        "description": "Updates a project in a workspace.\n\nThis feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
+        "operationId": "update-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
           { "$ref": "#/components/parameters/workspace_id" },
@@ -1482,8 +1483,8 @@
       "delete": {
         "tags": ["Projects management"],
         "summary": "Delete a project in a workspace",
-        "description": "Deletes a project in a workspace",
-        "operationId": "delete-projects",
+        "description": "Deletes a project in a workspace.\n\nThis feature is available to <a href=\"https://www.magicbell.com/pricing\">Enterprise customers</a> — get in touch with us, and we'll provide the credentials for you.",
+        "operationId": "delete-project",
         "parameters": [
           { "$ref": "#/components/parameters/authorization_header" },
           { "$ref": "#/components/parameters/workspace_id" },
