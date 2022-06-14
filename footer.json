@@ -30,6 +30,10 @@
     {
       "displayText": "Service Status",
       "url": "https://status.magicbell.com/"
+    },
+    {
+      "displayText": "Playground",
+      "url": "https://playground.magicbell.com/react"
     }
   ],
   "resourcesLinks": [
@@ -51,7 +55,7 @@
     { "displayText": "SDKs & API wrappers", "url": "/libraries-api-wrappers" },
     {
       "displayText": "Join our Slack community",
-      "url": "https://join.slack.com/t/magicbell-community/shared_invite/zt-trh6yi84-~jtPqNikvC1m3My_p0WUqw"
+      "url": "http://magicbell.community"
     }
   ]
 }
