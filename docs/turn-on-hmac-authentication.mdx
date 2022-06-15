@@ -29,7 +29,7 @@ Use your MagicBell project's API secret to compute an HMAC code of the user's em
 ### Using an email address
 
 <Note>
-When using an email address, the email address <strong>MUST</strong> be lowercase.
+  When using an email address, the email address <strong>MUST</strong> be lowercase.
 </Note>
 
 <Tabs>
@@ -130,7 +130,7 @@ class MagicBellAuth {
 
 class Main {
   public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException {
-    String hmac = MagicBellAuth.calculateHMAC("<external_id>", "MAGICBELL_API_SECRET");
+    String hmac = MagicBellAuth.calculateHMAC("USER_EXTERNAL_ID", "MAGICBELL_API_SECRET");
     System.out.println(hmac);
   }
 }
@@ -140,7 +140,9 @@ class Main {
 import Base64 from 'crypto-js/enc-base64';
 import hmacSHA256 from 'crypto-js/hmac-sha256';
 
-const userExternalIDHMAC = Base64.stringify(hmacSHA256(userExternalID, MAGICBELL_API_SECRET));
+const userExternalIDHMAC = Base64.stringify(
+  hmacSHA256(userExternalID, MAGICBELL_API_SECRET),
+);
 ```
 
 ```php title=PHP hideHeader noTopBorderRadius
@@ -199,7 +201,7 @@ import MagicBell, { FloatingNotificationInbox } from "@magicbell/magicbell-react
 
 export default function Notifications() {
   return (
-    <MagicBell apiKey="MAGICBELL_API_KEY" userExternalID="<external_id>" userKey="userExternalIDHmac">
+    <MagicBell apiKey="MAGICBELL_API_KEY" userExternalID="USER_EXTERNAL_ID" userKey="userExternalIDHmac">
       {(props) => <FloatingNotificationInbox height={500} {...props} />}
     </MagicBell>
   );
@@ -212,7 +214,7 @@ export default function Notifications() {
   // Other initialization code...
   var options = {
     apiKey: 'MAGICBELL_API_KEY',
-    userExternalID: '<external_id>',
+    userExternalID: 'USER_EXTERNAL_ID',
     userKey: userExternalIDHmac,
   };
 
