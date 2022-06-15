@@ -53,5 +53,10 @@
     "source": "/email/3rd-party-email-providers",
     "destination": "/email",
     "permanent": true
+  },
+  {
+    "source": "/turn-on-hmac-authentication",
+    "destination": "/hmac-authentication",
+    "permanent": true
   }
 ]
