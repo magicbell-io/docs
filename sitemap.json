@@ -157,7 +157,7 @@
           },
           {
             "name": "HMAC authentication",
-            "to": "/turn-on-hmac-authentication"
+            "to": "/hmac-authentication"
           },
           {
             "name": "React",
