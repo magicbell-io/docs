@@ -99,6 +99,10 @@
         "name": "Push",
         "children": [
           {
+            "name": "Web Push",
+            "to": "/web-push"
+          },
+          {
             "name": "Mobile Push",
             "children": [
               {
