@@ -110,7 +110,7 @@
                 "to": "/mobile-push/ios"
               },
               {
-                "name": "Android (Firebase)",
+                "name": "Android (FCM)",
                 "to": "/mobile-push/android"
               }
             ]
