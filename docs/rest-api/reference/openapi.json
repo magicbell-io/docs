@@ -695,7 +695,7 @@
         "operationId": "delete-user",
         "tags": ["Users APIs"],
         "summary": "Delete a user",
-        "description": "Sets a user to be deleted within 7 days.\n\nIf the user makes a request to the API within that period, the deletion will be canceled. For example, when the notification inbox for this user is loaded in your app, the user will be reinstated.",
+        "description": "Immediately deletes a user.",
         "parameters": [
           { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
           { "$ref": "#/components/parameters/x_magicbell_api_secret_header" },
@@ -820,7 +820,7 @@
         "operationId": "delete-user-by-email",
         "tags": ["Users APIs"],
         "summary": "Delete a user by email",
-        "description": "Sets a user to be deleted within 7 days.\n\nIf the user makes a request to the API within that period, the deletion will be canceled. For example, when the notification inbox for this user is loaded in your app, the user will be reinstated.",
+        "description": "Immediately deletes a user.",
         "parameters": [
           { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
           { "$ref": "#/components/parameters/x_magicbell_api_secret_header" },
@@ -944,7 +944,7 @@
         "operationId": "delete-user-by-external-id",
         "tags": ["Users APIs"],
         "summary": "Delete a user by external ID",
-        "description": "Sets a user to be deleted within 7 days.\n\nIf the user makes a request to the API within that period, the deletion will be canceled. For example, when the notification inbox for this user is loaded in your app, the user will be reinstated.",
+        "description": "Immediately deletes a user.",
         "parameters": [
           { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
           { "$ref": "#/components/parameters/x_magicbell_api_secret_header" },
