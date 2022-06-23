@@ -99,6 +99,19 @@
         "name": "Push",
         "children": [
           {
+            "name": "Web Push",
+            "children": [
+              {
+                "name": "Overview",
+                "to": "/web-push"
+              },
+              {
+                "name": "Safari APNs",
+                "to": "/web-push/safari"
+              }
+            ]
+          },
+          {
             "name": "Mobile Push",
             "children": [
               {
