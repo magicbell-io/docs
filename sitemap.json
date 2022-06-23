@@ -106,7 +106,7 @@
                 "to": "/web-push"
               },
               {
-                "name": "Safari APNs",
+                "name": "Safari",
                 "to": "/web-push/safari"
               }
             ]
