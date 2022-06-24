@@ -32,10 +32,14 @@
                     { "email": "dan@example.com" },
                     {
                       "external_id": "83d987a-83fd034",
-                      "first_name": "John",
+                      "first_name": "Hana",
+                      "last_name": "Mohan",
                       "custom_attributes": {
-                        "plan": "enterprise"
-                      }
+                        "plan": "enterprise",
+                        "pricing_version": "v10",
+                        "preferred_pronoun": "She"
+                      },
+                      "phone_numbers": ["+15005550001"]
                     },
                     { "matches": "custom_attributes.order.id = 88492" }
                   ],
