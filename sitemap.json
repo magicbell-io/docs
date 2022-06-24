@@ -100,24 +100,32 @@
         ]
       },
       {
-        "name": "Push",
+        "name": "Web Push",
         "children": [
           {
-            "name": "Mobile Push",
-            "children": [
-              {
-                "name": "Overview",
-                "to": "/mobile-push"
-              },
-              {
-                "name": "iOS (APNs)",
-                "to": "/mobile-push/ios"
-              },
-              {
-                "name": "Android (FCM)",
-                "to": "/mobile-push/android"
-              }
-            ]
+            "name": "Overview",
+            "to": "/web-push"
+          },
+          {
+            "name": "Safari",
+            "to": "/web-push/safari"
+          }
+        ]
+      },
+      {
+        "name": "Mobile Push",
+        "children": [
+          {
+            "name": "Overview",
+            "to": "/mobile-push"
+          },
+          {
+            "name": "iOS (APNs)",
+            "to": "/mobile-push/ios"
+          },
+          {
+            "name": "Android (FCM)",
+            "to": "/mobile-push/android"
           }
         ]
       },
