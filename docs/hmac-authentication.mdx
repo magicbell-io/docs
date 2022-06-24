@@ -92,6 +92,8 @@ $hmac = base64_encode(hex2bin($hexHash));
 
 ### Using an external ID
 
+<Note>If you use an integer to identify users, remember to cast it to a string.</Note>
+
 <Tabs>
 
 ```node title=NODE hideHeader noTopBorderRadius
@@ -130,7 +132,7 @@ class MagicBellAuth {
 
 class Main {
   public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException {
-    String hmac = MagicBellAuth.calculateHMAC("USER_EXTERNAL_ID", "MAGICBELL_API_SECRET");
+    String hmac = MagicBellAuth.calculateHMAC("[USER_EXTERNAL_ID]", "MAGICBELL_API_SECRET");
     System.out.println(hmac);
   }
 }
@@ -156,9 +158,13 @@ $hmac = base64_encode(hex2bin($hexHash));
 
 Next, provide the HMAC code in the `userKey` property.
 
-You still need to set your API key and the user's email or id when initializing MagicBell's notification inbox.
+You still need to set your API key and the user's email or external ID when initializing MagicBell's notification inbox.
 
 ### Using an email address
+
+<Note>
+  When using an email address, the email address <strong>MUST</strong> be lowercase.
+</Note>
 
 <Tabs>
 
@@ -168,7 +174,7 @@ import MagicBell, { FloatingNotificationInbox } from "@magicbell/magicbell-react
 
 export default function Notifications() {
   return (
-    <MagicBell apiKey="MAGICBELL_API_KEY" userEmail="mary@example.com" userKey="userEmailHmac">
+    <MagicBell apiKey="MAGICBELL_API_KEY" userEmail="mary@example.com" userKey="[HMAC_CODE]">
       {(props) => <FloatingNotificationInbox height={500} {...props} />}
     </MagicBell>
   );
@@ -182,7 +188,7 @@ export default function Notifications() {
   var options = {
     apiKey: 'MAGICBELL_API_KEY',
     userEmail: 'mary@example.com',
-    userKey: userEmailHmac,
+    userKey: '[HMAC_CODE]',
   };
 
   magicbell('render', target, options);
@@ -193,6 +199,8 @@ export default function Notifications() {
 
 ### Using an external ID
 
+<Note>If you use an integer to identify users, remember to cast it to a string.</Note>
+
 <Tabs>
 
 ```jsx title=REACT hideHeader noTopBorderRadius
@@ -201,7 +209,7 @@ import MagicBell, { FloatingNotificationInbox } from "@magicbell/magicbell-react
 
 export default function Notifications() {
   return (
-    <MagicBell apiKey="MAGICBELL_API_KEY" userExternalID="USER_EXTERNAL_ID" userKey="userExternalIDHmac">
+    <MagicBell apiKey="MAGICBELL_API_KEY" userExternalID="[USER_EXTERNAL_ID]" userKey="[HMAC_CODE]">
       {(props) => <FloatingNotificationInbox height={500} {...props} />}
     </MagicBell>
   );
@@ -215,7 +223,7 @@ export default function Notifications() {
   var options = {
     apiKey: 'MAGICBELL_API_KEY',
     userExternalID: 'USER_EXTERNAL_ID',
-    userKey: userExternalIDHmac,
+    userKey: '[HMAC_CODE]',
   };
 
   magicbell('render', target, options);
