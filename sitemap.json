@@ -92,6 +92,10 @@
           {
             "name": "SendGrid",
             "to": "/email/sendgrid"
+          },
+          {
+            "name": "Amazon SES",
+            "to": "/email/amazon-ses"
           }
         ]
       },
