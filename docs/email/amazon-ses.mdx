@@ -17,7 +17,13 @@ To configure Amazon SES for your MagicBell project, follow these steps:
   style={{ width: '100%', height: 'intrinsic' }}
 />
 
-<Note>You can optionally configure a custom from email address.</Note>
+<Note>
+  You can optionally configure a custom from email address — make sure it's{' '}
+  <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#just-verify-email-proc">
+    verified in Amazon SES
+  </a>
+  .
+</Note>
 
 Once your account is set up, MagicBell will automatically deliver email notifications through your Amazon SES account, **no additional work is needed**.
 
