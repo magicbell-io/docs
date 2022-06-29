@@ -45,9 +45,9 @@ export function buildQueryField(
   const { ofType } = field.type;
   let nestedFields = {} as Record<string, any>;
 
-  if (ofType && !isScalarType(ofType)) {
+  if (ofType && !isScalarType(ofType) && typeof ofType.getFields === 'function') {
     nestedFields = ofType.getFields();
-  } else if (isObjectType(field.type)) {
+  } else if (isObjectType(field.type) && typeof field.type.getFields === 'function') {
     nestedFields = field.type.getFields();
   }
 
