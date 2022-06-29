@@ -17,9 +17,7 @@ To configure Mailgun for your MagicBell project, follow these steps:
   style={{ width: '100%', height: 'intrinsic' }}
 />
 
-<Note>
-You can optionally configure a custom from email address and name.
-</Note>
+<Note>You can optionally configure a custom from email address and name.</Note>
 
 Once your account is set up, MagicBell will automatically deliver email notifications through your Mailgun account, **no
 additional work is needed**.
@@ -27,7 +25,7 @@ additional work is needed**.
 ## Sending emails with additional or unique content
 
 Our [create notifications endpoint](/docs/rest-api/reference#create-notification)
-allows you to customize the content sent to Postmark by setting
+allows you to customize the content sent to Mailgun by setting
 [`notification.overrides`](/docs/overrides).
 
 The `notification.overrides` parameter accepts all of the [Mailgun's Messages API](https://documentation.mailgun.com/en/latest/api-sending.html#sending)
@@ -59,7 +57,7 @@ Below is an example of a tagged message with custom headers.
 
 ## Using Mailgun email templates
 
-MagicBell can deliver email notifications using Mailgun email templates.
+In addition to our own [email templates](/docs/templates), MagicBell can deliver email notifications using Mailgun's.
 
 Create a template in Mailgun, and grab its ID. Then create a notification with the `template` attribute set in
 `notification.overrides.providers.mailgun`. MagicBell will use `custom_attributes` to fill in your template.
