@@ -18,7 +18,8 @@ To configure SendGrid for your MagicBell project, follow these steps:
 />
 
 <Note>
-You can optionally configure a custom from/reply to email address (verified sender identity) and name.
+  You can optionally configure a custom from/reply to email address (verified sender
+  identity) and name.
 </Note>
 
 Once your account is set up, MagicBell will automatically deliver email
@@ -62,7 +63,7 @@ Below you can see how to send an email notification with custom headers.
 
 ## Using SendGrid email templates
 
-MagicBell can deliver email notifications using SendGrid email templates.
+In addition to our own [email templates](/docs/templates.mdx), MagicBell can deliver email notifications using SendGrid's.
 
 Create a template in SendGrid, and grab its ID. Then create a notification with
 the `template_id` attribute set in `notification.overrides.providers.sendgrid` when creating
