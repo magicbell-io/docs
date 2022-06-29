@@ -57,7 +57,7 @@ Below is an example of a tagged message with custom headers.
 
 ## Using Mailgun email templates
 
-In addition to our own [email templates](/docs/templates.mdx), MagicBell can deliver email notifications using Mailgun's.
+In addition to our own [email templates](/docs/templates), MagicBell can deliver email notifications using Mailgun's.
 
 Create a template in Mailgun, and grab its ID. Then create a notification with the `template` attribute set in
 `notification.overrides.providers.mailgun`. MagicBell will use `custom_attributes` to fill in your template.
