@@ -291,6 +291,10 @@
         "to": "/segments"
       },
       {
+        "name": "Subscriptions",
+        "to": "/subscriptions"
+      },
+      {
         "name": "Log",
         "to": "/log"
       },

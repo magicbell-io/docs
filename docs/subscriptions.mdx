@@ -1,0 +1,29 @@
+---
+title: Subscriptions
+subtitle: Learn how to make use of subscriptions
+---
+
+There are times when you'd like to send notifications to users that would like to receive them, rather than everybody. An example of this could be your changelog, or someone that has an interest in a specific topic.
+
+### Concepts
+
+- User (or recipients): The actual recipient of the notification.
+- Subscription: An entity (with a topic) that a user can subscribe to.
+- Topic Subscription: The link between the user and the subscription, indicating whether a user is subscribed or unsubscribed.
+
+### An example
+
+1. Joe would like to receive all notifications related to support tickets in the system.
+2. Joe goes into the system and subscribes to the topic of 'support-ticket'
+3. When a notification is sent via MagicBell with any topic for which 'support-ticket' is a substring of the topic Joe will be notified.
+4. Joe then sees that `support-ticket-1234` is being handled by one of his peers and due to the constant back and forward decides he no longer wants to be notified about these.
+5. Joe unsubscribes from `support-ticket-1234` and stops receiving notifications for it.
+
+### How this all works
+
+The backend system creates the topic via the API. When the user clicks the subscribe button a topic subscription record is created with the status of subscribed. Whenever the topic is used in a notification the user will receive the notification.
+
+### Gotchas
+
+Unusubscribe **ALWAYS** wins. If a user is unsubscribed from a topic, they will not receive a notification, even if they are explicitly specified as a recipient.
+A notification **REQUIRES** at least one recipient.
