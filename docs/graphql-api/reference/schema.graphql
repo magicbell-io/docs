@@ -1,5 +1,6 @@
 schema {
   query: Query
+  mutation: Mutation
 }
 
 scalar JSON
@@ -144,6 +145,11 @@ type Query {
     """
     last: Int
   ): SubscriptionsConnection @adminRequired
+}
+
+type Mutation {
+  " TODO: THIS IS A LIE, REPLACE ME!!!! "
+  createSubscription(input: CreateSubscriptionInput!): CreateSubscriptionPayload!
 }
 
 """
