@@ -29,6 +29,16 @@ Once your account is set up, MagicBell will automatically deliver email notifica
 
 ## Sending emails with additional or unique content
 
+<Note>
+  At this time, our Amazon SES integration does not support overrides. If this is
+  something you'd like to use, please{' '}
+  <a href="https://roadmap.magicbell.community/b/bug-reports/amazon-ses-integration-does-not-support-overrides/">
+    let us know
+  </a>{' '}
+  and we'll be happy to consider adding support for it.
+</Note>
+
+<!-- 
 Our [create notification endpoint](/docs/rest-api/reference#create-notification) allows you to customize the content sent to Amazon SES by setting [`notification.overrides`](/docs/overrides).
 
 The `notification.overrides` parameter accepts all of [Amazon SES's SendEmail API](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_SendEmail.html) body parameters.
@@ -121,3 +131,4 @@ curl https://api.magicbell.com/notifications \
 </Tabs>
 
 Keep in mind that the content of the notification is ignored when you use a template. Sending will use the template content instead.
+-->
