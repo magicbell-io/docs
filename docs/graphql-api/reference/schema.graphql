@@ -165,6 +165,14 @@ type Mutation {
   Delete a subscription record that belong to your project.
   """
   deleteSubscription(input: DeleteSubscriptionInput!): DeleteSubscriptionPayload
+  """
+  Update a user's subscription status to a topic
+  """
+  updateUserSubscription(input: UpdateUserSubscriptionInput!): UpdateUserSubscriptionPayload
+  """
+  Delete a user's subscription to a topic
+  """
+  deleteUserSubscription(input: DeleteUserSubscriptionInput!): DeleteUserSubscriptionPayload
 }
 
 input CreateSubscriptionInput {
@@ -182,6 +190,19 @@ input UpdateSubscriptionInput {
   label: String
   slug: String
   topic: String
+}
+
+input DeleteUserSubscriptionInput {
+  email: String
+  externalId: String
+  subscription: String
+}
+
+input UpdateUserSubscriptionInput {
+  email: String
+  externalId: String
+  subscribed: Boolean
+  subscription: String
 }
 
 type PageInfo {
@@ -261,6 +282,12 @@ type Subscription {
   label: String
   slug: String!
   topic: String!
+}
+
+type UserSubscription {
+  subscribed: Boolean
+  subscription: Subscription
+  user: User
 }
 
 type UsersConnection {
@@ -403,4 +430,14 @@ type UpdateSubscriptionPayload {
 type DeleteSubscriptionPayload {
   errors: [ValidationError!]
   subscription: Subscription
+}
+
+type DeleteUserSubscriptionPayload {
+  errors: [ValidationError!]
+  userSubscription: UserSubscription
+}
+
+type UpdateUserSubscriptionPayload {
+  errors: [ValidationError!]
+  userSubscription: UserSubscription
 }
