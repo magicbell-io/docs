@@ -318,6 +318,7 @@ type User {
   customAttributes: JSON
   phoneNumbers: JSON
   notifications: NotificationsConnection
+  topicSubscriptions: JSON
   lastSignInIp: String
   lastSeenAt: ISO8601DateTime
   createdAt: ISO8601DateTime!
