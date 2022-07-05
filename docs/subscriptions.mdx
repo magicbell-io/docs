@@ -19,9 +19,15 @@ There are times when you'd like to send notifications to users that would like t
 4. Joe then sees that `support-ticket-1234` is being handled by one of his peers and due to the constant back and forward decides he no longer wants to be notified about these.
 5. Joe unsubscribes from `support-ticket-1234` and stops receiving notifications for it.
 
+### How users can unsubscribe
+
+When sending a notification you can use the `{{ unsubscribe_url }}` shortcut to generate a url for the specific user and the notification's topic.
+
 ### How this all works
 
-The backend system creates the subscription via the API. When the user clicks the subscribe button a topic subscription record is created with the status of subscribed. Whenever the topic is used in a notification the user will receive the notification.
+1. The backend system creates the subscription via the API. [API Documentation](/docs/graphql-api/reference#create-subscription)
+2. When the user clicks the subscribe button a topic subscription record is created with the status of subscribed. [REST API Documentation](/docs/rest-api/reference#update-topic-subscription) or [GraphQL API Documentation](/docs/graphql-api/reference#update-a-user's-subscription-status-to-a-topic)
+3. Whenever the topic is used in a notification the user will receive the notification.
 
 ### Gotchas
 
