@@ -1520,6 +1520,92 @@
           }
         }
       }
+    },
+    "/topic_subscriptions": {
+      "post": {
+        "operationId": "update-topic-subscription",
+        "tags": ["Subscription API"],
+        "summary": "Update a user's topic subscription status",
+        "description": "Set a user's subscription status to subscribed or unsubscribed for a particular subscription topic.",
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_external_id_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_email_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TopicSubscriptionBody" },
+              "example": {
+                "topic_subscription": {
+                  "email": "dan@example.com",
+                  "subscription": "acme-inc.orders.1234",
+                  "subscribed": false
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "topic_subscription": {
+                      "$ref": "#/components/schemas/UpdatedTopicSubscription"
+                    }
+                  }
+                },
+                "example": {
+                  "topic_subscription": {
+                    "subscribed": false,
+                    "subscription": {
+                      "label": "ACME Inc Order #1234 Updates",
+                      "slug": "acme-inc.orders.1234",
+                      "topic": "acme-inc.orders.1234"
+                    },
+                    "user": {
+                      "email": "dan@example.com",
+                      "external_id": "external-id-123",
+                      "id": "706dc466-a228-4c55-ae9f-f875e92da6a7"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "description": "List of validation errors"
+                    }
+                  }
+                },
+                "example": {
+                  "errors": [
+                    {
+                      "message": "Param 'topic_subscription.subscription' is missing"
+                    },
+                    {
+                      "message": "Param 'topic_subscription.subscribed' is missing"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1826,6 +1912,66 @@
         "type": "object",
         "properties": {
           "notification": { "$ref": "#/components/schemas/Notification" }
+        }
+      },
+      "TopicSubscriptionBody": {
+        "type": "object",
+        "properties": {
+          "topic_subscription": {
+            "type": "object",
+            "properties": {
+              "subscription": {
+                "type": "string",
+                "description": "The slug of the subscription to be updated"
+              },
+              "subscribed": {
+                "type": "boolean",
+                "description": "Whether the user should be subscribed/unsubscribed"
+              }
+            }
+          }
+        },
+        "required": ["subscription", "subscribed"]
+      },
+      "UpdatedTopicSubscription": {
+        "type": "object",
+        "properties": {
+          "subscribed": {
+            "type": "boolean",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "user": { "$ref": "#/components/schemas/SubscriptionUser" },
+          "subscription": { "$ref": "#/components/schemas/Subscription" }
+        }
+      },
+      "Subscription": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "topic": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          }
+        }
+      },
+      "SubscriptionUser": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "id": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          }
         }
       },
       "ProjectBody": {
