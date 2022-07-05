@@ -168,11 +168,11 @@ type Mutation {
   """
   Update a user's subscription status to a topic
   """
-  updateUserSubscription(input: UpdateUserSubscriptionInput!): UpdateUserSubscriptionPayload
+  updateTopicSubscription(input: UpdateTopicSubscriptionInput!): UpdateTopicSubscriptionPayload
   """
   Delete a user's subscription to a topic
   """
-  deleteUserSubscription(input: DeleteUserSubscriptionInput!): DeleteUserSubscriptionPayload
+  deleteTopicSubscription(input: DeleteTopicSubscriptionInput!): DeleteTopicSubscriptionPayload
 }
 
 input CreateSubscriptionInput {
@@ -192,13 +192,13 @@ input UpdateSubscriptionInput {
   topic: String
 }
 
-input DeleteUserSubscriptionInput {
+input DeleteTopicSubscriptionInput {
   email: String
   externalId: String
   subscription: String
 }
 
-input UpdateUserSubscriptionInput {
+input UpdateTopicSubscriptionInput {
   email: String
   externalId: String
   subscribed: Boolean
@@ -284,7 +284,7 @@ type Subscription {
   topic: String!
 }
 
-type UserSubscription {
+type TopicSubscription {
   subscribed: Boolean
   subscription: Subscription
   user: User
@@ -433,12 +433,12 @@ type DeleteSubscriptionPayload {
   subscription: Subscription
 }
 
-type DeleteUserSubscriptionPayload {
+type DeleteTopicSubscriptionPayload {
   errors: [ValidationError!]
-  userSubscription: UserSubscription
+  userSubscription: TopicSubscription
 }
 
-type UpdateUserSubscriptionPayload {
+type UpdateTopicSubscriptionPayload {
   errors: [ValidationError!]
-  userSubscription: UserSubscription
+  userSubscription: TopicSubscription
 }
