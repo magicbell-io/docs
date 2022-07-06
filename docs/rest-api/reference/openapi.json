@@ -1596,6 +1596,37 @@
           }
         }
       }
+    },
+    "/topic_subscriptions/{subscription_slug}": {
+      "delete": {
+        "operationId": "delete-topic-subscription",
+        "tags": ["Subscription API"],
+        "summary": "Delete a user's topic subscription",
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_external_id_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_email_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
+          { "$ref": "#/components/parameters/subscription_slug" }
+        ],
+        "responses": {
+          "204": { "description": "Topic subscription delete successfully" },
+          "404": {
+            "description": "Topic subscription not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "Couldn't find a user's subscription matching the criteria"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1645,6 +1676,13 @@
         "schema": { "type": "string" },
         "required": true,
         "description": "ID of the user notification.\nThe ID of a user notification can be obtained from the \"Fetch user notifications\" API endpoint or from push events sent to the MagicBell React library.\n"
+      },
+      "subscription_slug": {
+        "in": "path",
+        "name": "subscription_slug",
+        "schema": { "type": "string" },
+        "required": true,
+        "description": "The slug of the Subscription."
       },
       "workspace_id": {
         "in": "path",
