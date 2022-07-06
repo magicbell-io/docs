@@ -1539,9 +1539,8 @@
               "schema": { "$ref": "#/components/schemas/TopicSubscriptionBody" },
               "example": {
                 "topic_subscription": {
-                  "email": "dan@example.com",
-                  "subscription": "acme-inc.orders.1234",
-                  "subscribed": false
+                  "subscribed": false,
+                  "subscription": "acme-inc.orders.1234"
                 }
               }
             }
@@ -1563,16 +1562,7 @@
                 "example": {
                   "topic_subscription": {
                     "subscribed": false,
-                    "subscription": {
-                      "label": "ACME Inc Order #1234 Updates",
-                      "slug": "acme-inc.orders.1234",
-                      "topic": "acme-inc.orders.1234"
-                    },
-                    "user": {
-                      "email": "dan@example.com",
-                      "external_id": "external-id-123",
-                      "id": "706dc466-a228-4c55-ae9f-f875e92da6a7"
-                    }
+                    "subscription": "acme-inc.orders.1234"
                   }
                 }
               }
