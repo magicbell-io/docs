@@ -1,9 +1,9 @@
 import { GraphQLField, GraphQLObjectType, GraphQLSchema } from 'graphql';
 import React from 'react';
-import slugify from 'slugify';
 import FieldArguments from './FieldArguments';
 import Headers from './Headers';
 import Request from './Request';
+import { getLink } from './link';
 
 interface Props {
   field: GraphQLField<any, any, any>;
@@ -14,18 +14,17 @@ interface Props {
 export default function Field({ field, operation, schema }: Props) {
   if (!field) return null;
 
-  const { args, name, description: descriptionNode } = field;
+  const { args, description: descriptionNode } = field;
 
-  const href = `${name}-${operation.name}`.toLowerCase();
   const [title, description] = descriptionNode
     ? descriptionNode.replace(/\n+/, ':::').split(':::')
     : ['', ''];
-  const titleSlug = slugify(title, { lower: true, remove: /"\|\?/ });
+  const href = getLink(title);
 
   return (
     <article id={href} className="py-36 border-t">
-      <h2 className="mt-0" id={titleSlug}>
-        <a href={`#${titleSlug}`}>{title}</a>
+      <h2 className="mt-0">
+        <a href={`#${href}`}>{title}</a>
       </h2>
       <p className="text-xs rounded bg-blue-50 px-3 py-2 text-blue-600 uppercase font-mono mb-4 inline-block">
         {operation.name}

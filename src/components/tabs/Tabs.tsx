@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { isNil, reject } from 'ramda';
-import React, { useState } from 'react';
+import React, { Children, useState } from 'react';
 import TabPanel from './TabPanel';
 import TabsHeader from './TabsHeader';
 
 export interface CodeTabsProps {
-  children: (JSX.Element | null)[];
+  children: (JSX.Element | null)[] | JSX.Element | null;
   defaultIndex?: number;
 }
 
@@ -27,7 +27,8 @@ export default function Tabs({ children: allChildren, defaultIndex = 0 }: CodeTa
 
   if (!allChildren) return null;
 
-  const children = reject(isNil, allChildren);
+  const children = reject(isNil, Children.toArray(allChildren) as JSX.Element[]);
+
   // @ts-ignore
   const tabs = children?.map((component) => ({
     // Get code > pre props
