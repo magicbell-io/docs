@@ -36,3 +36,35 @@ Topics help with fetching all notifications for a specific entity in your system
 For example, you may want to show all notifications about a specific order in your UI.
 You can use our Rest API or GraphQL endpoint to fetch all notifications for a topic by supplying the topic query param.
 You can also mark all notifications for a topic `read` in one API call.
+
+## Subscriptions
+
+There are times when you'd like to send notifications to users who would specifically like to receive them, rather than to everybody. An example of this could be your changelog or someone that has an interest in a [specific topic](/docs/topics). Subscriptions allows users to subscribe to and unsubscribe from specific topics. Say, for example:
+
+1. Jane would like to receive all notifications related to support tickets in your app.
+1. Jane goes into your app and subscribes to the topic `support-ticket`.
+1. When a notification is sent in MagicBell with any topic for which `support-ticket` is a substring (e.g., `support-ticket-1234` or `support-ticket.1234`) of the topic, Jane will be notified.
+1. Jane then sees that `support-ticket-1234` is being handled by one of their peers and, due to the constant back and forth, decides they no longer want to be notified about this.
+1. Jane unsubscribes from `support-ticket-1234` and stops receiving notifications for that ticket, but will continue to be notified of others in that category.
+
+### How this all works
+
+1. When a user subscribes to a topic in your app, a subscription record is created with the status `subscribed`. You can update subscription status using either our [REST API](/docs/rest-api/reference#update-topic-subscription) or [GraphQL API](/docs/graphql-api/reference#update-a-user's-subscription-status-to-a-topic).
+1. Our backend [creates the subscription](/docs/graphql-api/reference#create-subscription).
+1. Whenever a topic is specified in a notification, the user will receive the notification.
+
+### How users can unsubscribe
+
+When sending a notification you can use the `{{ unsubscribe_url }}` merge tag to generate a URL for the specific recipient and the notification's topic — this can be used in [templates](/docs/templates), [email layout](/docs/email-layouts), and in notification content.
+
+As we don't generate unsubscribe URLs when a topic isn't specified for a notification, consider using [control flow](https://shopify.github.io/liquid/tags/control-flow/) to avoid an empty object being rendered in your notification:
+
+```html title=LIQUID noTopBorderRadius
+{% if unsubscribe_url != "" %} Click here to
+<a href="{{ unsubscribe_url }}">unsubscribe</a>. {% endif %}
+```
+
+<Note>
+  When a user unsubscribes from a topic, they will no longer receive notifications for
+  that topic, even if they are a recipient of the notification.
+</Note>

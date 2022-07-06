@@ -276,16 +276,7 @@
       },
       {
         "name": "Topics",
-        "children": [
-          {
-            "name": "Overview",
-            "to": "/topics"
-          },
-          {
-            "name": "Subscriptions",
-            "to": "/subscriptions"
-          }
-        ]
+        "to": "/topics"
       },
       {
         "name": "Smart Delivery",
