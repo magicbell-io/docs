@@ -1520,6 +1520,113 @@
           }
         }
       }
+    },
+    "/topic_subscriptions": {
+      "post": {
+        "operationId": "update-topic-subscription",
+        "tags": ["Subscription API"],
+        "summary": "Update a user's topic subscription status",
+        "description": "Set a user's subscription status to subscribed or unsubscribed for a particular subscription topic.",
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_external_id_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_email_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TopicSubscriptionBody" },
+              "example": {
+                "topic_subscription": {
+                  "subscribed": false,
+                  "subscription": "acme-inc.orders.1234"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "topic_subscription": {
+                      "$ref": "#/components/schemas/UpdatedTopicSubscription"
+                    }
+                  }
+                },
+                "example": {
+                  "topic_subscription": {
+                    "subscribed": false,
+                    "subscription": "acme-inc.orders.1234"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "description": "List of validation errors"
+                    }
+                  }
+                },
+                "example": {
+                  "errors": [
+                    {
+                      "message": "Param 'topic_subscription.subscription' is missing"
+                    },
+                    {
+                      "message": "Param 'topic_subscription.subscribed' is missing"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/topic_subscriptions/{subscription_slug}": {
+      "delete": {
+        "operationId": "delete-topic-subscription",
+        "tags": ["Subscription API"],
+        "summary": "Delete a user's topic subscription",
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_external_id_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_email_header" },
+          { "$ref": "#/components/parameters/x_magicbell_user_hmac_header" },
+          { "$ref": "#/components/parameters/subscription_slug" }
+        ],
+        "responses": {
+          "204": { "description": "Topic subscription delete successfully" },
+          "404": {
+            "description": "Topic subscription not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "errors": [
+                    {
+                      "message": "Couldn't find a user's subscription matching the criteria"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1569,6 +1676,13 @@
         "schema": { "type": "string" },
         "required": true,
         "description": "ID of the user notification.\nThe ID of a user notification can be obtained from the \"Fetch user notifications\" API endpoint or from push events sent to the MagicBell React library.\n"
+      },
+      "subscription_slug": {
+        "in": "path",
+        "name": "subscription_slug",
+        "schema": { "type": "string" },
+        "required": true,
+        "description": "The slug of the Subscription."
       },
       "workspace_id": {
         "in": "path",
@@ -1826,6 +1940,66 @@
         "type": "object",
         "properties": {
           "notification": { "$ref": "#/components/schemas/Notification" }
+        }
+      },
+      "TopicSubscriptionBody": {
+        "type": "object",
+        "properties": {
+          "topic_subscription": {
+            "type": "object",
+            "properties": {
+              "subscription": {
+                "type": "string",
+                "description": "The slug of the subscription to be updated"
+              },
+              "subscribed": {
+                "type": "boolean",
+                "description": "Whether the user should be subscribed/unsubscribed"
+              }
+            }
+          }
+        },
+        "required": ["subscription", "subscribed"]
+      },
+      "UpdatedTopicSubscription": {
+        "type": "object",
+        "properties": {
+          "subscribed": {
+            "type": "boolean",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "user": { "$ref": "#/components/schemas/SubscriptionUser" },
+          "subscription": { "$ref": "#/components/schemas/Subscription" }
+        }
+      },
+      "Subscription": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "topic": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          }
+        }
+      },
+      "SubscriptionUser": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          },
+          "id": {
+            "type": "string",
+            "description": "Whether the user should be subscribed/unsubscribed"
+          }
         }
       },
       "ProjectBody": {

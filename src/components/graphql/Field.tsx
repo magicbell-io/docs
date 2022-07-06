@@ -41,7 +41,7 @@ export default function Field({ field, operation, schema }: Props) {
           {args ? <FieldArguments args={args} /> : null}
         </main>
         <aside className="w-full xl:w-1/2 space-y-12">
-          <Request field={field} schema={schema} />
+          <Request field={field} schema={schema} operation={operation} />
         </aside>
       </div>
     </article>

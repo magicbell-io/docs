@@ -4,17 +4,29 @@ import schemaFilePath from 'raw-loader!../../../docs/graphql-api/reference/schem
 import QueryLink from './QueryLink';
 
 export default function GraphqlAPILinks() {
-  const schema = buildSchema(schemaFilePath);
-  const fields = schema.toConfig().query?.getFields();
+  const schema = buildSchema(schemaFilePath).toConfig();
+  const queries = schema.query?.getFields();
+  const mutations = schema.mutation?.getFields();
 
-  if (isNil(fields)) return null;
+  if (isNil(queries) && isNil(mutations)) return null;
+
   return (
     <div className="divide-y divide-dashed divide-gray-200 px-6">
-      <ul className="py-3">
-        {Object.keys(fields).map((queryKey: string) => (
-          <QueryLink key={queryKey} query={fields[queryKey]} />
-        ))}
-      </ul>
+      {queries ? (
+        <ul className="py-3">
+          {Object.keys(queries).map((queryKey: string) => (
+            <QueryLink key={queryKey} query={queries[queryKey]} />
+          ))}
+        </ul>
+      ) : null}
+
+      {mutations ? (
+        <ul className="py-3">
+          {Object.keys(mutations).map((queryKey: string) => (
+            <QueryLink key={queryKey} query={mutations[queryKey]} />
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 }

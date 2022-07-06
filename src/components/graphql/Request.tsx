@@ -1,4 +1,4 @@
-import { query } from 'gql-query-builder';
+import { query, mutation } from 'gql-query-builder';
 import { GraphQLField, GraphQLObjectType, GraphQLSchema } from 'graphql';
 import prettier from 'prettier';
 import parserGraphql from 'prettier/parser-graphql';
@@ -12,9 +12,10 @@ import Tabs from '../tabs/Tabs';
 interface Props {
   field: GraphQLField<any, any, any>;
   schema: GraphQLSchema;
+  operation: GraphQLObjectType<any, any>;
 }
 
-export default function Request({ field, schema }: Props) {
+export default function Request({ field, schema, operation }: Props) {
   if (!field) return null;
 
   const { name, type, astNode } = field;
@@ -22,9 +23,12 @@ export default function Request({ field, schema }: Props) {
   const requiresAdminRole = !isEmpty(
     filter((directive) => directive.name.value === 'adminRequired', directives),
   );
-  const node = schema.getTypeMap()[type.toString()] as GraphQLObjectType | null;
 
-  const gqlQuery = query({
+  const nonRequiredType = type.toString().replace(/!$/, '');
+  const node = schema.getTypeMap()[nonRequiredType] as GraphQLObjectType | null;
+
+  const typeFn = /mutation/i.test(operation.name) ? mutation : query;
+  const gqlQuery = typeFn({
     operation: name,
     fields: node ? buildQueryFields(node) : [],
   });
