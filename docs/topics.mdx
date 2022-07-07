@@ -30,6 +30,31 @@ the notifications should be created with the topic `pull-request-123`
 }
 ```
 
+### Creating notifications for subscribers
+
+The `{ "topic": { "subscribers": true } }` recipient can be used to send notifications to [subscribers](/docs/topics#subscriptions). It can be used on its own or along with other recipients. If this recipient is not specified, the notification will only be sent to the designated recipients.
+
+```json hideHeader
+{
+  "notification": {
+    "title": "@unamashana please review this PR",
+    "recipients": [
+      {
+        "email": "hana@magicbell.io",
+        "external_id": "00001"
+      },
+      {
+        "topic": {
+          "subscribers": true
+        }
+      }
+    ],
+    "topic": "pull-request-123",
+    "category": "comment"
+  }
+}
+```
+
 ## Fetching notifications for a topic
 
 Topics help with fetching all notifications for a specific entity in your system.
