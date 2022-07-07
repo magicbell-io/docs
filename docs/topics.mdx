@@ -47,6 +47,33 @@ Subscriptions allows users to subscribe to and unsubscribe from specific topics.
 1. Jane then sees that `pull-request-1234` is being handled by one of their peers and, due to the constant back and forth, decides they no longer want to be notified about this.
 1. Jane unsubscribes from `pull-request-1234` and stops receiving notifications for that pull request, but will continue to be notified of others.
 
+## Sending notifications for a topic
+
+When creating a notification, you **HAVE TO** set the topic in the `notification.topic` parameter. Along with the topic you also need to add a special recipient. The
+`{ "topic": { "subscribers": true } }` recipient can be used on it's own or along with other recipients. If this specific recipient is not specified the notification
+will only be sent to the supplied recipients.
+
+```json hideHeader
+{
+  "notification": {
+    "title": "@unamashana please review this PR",
+    "recipients": [
+      {
+        "email": "hana@magicbell.io",
+        "external_id": "00001"
+      },
+      {
+        "topic": {
+          "subscribers": true
+        }
+      }
+    ],
+    "topic": "pull-request-123",
+    "category": "comment"
+  }
+}
+```
+
 ### How this all works
 
 1. When a user subscribes to a topic in your app, a subscription record is created with the status `subscribed`. You can update subscription status using either our [REST API](/docs/rest-api/reference#update-topic-subscription) or [GraphQL API](/docs/graphql-api/reference#update-a-user's-subscription-status-to-a-topic).
