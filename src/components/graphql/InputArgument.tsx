@@ -1,5 +1,7 @@
-import { GraphQLArgument } from 'graphql';
+import { GraphQLArgument, GraphQLNonNull } from 'graphql';
 import React from 'react';
+import { isGraphqlInputObjectType } from './lib';
+import { getLink } from './link';
 
 interface Props {
   argument: GraphQLArgument;
@@ -8,7 +10,12 @@ interface Props {
 export default function InputArgument({ argument }: Props) {
   if (!argument) return null;
 
-  const { name, type, description } = argument;
+  const { name, description } = argument;
+
+  const type =
+    argument.type instanceof GraphQLNonNull ? argument.type.ofType : argument.type;
+  const isInputType = isGraphqlInputObjectType(type);
+  const typeName = argument.type.toString();
 
   return (
     <li className="list-none p-2">
@@ -21,7 +28,9 @@ export default function InputArgument({ argument }: Props) {
           }}
         />
       )}
-      <p className="opacity-80 m-0 capitalize">{type.toString()}</p>
+      <p className="opacity-80 m-0 capitalize">
+        {isInputType ? <a href={`#${getLink(type)}`}>{typeName}</a> : typeName}
+      </p>
     </li>
   );
 }
