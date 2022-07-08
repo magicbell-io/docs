@@ -1,0 +1,159 @@
+---
+title: Batch notifications (BETA)
+subtitle: Send notifications to users in batches at specific times
+---
+
+Notifications can be sent out in batches according to a schedule and matching criteria.
+
+Notifications are typically used to create digests for your users to consume a group of notifications at specific times.
+
+**Note:** The Batch Notifications feature is currently only available for email.
+
+## Delivery Rule
+
+A delivery rule describes [which notifications](#matching-criteria) should be batched, and [when](#schedule) they should be sent.
+
+Delivery rules are the starting point of configuring batch notifications.
+
+### Schedule
+
+The schedule that will be used to for sending batch notifications is configured with a CRON string.
+
+If, for example, you only wanted to send notifications to your users on Wednesday at 9am, you would use the following CRON string:
+
+```ruby hideHeader
+# Every Wednesday morning at 9am
+"0 9 * * 3"
+```
+
+Every notification that is received before Wednesday at 9am and [meets all the criteria to be batched](#matching-criteria) will be grouped together and will only be sent at 9am on Wednesday.
+
+### Matching criteria
+
+Notifications will only be batched if they meet all the matching criteria: channel, category and topic.
+
+If you want users to receive batched email notifications for the "Digest" category, your matching criteria would be:
+
+```ruby hideHeader
+Category: "Digest"
+Channel: "email"
+Topic: nil
+```
+
+## Composing the the batch layout
+
+When a group of notifications is ready to be sent out in a single batch email, the layout will be composed out of the [Email layout](/docs/email-layouts), a [batch template](#batch-templates), and a single template per notification.
+
+### Batch templates
+
+The batch template uses [Liquid](https://shopify.github.io/liquid/basics/introduction/) to describe how a batch of single templates is combined, for example:
+
+```html
+<dl>{% for template in templates %} {{ template.content }} {% endfor %}</dl>
+```
+
+### Single templates
+
+Single [templates](/docs/templates) describe the format of an individual notification that will be used within a [batch template](#batch-templates):
+
+```html
+<dt>{{notification.title}}</dt>
+<dd>{{notification.content}}</dd>
+```
+
+## Putting it all together
+
+You would like to send your users a single email notification that contains a weeks worth of updates. You would like the email to go out every Wednesday afternoon at 1:30pm.
+
+Each weekly update notifications belongs to the `Weekly updates` category.
+
+The first step is to create a [delivery rule](#delivery-rule):
+
+```ruby hideHeader
+# Delivery Rule
+cron: "30 13 * * 3"
+Category: "Weekly updates"
+Channel: "email"
+```
+
+Next, you'll want to set up the the email channel layout to look something like this:
+
+```html
+<!-- Email Layout -->
+<h1>
+  Your weekly update
+  <h1>
+    {% template.content %}
+
+    <p>Thanks for reading!</p>
+  </h1>
+</h1>
+```
+
+`{{ template.content }}` refers to the content of the batch template, which we'll set as follows:
+
+```html
+<!-- Batch Template -->
+{% for template in templates %}
+<div class="notifications">{{ template.content }}</div>
+{% endfor %}
+```
+
+Now let's create the single template for the individual notifications:
+
+```html
+<!-- Single Template -->
+<h2>{{ notification.title}}</h2>
+<p>{{ notification.content}}</p>
+```
+
+If you send the following matching notifications before the scheduled delivery time:
+
+```json
+// Notification 1
+{
+  "notification": {
+    "title": "We've launched wallets!",
+    "category": "Weekly updates",
+    "content": "Our new wallets are amazing - check them out on Insta!"
+  }
+}
+
+// Notification 2
+{
+  "notification": {
+    "title": "We're closed next week Monday :(",
+    "category": "Weekly updates",
+    "content": "We're taking a long weekend - we promise to get back to all your queries!"
+  }
+}
+```
+
+... your users will receive an email that looks like this:
+
+```html
+<h1>
+  Your weekly update
+  <h1>
+    <div class="notifications">
+      <h2>We've launched wallets!</h2>
+      <p>Our new wallets are amazing - check them out on Insta!</p>
+
+      <h2>We're closed next week Monday :(</h2>
+      <p>We're taking a long weekend - we promise to get back to all your queries!</p>
+    </div>
+
+    <p>Thanks for reading!</p>
+  </h1>
+</h1>
+```
+
+## Default batch templates
+
+If you have a delivery rule configured and do not have any templates created, then a default [batch template](#batch-templates) will be created for you.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/example_default_template.png"
+  style={{ width: '100%', height: 'intrinsic' }}
+/>
