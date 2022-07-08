@@ -176,32 +176,57 @@ type Mutation {
 }
 
 input CreateSubscriptionInput {
+  "The subscription label. This is used on the unsubscribe page."
   label: String
+
+  "The subscription slug, used for identification when performing CRUD operations on Topic Subscriptions"
   slug: String
+
+  "The string that should be used to match against notification topics"
   topic: String
 }
 
 input DeleteSubscriptionInput {
+  "The subscription id"
   id: ID
 }
 
 input UpdateSubscriptionInput {
+  "The subscription id"
   id: ID
+
+  "The subscription label. This is used on the unsubscribe page."
   label: String
+
+  "The subscription slug, used for identification when performing CRUD operations on Topic Subscriptions"
   slug: String
+
+  "The string that should be used to match against notification topics"
   topic: String
 }
 
 input DeleteTopicSubscriptionInput {
+  "The user's email address"
   email: String
+
+  "The user's external id"
   externalId: String
+
+  "The identifying subscription slug"
   subscription: String
 }
 
 input UpdateTopicSubscriptionInput {
+  "The user's email address"
   email: String
+
+  "The user's external id"
   externalId: String
+
+  "Whether the user is subscribed/unsubscribed"
   subscribed: Boolean
+
+  "The identifying subscription slug"
   subscription: String
 }
 
