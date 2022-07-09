@@ -1886,9 +1886,9 @@
     tinycolor2 "^1.4.2"
     tslib "^2.1.0"
 
-"@magicbell/support-widget@git+https://github.com/magicbell-io/support-widget":
+"@magicbell/support-widget@git+https://github.com/magicbell-io/support-widget#8e3d471":
   version "0.1.0"
-  resolved "git+https://github.com/magicbell-io/support-widget#afabb42bb8d3a24cac74067aaa50154d14765616"
+  resolved "git+https://github.com/magicbell-io/support-widget#8e3d471600f9ed7b1e4555e22a015b4db907d898"
   dependencies:
     botz "^1.1.0"
     tiny-invariant "^1.2.0"

@@ -24,7 +24,7 @@
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.5",
     "@magicbell/magicbell-react": "^7.7.0",
-    "@magicbell/support-widget": "git+https://github.com/magicbell-io/support-widget",
+    "@magicbell/support-widget": "git+https://github.com/magicbell-io/support-widget#8e3d471",
     "@next/bundle-analyzer": "^12.1.0",
     "algoliasearch": "^4.12.0",
     "classnames": "^2.3.1",
