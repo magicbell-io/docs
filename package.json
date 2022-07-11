@@ -6,7 +6,7 @@
     "node": ">=14.x"
   },
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev -p 3005",
     "analyze": "ANALYZE=true next build",
     "build": "next build",
     "postbuild": "next-sitemap && node ./scripts/build-search-index.mjs",
