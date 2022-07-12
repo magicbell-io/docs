@@ -13,7 +13,7 @@ In the following example, we are changing the font to [IBM Plex Sans](https://fo
 
 ```html title=ESM
 <script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
+  import { renderWidget } from 'https://unpkg.com/@magicbell/embeddable';
 
   let theme = {
     header: { fontFamily: 'IBM Plex Sans' },
@@ -39,7 +39,7 @@ In the following example, we are changing the font to [IBM Plex Sans](https://fo
     stylesheets,
   };
 
-  magicbell('render', target, options);
+  renderWidget(target, options);
 </script>
 ```
 
@@ -59,7 +59,7 @@ Pass the font size to all elements you want to customize. In the following examp
 ```html title=ESM
 <div id="notifications-inbox" />
 <script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
+  import { renderWidget } from 'https://unpkg.com/@magicbell/embeddable';
 
   let theme = {
     header: { fontSize: '13px' },
@@ -78,6 +78,6 @@ Pass the font size to all elements you want to customize. In the following examp
     theme,
   };
 
-  magicbell('render', targetEl, options);
+  renderWidget(targetEl, options);
 </script>
 ```

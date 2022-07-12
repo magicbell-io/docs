@@ -50,7 +50,7 @@ export default function Notifications() {
 
 ```html title=HTML hideHeader noTopBorderRadius
 <script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
+  import { renderWidget } from 'https://unpkg.com/@magicbell/embeddable';
 
   let targetEl = document.getElementById('notifications-inbox');
   let options = {
@@ -60,7 +60,7 @@ export default function Notifications() {
     locale: 'pt_BR',
   };
 
-  magicbell('render', targetEl, options);
+  renderWidget(targetEl, options);
 </script>
 ```
 
@@ -117,7 +117,7 @@ export default function Notifications() {
 
 ```html title=HTML hideHeader noTopBorderRadius
 <script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
+  import { renderWidget } from 'https://unpkg.com/@magicbell/embeddable';
 
   // Your custom locale definition
   let locale = {
@@ -141,7 +141,7 @@ export default function Notifications() {
     locale,
   };
 
-  magicbell('render', targetEl, options);
+  renderWidget(targetEl, options);
 </script>
 ```
 

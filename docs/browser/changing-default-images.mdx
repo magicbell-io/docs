@@ -7,7 +7,7 @@ The notification inbox shows [an image](https://assets.magicbell.io/images/empty
 ```html title=ESM
 <div id="notifications-inbox" />
 <script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
+  import { renderWidget } from 'https://unpkg.com/@magicbell/embeddable';
 
   let targetEl = document.getElementById('notifications-inbox');
   let options = {
@@ -19,7 +19,7 @@ The notification inbox shows [an image](https://assets.magicbell.io/images/empty
     },
   };
 
-  magicbell('render', targetEl, options);
+  renderWidget(targetEl, options);
 </script>
 ```
 
