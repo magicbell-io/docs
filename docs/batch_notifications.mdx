@@ -5,7 +5,7 @@ subtitle: Send notifications to users in batches at specific times
 
 Notifications can be sent out in batches according to a schedule and matching criteria.
 
-**Note:** The Batch Notifications feature is currently only available for email with support for other channels coming soon! If you'd like to find out more or would like to have early access, let us know in the [slack community](http://magicbell.community).
+**Note:** The batch notifications feature is currently only available for email, and support for other channels is coming soon! If you'd like to find out more or would like to have early access, let us know in the [slack community](http://magicbell.community).
 
 ## Delivery Rule
 
@@ -56,7 +56,8 @@ All notifications for the `email` channel and `comment` category will be grouped
 // email batch 1
 {
   "notification": {
-    "category": "email",
+    "category": "comment",
+    "channel": "email",
     "topic": "task_1",
     "title": "First email"
   },
@@ -65,7 +66,8 @@ All notifications for the `email` channel and `comment` category will be grouped
 
 {
   "notification": {
-    "category": "email",
+    "category": "comment",
+    "channel": "email",
     "topic": "task_1",
     "title": "Third email"
   },
@@ -75,7 +77,8 @@ All notifications for the `email` channel and `comment` category will be grouped
 // email batch 2
 {
   "notification": {
-    "category": "email",
+    "category": "comment",
+    "channel": "email",
     "topic": "task_2",
     "title": "Second email"
   },
