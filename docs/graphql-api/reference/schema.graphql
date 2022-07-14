@@ -212,8 +212,8 @@ input DeleteTopicSubscriptionInput {
   "The user's external id"
   externalId: String
 
-  "The identifying subscription slug"
-  subscription: String
+  "The associated subscription information"
+  subscription: SubscriptionInput
 }
 
 input UpdateTopicSubscriptionInput {
@@ -226,8 +226,13 @@ input UpdateTopicSubscriptionInput {
   "Whether the user is subscribed/unsubscribed"
   subscribed: Boolean
 
+  "The associated subscription information"
+  subscription: SubscriptionInput
+}
+
+input SubscriptionInput {
   "The identifying subscription slug"
-  subscription: String
+  slug: String
 }
 
 type PageInfo {
