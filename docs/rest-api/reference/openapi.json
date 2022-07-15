@@ -1540,7 +1540,9 @@
               "example": {
                 "topic_subscription": {
                   "subscribed": false,
-                  "subscription": "acme-inc.orders.1234"
+                  "subscription": {
+                    "slug": "acme-inc.orders.1234"
+                  }
                 }
               }
             }
@@ -1562,7 +1564,9 @@
                 "example": {
                   "topic_subscription": {
                     "subscribed": false,
-                    "subscription": "acme-inc.orders.1234"
+                    "subscription": {
+                      "slug": "acme-inc.orders.1234"
+                    }
                   }
                 }
               }
@@ -1949,8 +1953,13 @@
             "type": "object",
             "properties": {
               "subscription": {
-                "type": "string",
-                "description": "The slug of the subscription to be updated"
+                "type": "object",
+                "properties": {
+                  "slug": {
+                    "type": "string",
+                    "description": "The slug of the subscription to be updated"
+                  }
+                }
               },
               "subscribed": {
                 "type": "boolean",
