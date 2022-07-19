@@ -28,6 +28,14 @@ module.exports = withPlugins([[withBundleAnalyzer], withSvgr], {
     defaultLocale: 'en',
   },
   async redirects() {
-    return redirects;
+    return [
+      {
+        source: '/',
+        destination: '/docs',
+        basePath: false,
+        permanent: false,
+      },
+      ...redirects,
+    ];
   },
 });
