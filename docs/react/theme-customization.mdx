@@ -59,7 +59,7 @@ export default function Notifications() {
 
 ```html title=HTML hideHeader noTopBorderRadius
 <script type="module">
-  import { renderWidget } from 'https://assets.magicbell.com/magicbell.esm.js';
+  import { renderWidget } from 'https://unpkg.com/@magicbell/embeddable';
 
   // Your custom theme definition
   let theme = {
@@ -76,7 +76,7 @@ export default function Notifications() {
     theme,
   };
 
-  magicbell('render', targetEl, options);
+  renderWidget(targetEl, options);
 </script>
 ```
 
