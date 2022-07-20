@@ -276,14 +276,23 @@
       },
       {
         "name": "Topics",
-        "to": "/topics"
+        "children": [
+          {
+            "name": "Overview",
+            "to": "/topics"
+          },
+          {
+            "name": "Subscriptions",
+            "to": "/subscriptions"
+          }
+        ]
       },
       {
         "name": "Smart Delivery",
         "to": "/smart-delivery"
       },
       {
-        "name": "Override content accross channels",
+        "name": "Override content across channels",
         "to": "/overrides"
       },
       {
