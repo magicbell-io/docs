@@ -44,7 +44,7 @@ The `{ "topic": { "subscribers": true } }` recipient can be used to send notific
 
 ## How users can unsubscribe
 
-When sending a notification you can use the `{{ unsubscribe_url }}` merge tag to generate a URL for the specific recipient and the notification's topic — this can be used in [templates](/docs/templates), [email layout](/docs/email-layouts), and in notification content.
+When sending a notification you can use the `{{ unsubscribe_url | topic: "current" }}` merge tag to generate a URL for the specific recipient and the notification's topic — this can be used in [templates](/docs/templates), [email layout](/docs/email-layouts), and in notification content. If you would like to set a specific topic for unsubscription, that does not match the notification topic you can do so by using the `{{ unsubscribe_url | topic: "another-topic" }}` merge tag.
 
 As we don't generate unsubscribe URLs when a topic isn't specified for a notification, consider using [control flow](https://shopify.github.io/liquid/tags/control-flow/) to avoid an empty object being rendered in your notification:
 
