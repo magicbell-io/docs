@@ -1631,6 +1631,204 @@
           }
         }
       }
+    },
+    "/channels": {
+      "get": {
+        "summary": "Get channel list",
+        "operationId": "get-channels-list",
+        "description": "Get a list of channel configuration.",
+        "tags": ["Configuration"],
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_api_secret_header" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lists the configuration for all the channels",
+            "content": {
+              "application/json": {
+                "example": {
+                  "channels": [
+                    {
+                      "slug": "email",
+                      "configuration": {
+                        "from": {
+                          "email": "stephan@example.com",
+                          "name": "Stephan Sender"
+                        },
+                        "providers": {
+                          "sendgrid": {
+                            "api_key": "234-api-key-sendgrid",
+                            "enabled": true,
+                            "from": {
+                              "email": "hannes@example.com",
+                              "name": "Hannes Mailer"
+                            },
+                            "reply_to": {
+                              "email": "joe@example.com",
+                              "name": "Joe Bloggs"
+                            }
+                          },
+                          "mailgun": {
+                            "enabled": false,
+                            "api_key": "mailgun-api-key",
+                            "sender_domain": "example.com",
+                            "from": {
+                              "email": "joe@example.com",
+                              "name": "Joe Bloggs"
+                            }
+                          },
+                          "postmark": {
+                            "enabled": false,
+                            "api_key": "postmark-api-key",
+                            "from": {
+                              "email": "bob@example.com",
+                              "name": "Bob The Builder"
+                            }
+                          },
+                          "ping": {
+                            "enabled": false,
+                            "url": "http://my.app.local"
+                          },
+                          "amazon_ses": {
+                            "enabled": false,
+                            "key_id": "amazon-ses-key-id",
+                            "secret_key": "amazon-ses-secret-key",
+                            "region": "us-east-1",
+                            "from": {
+                              "email": "jeff@example.com"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "slug": "in_app"
+                    },
+                    {
+                      "slug": "web_push",
+                      "configuration": {
+                        "providers": {
+                          "apns": {
+                            "enabled": false,
+                            "p12_cert": "safari-p12-cert.safari-p12-cert.safari-p12-cert.safari-p12-cert.safari-p12-cert.safari-p12-cert",
+                            "p12_pass": "p-12-pass",
+                            "website_name": "www.example.com",
+                            "url_format_string": "url-format-string"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "slug": "mobile_push",
+                      "configuration": {
+                        "providers": {
+                          "fcm": {
+                            "app_bundle_id": "com.example.app",
+                            "enabled": true,
+                            "api_key": "ViRp5TGl8irwe7r+EpVP/jsy0dItcF9/v3goCpRv6I5I3Y48ldpF9oGy67G8s0sg"
+                          },
+                          "apns": {
+                            "enabled": false,
+                            "key_id": "apns-key-id",
+                            "team_id": "apns-team-id",
+                            "p8_cert": "apns-p8-cert.apns-p8-cert.apns-p8-cert.apns-p8-cert.apns-p8-cert",
+                            "app_bundle_id": "apns.app.bundle.id",
+                            "environment": "production",
+                            "badge": "unread"
+                          },
+                          "apns_sandbox": {
+                            "enabled": false,
+                            "key_id": "apns-sandbox-key-id",
+                            "team_id": "apns-sandbox-team-id",
+                            "p8_cert": "apns-sandbox-p8-cert.apns-sandbox-p8-cert.apns-sandbox-p8-cert.apns-sandbox-p8-cert",
+                            "app_bundle_id": "apns.sandbox.app.bundle.id",
+                            "environment": "development",
+                            "badge": "unread"
+                          },
+                          "fcm_sandbox": {
+                            "enabled": false,
+                            "api_key": "ViRp5TGl8irwe7r+EpVP/jsy0dItcF9/v3goCpRv6I5I3Y48ldpF9oGy67G8s12G",
+                            "app_bundle_id": "fcm.sandbox.bundle.id"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "slug": "slack"
+                    },
+                    {
+                      "slug": "sms",
+                      "configuration": {
+                        "from": {
+                          "phone_number": "+1 555-555-5555"
+                        },
+                        "providers": {
+                          "twilio": {
+                            "api_key": "123-the-api-key",
+                            "api_secret": "123-the-api-secret",
+                            "enabled": true,
+                            "from": {
+                              "phone_number": "+1 555-789-1234"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Update channels",
+        "operationId": "update-channels-list",
+        "description": "Update the configuration of the specified channels.",
+        "tags": ["Configuration"],
+        "parameters": [
+          { "$ref": "#/components/parameters/x_magicbell_api_key_header" },
+          { "$ref": "#/components/parameters/x_magicbell_api_secret_header" }
+        ],
+        "responses": {
+          "204": {
+            "description": "Updates the configuration for all the channels"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/channels_config_list"
+              },
+              "example": {
+                "channels": [
+                  {
+                    "slug": "email",
+                    "configuration": {
+                      "providers": {
+                        "sendgrid": {
+                          "api_key": "234-api-key-sendgrid",
+                          "enabled": true,
+                          "from": {
+                            "email": "hannes@example.com",
+                            "name": "Hannes Mailer"
+                          },
+                          "reply_to": {
+                            "email": "joe@example.com",
+                            "name": "Joe Bloggs"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -2203,6 +2401,378 @@
           }
         },
         "required": ["device_token", "platform"]
+      },
+      "channels_config_list": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "channels": {
+            "description": "A list of channels with their associated configuration settings",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "slug": {
+                  "type": "string",
+                  "enum": ["email", "sms", "in_app", "mobile_push", "web_push", "slack"]
+                },
+                "configuration": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/email_channel_config"
+                    },
+                    {
+                      "$ref": "#/components/schemas/mobile_push_config"
+                    },
+                    {
+                      "$ref": "#/components/schemas/sms_config"
+                    },
+                    {
+                      "$ref": "#/components/schemas/web_push_config"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "email_channel_config": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "from": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "providers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "sendgrid": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "reply_to": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "mailgun": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "sender_domain": {
+                    "type": "string"
+                  },
+                  "from": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "postmark": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "disabled": {
+                    "type": "boolean"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "ping": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "disabled": {
+                    "type": "boolean"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                }
+              },
+              "amazon_ses": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "key_id": {
+                    "type": "string"
+                  },
+                  "region": {
+                    "type": "string"
+                  },
+                  "secret_key": {
+                    "type": "string"
+                  },
+                  "from": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "mobile_push_config": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "providers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "apns": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "app_bundle_id": {
+                    "type": "string"
+                  },
+                  "badge": {
+                    "type": "string",
+                    "enum": ["unread", "unseen"]
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "environment": {
+                    "type": "string",
+                    "enum": ["development", "production"]
+                  },
+                  "key_id": {
+                    "type": "string"
+                  },
+                  "p8_cert": {
+                    "type": "string"
+                  },
+                  "team_id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "apns_sandbox": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "app_bundle_id": {
+                    "type": "string"
+                  },
+                  "badge": {
+                    "type": "string",
+                    "enum": ["unread", "unseen"]
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "environment": {
+                    "type": "string",
+                    "enum": ["development", "production"]
+                  },
+                  "key_id": {
+                    "type": "string"
+                  },
+                  "p8_cert": {
+                    "type": "string"
+                  },
+                  "team_id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "fcm": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "app_bundle_id": {
+                    "type": "string"
+                  },
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "fcm_sandbox": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "app_bundle_id": {
+                    "type": "string"
+                  },
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "sms_config": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "from": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "phone_number": {
+                "type": "string"
+              }
+            }
+          },
+          "providers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "twilio": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "api_key": {
+                    "type": "string"
+                  },
+                  "api_secret": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "phone_number": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "web_push_config": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "providers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "apns": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "p12_cert": {
+                    "type": "string"
+                  },
+                  "p12_pass": {
+                    "type": "string"
+                  },
+                  "url_format_string": {
+                    "type": "string"
+                  },
+                  "website_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
