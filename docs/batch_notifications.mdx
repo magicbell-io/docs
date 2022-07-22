@@ -1,0 +1,207 @@
+---
+title: Batch notifications (BETA)
+subtitle: Send notifications to users in batches at specific times
+---
+
+Notifications can be sent out in batches according to a schedule and matching criteria.
+
+**Note:** The batch notifications feature is currently only available for email, and support for other channels is coming soon! If you'd like to find out more or would like to have early access, let us know in the [slack community](http://magicbell.community).
+
+## Delivery Rule
+
+A delivery rule describes [which notifications](#matching-criteria) should be batched, and [when](#schedule) they should be sent.
+
+Delivery rules are the starting point of configuring batch notifications.
+
+### Schedule
+
+The schedule that will be used to for sending batch notifications is configured with a [CRON](https://crontab.guru/) string.
+
+If, for example, you only wanted to send notifications to your users on Wednesday at 9am, you would use the following CRON string:
+
+```js hideHeader
+# Every Wednesday morning at 9am
+"0 9 * * 3"
+```
+
+Every notification that is received before Wednesday at 9am and [meets all the criteria to be batched](#matching-criteria) will be grouped together and will only be sent at 9am on Wednesday.
+
+### Matching criteria
+
+Notifications will only be batched if they meet all the specified matching criteria. You can specify any or all of the following: channel, category and topic.
+
+If you want users to receive batched email notifications for the "comment" category, your matching criteria would be:
+
+```js hideHeader
+"channel": "email"
+"category": "comment"
+```
+
+### Smart matching
+
+If you would like to automatically batch notifications by topic threads, you can do so with the optional `smart_match` parameter.
+
+An example of the matching criteria would look something like this:
+
+```js hideHeader
+// Delivery rule
+"channel": "email"
+"category": "comment"
+"smart_match": { "topic": "match"}
+```
+
+All notifications for the `email` channel and `comment` category will be grouped per topic:
+
+```js hideHeader
+// email batch 1
+{
+  "notification": {
+    "category": "comment",
+    "channel": "email",
+    "topic": "task_1",
+    "title": "First email"
+  },
+  // ...
+}
+
+{
+  "notification": {
+    "category": "comment",
+    "channel": "email",
+    "topic": "task_1",
+    "title": "Third email"
+  },
+  // ...
+}
+
+// email batch 2
+{
+  "notification": {
+    "category": "comment",
+    "channel": "email",
+    "topic": "task_2",
+    "title": "Second email"
+  },
+  // ...
+}
+```
+
+## Composing the the batch layout
+
+When a group of notifications is ready to be sent out in a batch email, the layout will be composed out of the [Email layout](/docs/email-layouts) and a [batch template](#batch-templates). If the email layout is empty, the batch template will still be rendered.
+
+### Batch templates
+
+The batch template uses [Liquid](https://shopify.github.io/liquid/basics/introduction/) to describe how a batch of notifications will be rendered, for example:
+
+```html
+<dl>
+  {% for notification in notifications %}
+  <dt>{{notification.title}}</dt>
+  <dd>{{notification.content}}</dd>
+  {% endfor %}
+</dl>
+```
+
+## Putting it all together
+
+You would like to send your users a single email notification that contains a weeks worth of updates. You would like the email to go out every Wednesday afternoon at 1:30pm.
+
+Each weekly update notifications belongs to the `Weekly updates` category.
+
+The first step is to create a [delivery rule](#delivery-rule):
+
+```js hideHeader
+# Delivery Rule
+"cron": "30 13 * * 3"
+"category": "weekly_updates"
+"channel": "email"
+```
+
+Next, you'll want to set up the the email channel layout to look something like this:
+
+```html
+<!-- Email Layout -->
+<h1>Hi {{ user.first_name }}</h1>
+
+{% template.content %}
+
+<p>Thanks for reading!</p>
+```
+
+`{{ template.content }}` refers to the content of the batch template, which we'll set as follows:
+
+```html
+<!-- Batch Template -->
+{% for notification in notifications %}
+<div class="notification">
+  <h2>{{ notification.title}}</h2>
+
+  <p>{{ notification.content}}</p>
+</div>
+{% endfor %}
+```
+
+If you send the following matching notifications before the next delivery time:
+
+```json
+// Notification 1
+{
+  "notification": {
+    "title": "We've launched wallets!",
+    "category": "weekly_updates",
+    "content": "Our new wallets are amazing - check them out on Insta!",
+    "recipients": [
+      {
+        "first_name": "Dan",
+        "email": "dan@example.com"
+      }
+    ]
+  }
+}
+
+// Notification 2
+{
+  "notification": {
+    "title": "We're closed next week Monday :(",
+    "category": "weekly_updates",
+    "content": "We're taking a long weekend - we promise to get back to all your queries!",
+    "recipients": [
+      {
+        "first_name": "Dan",
+        "email": "dan@example.com"
+      }
+    ]
+  }
+}
+```
+
+... your users will receive an email that looks like this:
+
+```html
+<h1>Hi Dan,</h1>
+
+<div class="notification">
+  <h2>We've launched wallets!</h2>
+
+  <p>Our new wallets are amazing - check them out on Insta!</p>
+</div>
+
+<div class="notification">
+  <h2>We're closed next week Monday :(</h2>
+
+  <p>We're taking a long weekend - we promise to get back to all your queries!</p>
+</div>
+
+<p>Thanks for reading!</p>
+```
+
+## Default batch templates
+
+If you have a delivery rule configured and do not have any templates created, then a default [batch template](#batch-templates) will be created for you.
+
+<img
+  className="full-mobile"
+  src="/docs/uploads/example_default_template.png"
+  style={{ width: '100%', height: 'intrinsic' }}
+/>

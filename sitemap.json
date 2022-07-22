@@ -306,6 +306,10 @@
       {
         "name": "Compose",
         "to": "/compose"
+      },
+      {
+        "name": "Batch notifications",
+        "to": "/batch_notifications"
       }
     ]
   },
